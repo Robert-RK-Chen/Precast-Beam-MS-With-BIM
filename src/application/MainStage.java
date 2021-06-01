@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.net.URL;
+
 /**
  * @author Robert Chen
  */
@@ -15,14 +17,21 @@ public class MainStage extends Application
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("../scene/MainScene.fxml"));
+        URL mainSceneUrl = getClass().getResource("../scene/MainScene.fxml");
+        FXMLLoader mainSceneLoader = new FXMLLoader();
+        mainSceneLoader.setLocation(mainSceneUrl);
 
-        Image icon = new Image(getClass().getResource("../image/icon/prebeams.png").toExternalForm());
+        Parent root = mainSceneLoader.load();
+        Scene mainScene = new Scene(root, 1200, 800);
+
+        URL iconUrl = getClass().getResource("../resource/image/icon/prebeams.png");
+        Image icon = new Image(iconUrl.toExternalForm());
+
         primaryStage.getIcons().add(icon);
-
         primaryStage.setTitle("预制梁场生产管理系统");
-        primaryStage.setScene(new Scene(root, 1200,800));
+        primaryStage.setScene(mainScene);
         primaryStage.setResizable(false);
+
         primaryStage.show();
     }
 

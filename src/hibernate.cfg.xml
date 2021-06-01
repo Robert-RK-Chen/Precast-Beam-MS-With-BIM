@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/precast_beam_system</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">12061555</property>
+        <mapping class="hibernate.entities.BeamInfoEntity"/>
+        <mapping class="hibernate.entities.BeamStoreEntity"/>
+        <mapping class="hibernate.entities.CuringInfoEntity"/>
+        <mapping class="hibernate.entities.PouringInfoEntity"/>
+        <mapping class="hibernate.entities.SteelInfoEntity"/>
+        <mapping class="hibernate.entities.TieInfoEntity"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>
