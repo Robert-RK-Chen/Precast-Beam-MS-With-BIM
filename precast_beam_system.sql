@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 01/06/2021 01:01:18
+ Date: 01/06/2021 18:19:10
 */
 
 SET NAMES utf8mb4;
@@ -31,6 +31,7 @@ CREATE TABLE `beam_info`  (
   `width` double NULL DEFAULT NULL,
   `radius` double NULL DEFAULT NULL,
   `height` double NULL DEFAULT NULL,
+  `beam_state` varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NULL DEFAULT NULL,
   PRIMARY KEY (`beam_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = gbk COLLATE = gbk_chinese_ci ROW_FORMAT = DYNAMIC;
 

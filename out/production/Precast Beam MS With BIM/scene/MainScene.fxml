@@ -1,4 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0"
-      prefWidth="1200.0" xmlns="http://javafx.com/javafx/16"/>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox prefHeight="800.0" prefWidth="1200.0">
+        <HBox prefHeight="600.0" prefWidth="1200.0">
+            <VBox prefHeight="600.0" prefWidth="300.0">
+                <Label alignment="CENTER" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #E94256; -fx-background-radius: 6;" text="扎 筋 区" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0" />
+            <VBox prefHeight="600.0" prefWidth="900.0">
+                <HBox prefHeight="60.0" prefWidth="900.0">
+                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #0A7AFF; -fx-border-radius: 10;" text="读入数据库" textFill="#0a7aff">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="10.0" top="10.0" />
+                        </HBox.margin>
+                    </Button>
+                    <TextField prefHeight="40.0" prefWidth="680.0" promptText="🔍 搜索（预制梁编号）" style="-fx-background-color: #EFEFF0; -fx-border-width: 0; -fx-background-radius: 10;">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="10.0" top="10.0" />
+                        </HBox.margin>
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </TextField>
+                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #0A7AFF; -fx-border-radius: 10;" text="查询" textFill="#0a7aff">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+                <Separator prefHeight="0.0" prefWidth="897.0" />
+                <HBox prefHeight="540.0" prefWidth="900.0">
+                    <VBox prefHeight="540.0" prefWidth="300.0">
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #027FFF; -fx-background-radius: 6;" text="浇 筑 区" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" top="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+                    <Separator orientation="VERTICAL" prefHeight="540.0" prefWidth="0.0" />
+                    <VBox prefHeight="540.0" prefWidth="300.0">
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #34B4A7; -fx-background-radius: 6;" text="养 护 区" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                    </VBox>
+                    <Separator orientation="VERTICAL" prefHeight="540.0" prefWidth="0.0" />
+                    <VBox prefHeight="540.0" prefWidth="300.0">
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #622AFF; -fx-background-radius: 6;" text="存 储 区" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </HBox>
+        <Separator prefHeight="0.0" prefWidth="1200.0" />
+        <HBox prefHeight="200.0" prefWidth="1200.0" style="-fx-background-color: #F3F3F8;">
+            <Label alignment="CENTER" prefHeight="180.0" prefWidth="100.0" style="-fx-background-color: #E2620C; -fx-background-radius: 10;" text="已使用" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+                <HBox.margin>
+                    <Insets bottom="10.0" left="10.0" top="10.0" />
+                </HBox.margin>
+            </Label>
+        </HBox>
+    </VBox>
+</Pane>

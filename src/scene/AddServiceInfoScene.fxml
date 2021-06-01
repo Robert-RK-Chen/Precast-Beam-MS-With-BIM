@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0"
+      prefWidth="500.0" xmlns="http://javafx.com/javafx/16">
+    <VBox prefHeight="260.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF;">
+        <HBox prefHeight="30.0" prefWidth="500.0">
+            <VBox.margin>
+                <Insets left="20.0" right="20.0" top="20.0"/>
+            </VBox.margin>
+            <Label prefHeight="30.0" prefWidth="300.0" text="预制梁编号">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="300.0" text="质检员">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </Label>
+        </HBox>
+        <HBox prefHeight="35.0" prefWidth="500.0">
+            <VBox.margin>
+                <Insets left="20.0" right="20.0"/>
+            </VBox.margin>
+            <TextField prefHeight="40.0" prefWidth="300.0"/>
+            <TextField prefHeight="40.0" prefWidth="300.0">
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </TextField>
+        </HBox>
+        <HBox prefHeight="30.0" prefWidth="500.0">
+            <VBox.margin>
+                <Insets left="20.0" right="20.0" top="20.0"/>
+            </VBox.margin>
+            <Label prefHeight="30.0" prefWidth="300.0" text="开始时间">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+            </Label>
+            <Label layoutX="205.0" layoutY="10.0" prefHeight="30.0" prefWidth="300.0" text="结束时间">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </Label>
+        </HBox>
+        <HBox prefHeight="35.0" prefWidth="500.0">
+            <VBox.margin>
+                <Insets left="20.0" right="20.0"/>
+            </VBox.margin>
+            <DatePicker prefHeight="40.0" prefWidth="300.0"/>
+            <DatePicker prefHeight="40.0" prefWidth="300.0">
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </DatePicker>
+        </HBox>
+        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="500.0"
+                style="-fx-background-color: #027FFF; -fx-background-radius: 10;" text="保 存 信 息"
+                textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+            <VBox.margin>
+                <Insets left="20.0" right="20.0" top="30.0"/>
+            </VBox.margin>
+        </Button>
+    </VBox>
+</Pane>
