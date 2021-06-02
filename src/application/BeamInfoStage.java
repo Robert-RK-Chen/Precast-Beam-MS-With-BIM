@@ -15,37 +15,33 @@ import java.net.URL;
 public class BeamInfoStage extends Application
 {
     /**
-     * 单例模式
+     * 单例模式保证只弹出唯一的窗口
      */
-    private static Stage beamInfoStage = null;
+    private static Stage infoStage = null;
 
-    public static Stage getBeamInfoStage()
-    {
-        if(beamInfoStage == null)
-        {
-            beamInfoStage = new Stage();
+    public static Stage showBeamInfo() {
+        if(infoStage == null) {
+            infoStage = new Stage();
         }
-        return beamInfoStage;
+        return infoStage;
     }
 
     @Override
     public void start(Stage stage) throws Exception
     {
-        URL beamInfoSceneUrl = getClass().getResource("../scene/BeamInfoScene.fxml");
-        FXMLLoader beamInfoSceneLoader = new FXMLLoader();
-        beamInfoSceneLoader.setLocation(beamInfoSceneUrl);
-
-        Parent root = beamInfoSceneLoader.load();
-        Scene beamInfoScene = new Scene(root, 1200, 800);
+        URL infoUrl = getClass().getResource("../scene/BeamInfoScene.fxml");
+        FXMLLoader infoLoader = new FXMLLoader();
+        infoLoader.setLocation(infoUrl);
+        Parent root = infoLoader.load();
 
         URL iconUrl = getClass().getResource("../resource/image/icon/prebeams.png");
         Image icon = new Image(iconUrl.toExternalForm());
-
         stage.getIcons().add(icon);
-        stage.setTitle("预制梁信息面板");
-        stage.setScene(beamInfoScene);
-        stage.setResizable(false);
 
+        stage.setTitle("预制梁信息面板");
+        Scene infoScene = new Scene(root, 1200, 800);
+        stage.setScene(infoScene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -56,6 +52,6 @@ public class BeamInfoStage extends Application
 
     public void showStage() throws Exception
     {
-        start(getBeamInfoStage());
+        start(showBeamInfo());
     }
 }

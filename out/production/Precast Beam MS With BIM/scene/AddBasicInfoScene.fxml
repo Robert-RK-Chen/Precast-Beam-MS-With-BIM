@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0"
-      prefWidth="500.0" xmlns="http://javafx.com/javafx/16">
+      prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.AddBasicInfoController">
     <VBox prefHeight="420.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF;">
         <VBox prefHeight="65.0" prefWidth="500.0">
             <VBox.margin>
@@ -26,12 +30,20 @@
                 </Label>
             </HBox>
             <HBox prefHeight="35.0" prefWidth="380.0">
-                <TextField prefHeight="40.0" prefWidth="250.0"/>
-                <TextField layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="250.0">
+                <TextField fx:id="beamIdTf" prefHeight="40.0" prefWidth="250.0"
+                           style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;"/>
+                <ComboBox fx:id="beamKindCb" onAction="#getBeamKind" prefHeight="40.0" prefWidth="250.0"
+                          style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;">
                     <HBox.margin>
                         <Insets left="10.0"/>
                     </HBox.margin>
-                </TextField>
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="正方体"/>
+                            <String fx:value="圆柱体"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
             </HBox>
         </VBox>
         <VBox prefHeight="65.0" prefWidth="380.0">
@@ -62,13 +74,16 @@
                 </Label>
             </HBox>
             <HBox prefHeight="35.0" prefWidth="380.0">
-                <TextField prefHeight="40.0" prefWidth="160.0"/>
-                <TextField layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="160.0">
+                <TextField fx:id="steelType1Tf" prefHeight="40.0" prefWidth="160.0"
+                           style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;"/>
+                <TextField fx:id="steelType2Tf" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="160.0"
+                           style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;">
                     <HBox.margin>
                         <Insets left="10.0"/>
                     </HBox.margin>
                 </TextField>
-                <TextField prefHeight="40.0" prefWidth="160.0">
+                <TextField fx:id="steelType3Tf" prefHeight="40.0" prefWidth="160.0"
+                           style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;">
                     <HBox.margin>
                         <Insets left="10.0"/>
                     </HBox.margin>
@@ -98,12 +113,14 @@
                 </Label>
             </HBox>
             <HBox prefHeight="35.0" prefWidth="380.0">
-                <TextField prefHeight="40.0" prefWidth="250.0">
+                <TextField fx:id="lengthTf" prefHeight="40.0" prefWidth="250.0"
+                           style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;">
                     <HBox.margin>
                         <Insets/>
                     </HBox.margin>
                 </TextField>
-                <TextField layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="250.0">
+                <TextField fx:id="widthTf" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="250.0"
+                           style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;">
                     <HBox.margin>
                         <Insets left="10.0"/>
                     </HBox.margin>
@@ -130,16 +147,19 @@
                 </Label>
             </HBox>
             <HBox prefHeight="35.0" prefWidth="380.0">
-                <TextField prefHeight="40.0" prefWidth="250.0"/>
-                <TextField layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="250.0">
+                <TextField fx:id="heightTf" prefHeight="40.0" prefWidth="250.0"
+                           style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;"/>
+                <TextField fx:id="radiusTf" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="250.0"
+                           style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;">
                     <HBox.margin>
                         <Insets left="10.0"/>
                     </HBox.margin>
                 </TextField>
             </HBox>
         </VBox>
-        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="460.0"
-                style="-fx-background-color: #027FFF; -fx-background-radius: 10;" text="添加预制梁" textFill="WHITE">
+        <Button fx:id="addBeamButton" mnemonicParsing="false" onMouseClicked="#addBeam" prefHeight="40.0"
+                prefWidth="460.0" style="-fx-background-color: #027FFF; -fx-background-radius: 6;" text="添加预制梁"
+                textFill="WHITE">
             <VBox.margin>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="30.0"/>
             </VBox.margin>
