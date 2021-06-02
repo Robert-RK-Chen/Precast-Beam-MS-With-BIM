@@ -35,6 +35,12 @@ public class AddBasicInfoController
     @FXML
     private Button addBeamButton;
 
+    public void initialize(Button button)
+    {
+        beamIdTf.setText(button.getText());
+        beamIdTf.setDisable(true);
+    }
+
     public void addBeam()
     {
         BeamInfoModel beamInfoModel = new BeamInfoModel();
@@ -45,21 +51,10 @@ public class AddBasicInfoController
         String steelType1 = steelType1Tf.getText();
         String steelType2 = steelType2Tf.getText();
         String steelType3 = steelType3Tf.getText();
-
-        /* error here !
-         * 当有值为空置时，String 转 Double 报错，虽然赋值 0
-         * 尚不清楚原因
-         * */
-        
-//        double length = Double.parseDouble(lengthTf.getText() == null ? "0" : lengthTf.getText());
-//        double width = Double.parseDouble(widthTf.getText() == null ? "0" : widthTf.getText());
-//        double height = Double.parseDouble(heightTf.getText() == null ? "0" : heightTf.getText());
-//        double radius = Double.parseDouble(radiusTf.getText() == null ? "0" : radiusTf.getText());
-
-        double length = 12;
-        double width = 12;
-        double height = 12;
-        double radius = 12;
+        double length = Double.parseDouble("".equals(lengthTf.getText()) ? "0" : lengthTf.getText());
+        double width = Double.parseDouble("".equals(widthTf.getText()) ? "0" : widthTf.getText());
+        double height = Double.parseDouble("".equals(heightTf.getText()) ? "0" : heightTf.getText());
+        double radius = Double.parseDouble("".equals(radiusTf.getText()) ? "0" : radiusTf.getText());
 
         beamInfoEntity.setBeamId(beamId);
         beamInfoEntity.setBeamKind(beamKind);
@@ -73,10 +68,10 @@ public class AddBasicInfoController
         beamInfoEntity.setBeamState("预处理");
         beamInfoModel.insert(beamInfoEntity);
 
-        Alert addSuccess = new Alert(Alert.AlertType.CONFIRMATION);
+        Alert addSuccess = new Alert(Alert.AlertType.INFORMATION);
         addSuccess.setTitle("来自 添加预处理的预制梁 的消息");
         addSuccess.setHeaderText("预制梁添加成功！");
-        addSuccess.showAndWait();
+        addSuccess.show();
 
         Stage stage = (Stage) addBeamButton.getScene().getWindow();
         stage.close();
@@ -85,7 +80,9 @@ public class AddBasicInfoController
     public void getBeamKind()
     {
         String beamKind = beamKindCb.getValue();
-        if ("正方体".equals(beamKind))
+        String defaultBeamKind = "正方体";
+
+        if (defaultBeamKind.equals(beamKind))
         {
             widthTf.setDisable(false);
             lengthTf.setDisable(false);

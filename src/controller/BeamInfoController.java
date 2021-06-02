@@ -47,6 +47,5 @@ public class BeamInfoController
         widthTf.setText(beamInfoEntity.getWidth().toString());
         heightTf.setText(beamInfoEntity.getHeight().toString());
         radiusTf.setText(beamInfoEntity.getRadius().toString());
-
     }
 }

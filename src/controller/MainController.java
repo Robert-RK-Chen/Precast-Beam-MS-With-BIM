@@ -55,16 +55,16 @@ public class MainController
         String beamId = button.getText();
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamId);
-        if(beamInfoEntity==null)
+        if (beamInfoEntity == null)
         {
             application.AddBasicInfoStage addBasicInfoStage = new AddBasicInfoStage();
+            addBasicInfoStage.getPreBeam(button);
             addBasicInfoStage.showStage();
         }
         else
         {
             application.BeamInfoStage beamInfoStage = new BeamInfoStage();
-            controller.BeamInfoController beamInfoController = new BeamInfoController();
-            beamInfoController.initialize(button);
+            beamInfoStage.getPreBeam(button);
             beamInfoStage.showStage();
         }
     }

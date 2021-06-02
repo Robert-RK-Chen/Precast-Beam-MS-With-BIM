@@ -1,9 +1,12 @@
 package application;
 
+import controller.AddBasicInfoController;
+import controller.BeamInfoController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -14,9 +17,8 @@ import java.net.URL;
  */
 public class AddBasicInfoStage extends Application
 {
-    /**
-     * 单例模式
-     */
+
+    private Button preBeam = null;
     private static Stage basicInfoStage = null;
 
     public static Stage addBasicInfo()
@@ -35,15 +37,17 @@ public class AddBasicInfoStage extends Application
         FXMLLoader addBasicLoader = new FXMLLoader();
         addBasicLoader.setLocation(addBasicUrl);
         Parent root = addBasicLoader.load();
-
+        Scene addBasicScene = new Scene(root, 500, 420);
         URL iconUrl = getClass().getResource("../resource/image/icon/prebeams.png");
         Image icon = new Image(iconUrl.toExternalForm());
-        stage.getIcons().add(icon);
 
+        stage.getIcons().add(icon);
         stage.setTitle("添加预处理的预制梁");
-        Scene addBasicScene = new Scene(root, 500, 420);
         stage.setScene(addBasicScene);
         stage.setResizable(false);
+
+        AddBasicInfoController addBasicController = addBasicLoader.getController();
+        addBasicController.initialize(preBeam);
         stage.show();
     }
 
@@ -55,5 +59,10 @@ public class AddBasicInfoStage extends Application
     public void showStage() throws Exception
     {
         start(addBasicInfo());
+    }
+
+    public void getPreBeam(Button button)
+    {
+        preBeam = button;
     }
 }
