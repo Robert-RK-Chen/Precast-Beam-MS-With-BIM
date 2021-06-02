@@ -5,7 +5,6 @@ import application.BeamInfoStage;
 import hibernate.abstractModel.HibernateUtil;
 import hibernate.entities.BeamInfoEntity;
 import hibernate.model.BeamInfoModel;
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 /**
@@ -13,30 +12,21 @@ import javafx.scene.control.Button;
  */
 public class MainController
 {
-    @FXML
-    private Button preBeam1;
-    @FXML
-    private Button preBeam2;
-    @FXML
-    private Button preBeam3;
-    @FXML
-    private Button preBeam4;
-    @FXML
-    private Button preBeam5;
-    @FXML
-    private Button preBeam6;
-    @FXML
-    private Button preBeam7;
-    @FXML
-    private Button preBeam8;
-    @FXML
-    private Button preBeam9;
-    @FXML
-    private Button preBeam10;
+    public Button preBeam1;
+    public Button preBeam2;
+    public Button preBeam3;
+    public Button preBeam4;
+    public Button preBeam5;
+    public Button preBeam6;
+    public Button preBeam7;
+    public Button preBeam8;
+    public Button preBeam9;
+    public Button preBeam10;
 
     public void initialize()
     {
-        HibernateUtil.getSession();
+        Thread thread = new Thread(HibernateUtil::getSession);
+        thread.start();
     }
 
     public void getPreBeam1() throws Exception { getInfo(preBeam1); }
@@ -57,13 +47,13 @@ public class MainController
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamId);
         if (beamInfoEntity == null)
         {
-            application.AddBasicInfoStage addBasicInfoStage = new AddBasicInfoStage();
+            AddBasicInfoStage addBasicInfoStage = new AddBasicInfoStage();
             addBasicInfoStage.getPreBeam(button);
             addBasicInfoStage.showStage();
         }
         else
         {
-            application.BeamInfoStage beamInfoStage = new BeamInfoStage();
+            BeamInfoStage beamInfoStage = new BeamInfoStage();
             beamInfoStage.getPreBeam(button);
             beamInfoStage.showStage();
         }

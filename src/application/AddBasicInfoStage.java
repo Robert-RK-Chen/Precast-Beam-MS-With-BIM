@@ -1,7 +1,6 @@
 package application;
 
 import controller.AddBasicInfoController;
-import controller.BeamInfoController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,9 +17,17 @@ import java.net.URL;
 public class AddBasicInfoStage extends Application
 {
 
+    /**
+     * Button preBeam : 作为主界面与添加预制梁信息界面中间信息传递控件
+     * Stage basicInfoStage : 添加预制梁基本信息界面
+     */
     private Button preBeam = null;
     private static Stage basicInfoStage = null;
 
+    /**
+     * @return Stage basicInfoStage
+     * 使用单例模式保证只会弹出一个界面
+     */
     public static Stage addBasicInfo()
     {
         if (basicInfoStage == null)

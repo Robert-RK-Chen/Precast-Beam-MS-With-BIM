@@ -2,7 +2,6 @@ package controller;
 
 import hibernate.entities.BeamInfoEntity;
 import hibernate.model.BeamInfoModel;
-import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -14,31 +13,20 @@ import javafx.stage.Stage;
  */
 public class AddBasicInfoController
 {
-    @FXML
-    private TextField beamIdTf;
-    @FXML
-    private ComboBox<String> beamKindCb;
-    @FXML
-    private TextField steelType1Tf;
-    @FXML
-    private TextField steelType2Tf;
-    @FXML
-    private TextField steelType3Tf;
-    @FXML
-    private TextField lengthTf;
-    @FXML
-    private TextField widthTf;
-    @FXML
-    private TextField heightTf;
-    @FXML
-    private TextField radiusTf;
-    @FXML
-    private Button addBeamButton;
+    public TextField beamIdTf;
+    public ComboBox<String> beamKindCb;
+    public TextField steelType1Tf;
+    public TextField steelType2Tf;
+    public TextField steelType3Tf;
+    public TextField lengthTf;
+    public TextField widthTf;
+    public TextField heightTf;
+    public TextField radiusTf;
+    public Button addBeamButton;
 
     public void initialize(Button button)
     {
         beamIdTf.setText(button.getText());
-        beamIdTf.setDisable(true);
     }
 
     public void addBeam()

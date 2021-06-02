@@ -147,14 +147,27 @@
         </VBox>
         <Separator orientation="VERTICAL" prefHeight="800.0" prefWidth="0.0" style="-fx-background-color: #F3F3F8;"/>
         <VBox prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #F3F3F8;">
-            <Label prefHeight="30.0" prefWidth="775.0" text="扎钢筋">
+            <HBox prefHeight="30.0" prefWidth="775.0">
                 <VBox.margin>
-                    <Insets left="20.0" right="10.0" top="20.0"/>
+                    <Insets left="20.0" right="15.0" top="20.0"/>
                 </VBox.margin>
-                <font>
-                    <Font name="System Bold" size="16.0"/>
-                </font>
-            </Label>
+                <Label prefHeight="30.0" prefWidth="630.0" text="扎钢筋">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="当前状态：">
+                    <font>
+                        <Font name="System Bold" size="14.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="stateLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="50.0"
+                       text="状态值" textFill="#027fff">
+                    <font>
+                        <Font name="System Bold" size="14.0"/>
+                    </font>
+                </Label>
+            </HBox>
             <VBox prefHeight="85.0" prefWidth="770.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
                 <VBox.margin>
                     <Insets left="10.0" right="15.0" top="5.0"/>
@@ -189,13 +202,13 @@
                     <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0"/>
                     </VBox.margin>
-                    <TextField prefHeight="40.0" prefWidth="245.0"/>
-                    <TextField prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="wireInspectorTf" prefHeight="40.0" prefWidth="245.0"/>
+                    <TextField fx:id="wireStartTf" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
                     </TextField>
-                    <TextField prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="wireFinishTf" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
@@ -244,13 +257,13 @@
                     <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0"/>
                     </VBox.margin>
-                    <TextField prefHeight="40.0" prefWidth="245.0"/>
-                    <TextField prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="pouringInspectorTf" prefHeight="40.0" prefWidth="245.0"/>
+                    <TextField fx:id="pouringStartTf" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
                     </TextField>
-                    <TextField prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="pouringFinishTf" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
@@ -299,13 +312,13 @@
                     <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0"/>
                     </VBox.margin>
-                    <TextField prefHeight="40.0" prefWidth="245.0"/>
-                    <TextField prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="curingInspectorTf" prefHeight="40.0" prefWidth="245.0"/>
+                    <TextField fx:id="curingStartTf" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
                     </TextField>
-                    <TextField prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="curingFinishTf" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
@@ -347,8 +360,8 @@
                     <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0"/>
                     </VBox.margin>
-                    <TextField prefHeight="40.0" prefWidth="370.0"/>
-                    <TextField prefHeight="40.0" prefWidth="370.0">
+                    <TextField fx:id="storeInspectorTf" prefHeight="40.0" prefWidth="370.0"/>
+                    <TextField fx:id="storeStartTf" prefHeight="40.0" prefWidth="370.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
@@ -379,20 +392,21 @@
                     <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0"/>
                     </VBox.margin>
-                    <TextField prefHeight="40.0" prefWidth="370.0">
+                    <TextField fx:id="shipmentExpectTf" prefHeight="40.0" prefWidth="370.0">
                         <HBox.margin>
                             <Insets/>
                         </HBox.margin>
                     </TextField>
-                    <TextField prefHeight="40.0" prefWidth="370.0">
+                    <TextField fx:id="shipmentActualTf" prefHeight="40.0" prefWidth="370.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
                     </TextField>
                 </HBox>
             </VBox>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="770.0"
-                    style="-fx-background-color: #027FFF; -fx-background-radius: 10;" text="下 一 步" textFill="WHITE">
+            <Button fx:id="nextStepButton" mnemonicParsing="false" onMouseClicked="#nextStep" prefHeight="50.0"
+                    prefWidth="770.0" style="-fx-background-color: #027FFF; -fx-background-radius: 10;" text="下 一 步"
+                    textFill="WHITE">
                 <VBox.margin>
                     <Insets bottom="20.0" left="10.0" right="15.0" top="25.0"/>
                 </VBox.margin>

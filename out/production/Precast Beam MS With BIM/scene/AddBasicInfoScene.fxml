@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0"
       prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
@@ -30,7 +30,7 @@
                 </Label>
             </HBox>
             <HBox prefHeight="35.0" prefWidth="380.0">
-                <TextField fx:id="beamIdTf" prefHeight="40.0" prefWidth="250.0"
+                <TextField fx:id="beamIdTf" disable="true" prefHeight="40.0" prefWidth="250.0"
                            style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;"/>
                 <ComboBox fx:id="beamKindCb" onAction="#getBeamKind" prefHeight="40.0" prefWidth="250.0"
                           style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6;">

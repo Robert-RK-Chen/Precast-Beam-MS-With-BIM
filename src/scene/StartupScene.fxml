@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/16">
+    <ImageView fitHeight="380.0" fitWidth="600.0" pickOnBounds="true">
+        <Image url="@../resource/image/start.png"/>
+    </ImageView>
+</Pane>
