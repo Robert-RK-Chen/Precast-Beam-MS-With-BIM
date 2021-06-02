@@ -18,10 +18,10 @@ public class AddBasicInfoStage extends Application
 {
 
     /**
-     * Button preBeam : 作为主界面与添加预制梁信息界面中间信息传递控件
+     * String preBeamId : 作为主界面与添加预制梁信息界面中间信息传递控件
      * Stage basicInfoStage : 添加预制梁基本信息界面
      */
-    private Button preBeam = null;
+    private String preBeamId = null;
     private static Stage basicInfoStage = null;
 
     /**
@@ -54,7 +54,7 @@ public class AddBasicInfoStage extends Application
         stage.setResizable(false);
 
         AddBasicInfoController addBasicController = addBasicLoader.getController();
-        addBasicController.initialize(preBeam);
+        addBasicController.initialize(preBeamId);
         stage.show();
     }
 
@@ -68,8 +68,5 @@ public class AddBasicInfoStage extends Application
         start(addBasicInfo());
     }
 
-    public void getPreBeam(Button button)
-    {
-        preBeam = button;
-    }
+    public void getPreBeam(String id) { preBeamId = id; }
 }

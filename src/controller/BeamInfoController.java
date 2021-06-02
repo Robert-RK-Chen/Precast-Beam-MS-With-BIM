@@ -3,6 +3,7 @@ package controller;
 import application.AddServiceInfoStage;
 import hibernate.entities.*;
 import hibernate.model.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -42,18 +43,18 @@ public class BeamInfoController
     public TextField shipmentExpectTf;
     public TextField shipmentActualTf;
 
-    public void initialize(Button button)
+    public void initialize(String id)
     {
         BeamInfoModel beamInfoModel = new BeamInfoModel();
-        BeamInfoEntity beamInfoEntity = beamInfoModel.findById(button.getText());
+        BeamInfoEntity beamInfoEntity = beamInfoModel.findById(id);
         TieInfoModel tieInfoModel = new TieInfoModel();
-        TieInfoEntity tieInfoEntity = tieInfoModel.findById(button.getText());
+        TieInfoEntity tieInfoEntity = tieInfoModel.findById(id);
         PouringInfoModel pouringInfoModel = new PouringInfoModel();
-        PouringInfoEntity pouringInfoEntity = pouringInfoModel.findById(button.getText());
+        PouringInfoEntity pouringInfoEntity = pouringInfoModel.findById(id);
         CuringInfoModel curingInfoModel = new CuringInfoModel();
-        CuringInfoEntity curingInfoEntity = curingInfoModel.findById(button.getText());
+        CuringInfoEntity curingInfoEntity = curingInfoModel.findById(id);
         BeamStoreModel beamStoreModel = new BeamStoreModel();
-        BeamStoreEntity beamStoreEntity = beamStoreModel.findById(button.getText());
+        BeamStoreEntity beamStoreEntity = beamStoreModel.findById(id);
 
         URL imageUrl = getClass().getResource("../resource/image/preview/" + beamInfoEntity.getBeamKind() + ".jpg");
         beamImageView.setImage(new Image(imageUrl.toExternalForm()));
@@ -101,8 +102,22 @@ public class BeamInfoController
 
     public void nextStep() throws Exception
     {
-        AddServiceInfoStage serviceInfoStage = new AddServiceInfoStage();
-        serviceInfoStage.getBeam(beamIdTf);
-        serviceInfoStage.showStage();
+        String state = "已运出";
+        BeamInfoModel beamInfoModel = new BeamInfoModel();
+        BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
+
+        if (state.equals(beamInfoEntity.getBeamState()))
+        {
+            Alert finishBeam = new Alert(Alert.AlertType.INFORMATION);
+            finishBeam.setTitle("来自 添加预制梁业务 的消息");
+            finishBeam.setHeaderText("这块预制梁已经运出，\n完成了所有的业务方法！");
+            finishBeam.show();
+        }
+        else
+        {
+            AddServiceInfoStage serviceInfoStage = new AddServiceInfoStage();
+            serviceInfoStage.getBeam(beamIdTf);
+            serviceInfoStage.showStage();
+        }
     }
 }

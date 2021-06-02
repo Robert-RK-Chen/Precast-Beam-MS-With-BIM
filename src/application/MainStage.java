@@ -15,17 +15,6 @@ import java.net.URL;
  */
 public class MainStage extends Application
 {
-    private static Stage primaryStage = null;
-
-    public static Stage getPrimaryStage()
-    {
-        if (primaryStage == null)
-        {
-            primaryStage = new Stage();
-        }
-        return primaryStage;
-    }
-
     @Override
     public void start(Stage primaryStage) throws Exception
     {
@@ -53,8 +42,4 @@ public class MainStage extends Application
         launch(args);
     }
 
-    public void showStage() throws Exception
-    {
-        start(getPrimaryStage());
-    }
 }

@@ -37,8 +37,9 @@
                         </Label>
                     </HBox>
                     <HBox prefHeight="35.0" prefWidth="380.0">
-                        <TextField fx:id="beamIdTf" prefHeight="40.0" prefWidth="185.0"/>
-                        <TextField fx:id="beamKindTf" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="185.0">
+                        <TextField fx:id="beamIdTf" editable="false" prefHeight="40.0" prefWidth="185.0"/>
+                        <TextField fx:id="beamKindTf" editable="false" layoutX="10.0" layoutY="10.0" prefHeight="40.0"
+                                   prefWidth="185.0">
                             <HBox.margin>
                                 <Insets left="10.0"/>
                             </HBox.margin>
@@ -73,14 +74,14 @@
                         </Label>
                     </HBox>
                     <HBox prefHeight="35.0" prefWidth="380.0">
-                        <TextField fx:id="steelType1Tf" prefHeight="40.0" prefWidth="120.0"/>
-                        <TextField fx:id="steelType2Tf" layoutX="10.0" layoutY="10.0" prefHeight="40.0"
+                        <TextField fx:id="steelType1Tf" editable="false" prefHeight="40.0" prefWidth="120.0"/>
+                        <TextField fx:id="steelType2Tf" editable="false" layoutX="10.0" layoutY="10.0" prefHeight="40.0"
                                    prefWidth="120.0">
                             <HBox.margin>
                                 <Insets left="10.0"/>
                             </HBox.margin>
                         </TextField>
-                        <TextField fx:id="steelType3Tf" prefHeight="40.0" prefWidth="120.0">
+                        <TextField fx:id="steelType3Tf" editable="false" prefHeight="40.0" prefWidth="120.0">
                             <HBox.margin>
                                 <Insets left="10.0"/>
                             </HBox.margin>
@@ -107,8 +108,9 @@
                         </Label>
                     </HBox>
                     <HBox prefHeight="35.0" prefWidth="380.0">
-                        <TextField fx:id="lengthTf" prefHeight="40.0" prefWidth="185.0"/>
-                        <TextField fx:id="widthTf" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="185.0">
+                        <TextField fx:id="lengthTf" editable="false" prefHeight="40.0" prefWidth="185.0"/>
+                        <TextField fx:id="widthTf" editable="false" layoutX="10.0" layoutY="10.0" prefHeight="40.0"
+                                   prefWidth="185.0">
                             <HBox.margin>
                                 <Insets left="10.0"/>
                             </HBox.margin>
@@ -135,8 +137,9 @@
                         </Label>
                     </HBox>
                     <HBox prefHeight="35.0" prefWidth="380.0">
-                        <TextField fx:id="heightTf" prefHeight="40.0" prefWidth="185.0"/>
-                        <TextField fx:id="radiusTf" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="185.0">
+                        <TextField fx:id="heightTf" editable="false" prefHeight="40.0" prefWidth="185.0"/>
+                        <TextField fx:id="radiusTf" editable="false" layoutX="10.0" layoutY="10.0" prefHeight="40.0"
+                                   prefWidth="185.0">
                             <HBox.margin>
                                 <Insets left="10.0"/>
                             </HBox.margin>
@@ -202,13 +205,13 @@
                     <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0"/>
                     </VBox.margin>
-                    <TextField fx:id="wireInspectorTf" prefHeight="40.0" prefWidth="245.0"/>
-                    <TextField fx:id="wireStartTf" prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="wireInspectorTf" editable="false" prefHeight="40.0" prefWidth="245.0"/>
+                    <TextField fx:id="wireStartTf" editable="false" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
                     </TextField>
-                    <TextField fx:id="wireFinishTf" prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="wireFinishTf" editable="false" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
@@ -257,13 +260,13 @@
                     <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0"/>
                     </VBox.margin>
-                    <TextField fx:id="pouringInspectorTf" prefHeight="40.0" prefWidth="245.0"/>
-                    <TextField fx:id="pouringStartTf" prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="pouringInspectorTf" editable="false" prefHeight="40.0" prefWidth="245.0"/>
+                    <TextField fx:id="pouringStartTf" editable="false" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
                     </TextField>
-                    <TextField fx:id="pouringFinishTf" prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="pouringFinishTf" editable="false" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
@@ -312,13 +315,13 @@
                     <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0"/>
                     </VBox.margin>
-                    <TextField fx:id="curingInspectorTf" prefHeight="40.0" prefWidth="245.0"/>
-                    <TextField fx:id="curingStartTf" prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="curingInspectorTf" editable="false" prefHeight="40.0" prefWidth="245.0"/>
+                    <TextField fx:id="curingStartTf" editable="false" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
                     </TextField>
-                    <TextField fx:id="curingFinishTf" prefHeight="40.0" prefWidth="245.0">
+                    <TextField fx:id="curingFinishTf" editable="false" prefHeight="40.0" prefWidth="245.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
@@ -360,8 +363,8 @@
                     <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0"/>
                     </VBox.margin>
-                    <TextField fx:id="storeInspectorTf" prefHeight="40.0" prefWidth="370.0"/>
-                    <TextField fx:id="storeStartTf" prefHeight="40.0" prefWidth="370.0">
+                    <TextField fx:id="storeInspectorTf" editable="false" prefHeight="40.0" prefWidth="370.0"/>
+                    <TextField fx:id="storeStartTf" editable="false" prefHeight="40.0" prefWidth="370.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>
@@ -392,12 +395,12 @@
                     <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0"/>
                     </VBox.margin>
-                    <TextField fx:id="shipmentExpectTf" prefHeight="40.0" prefWidth="370.0">
+                    <TextField fx:id="shipmentExpectTf" editable="false" prefHeight="40.0" prefWidth="370.0">
                         <HBox.margin>
                             <Insets/>
                         </HBox.margin>
                     </TextField>
-                    <TextField fx:id="shipmentActualTf" prefHeight="40.0" prefWidth="370.0">
+                    <TextField fx:id="shipmentActualTf" editable="false" prefHeight="40.0" prefWidth="370.0">
                         <HBox.margin>
                             <Insets left="10.0"/>
                         </HBox.margin>

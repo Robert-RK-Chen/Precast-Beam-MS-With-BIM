@@ -24,9 +24,9 @@ public class AddBasicInfoController
     public TextField radiusTf;
     public Button addBeamButton;
 
-    public void initialize(Button button)
+    public void initialize(String id)
     {
-        beamIdTf.setText(button.getText());
+        beamIdTf.setText(id);
     }
 
     public void addBeam()
@@ -68,7 +68,7 @@ public class AddBasicInfoController
     public void getBeamKind()
     {
         String beamKind = beamKindCb.getValue();
-        String defaultBeamKind = "正方体";
+        String defaultBeamKind = "长方体";
 
         if (defaultBeamKind.equals(beamKind))
         {

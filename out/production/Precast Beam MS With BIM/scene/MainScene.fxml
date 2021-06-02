@@ -158,7 +158,8 @@
             <Separator orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0"/>
             <VBox prefHeight="600.0" prefWidth="900.0">
                 <HBox prefHeight="60.0" prefWidth="900.0">
-                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0"
+                    <Button fx:id="readDatabaseButton" alignment="CENTER" mnemonicParsing="false"
+                            onMouseClicked="#readDatabase" prefHeight="40.0" prefWidth="120.0"
                             style="-fx-background-color: #FFFFFF; -fx-border-color: #0A7AFF; -fx-border-radius: 10;"
                             text="读入数据库" textFill="#0a7aff">
                         <font>
@@ -168,7 +169,7 @@
                             <Insets bottom="10.0" left="10.0" top="10.0"/>
                         </HBox.margin>
                     </Button>
-                    <TextField prefHeight="40.0" prefWidth="680.0" promptText="🔍 搜索（预制梁编号）"
+                    <TextField fx:id="beamSearchTf" prefHeight="40.0" prefWidth="680.0" promptText="🔍 搜索（预制梁编号）"
                                style="-fx-background-color: #EFEFF0; -fx-border-width: 0; -fx-background-radius: 10;">
                         <HBox.margin>
                             <Insets bottom="10.0" left="10.0" top="10.0"/>
@@ -177,7 +178,8 @@
                             <Font size="14.0"/>
                         </font>
                     </TextField>
-                    <Button alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0"
+                    <Button fx:id="queryButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#queryBeam"
+                            prefHeight="40.0" prefWidth="60.0"
                             style="-fx-background-color: #FFFFFF; -fx-border-color: #0A7AFF; -fx-border-radius: 10;"
                             text="查询" textFill="#0a7aff">
                         <font>

@@ -39,7 +39,7 @@
                     </HBox.margin>
                     <items>
                         <FXCollections fx:factory="observableArrayList">
-                            <String fx:value="正方体"/>
+                            <String fx:value="长方体"/>
                             <String fx:value="圆柱体"/>
                         </FXCollections>
                     </items>

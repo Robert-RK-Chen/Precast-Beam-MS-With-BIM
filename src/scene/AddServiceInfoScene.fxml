@@ -63,8 +63,8 @@
             <VBox.margin>
                 <Insets left="20.0" right="20.0"/>
             </VBox.margin>
-            <DatePicker fx:id="startTimeDp" prefHeight="40.0" prefWidth="300.0"/>
-            <DatePicker fx:id="finishTimeDp" prefHeight="40.0" prefWidth="300.0">
+            <DatePicker fx:id="startTimeDp" editable="false" prefHeight="40.0" prefWidth="300.0"/>
+            <DatePicker fx:id="finishTimeDp" editable="false" prefHeight="40.0" prefWidth="300.0">
                 <HBox.margin>
                     <Insets left="20.0"/>
                 </HBox.margin>
@@ -84,7 +84,7 @@
             </Label>
         </HBox>
         <HBox prefHeight="35.0" prefWidth="500.0">
-            <DatePicker fx:id="shipmentActualDp" disable="true" prefHeight="40.0" prefWidth="500.0">
+            <DatePicker fx:id="shipmentActualDp" disable="true" editable="false" prefHeight="40.0" prefWidth="500.0">
                 <HBox.margin>
                     <Insets left="20.0" right="20.0"/>
                 </HBox.margin>

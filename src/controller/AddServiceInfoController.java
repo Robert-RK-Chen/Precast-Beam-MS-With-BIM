@@ -59,9 +59,12 @@ public class AddServiceInfoController
             case "存储" -> {
                 beamInfoEntity.setBeamState("已运出");
                 beamInfoModel.update(beamInfoEntity);
+                Alert transBeam = new Alert(Alert.AlertType.INFORMATION);
+                transBeam.setTitle("来自 添加预制梁业务 的消息");
+                transBeam.setHeaderText("预制梁已经运出!");
+                transBeam.show();
             }
-            default -> {
-            }
+            default -> {}
         }
 
         Alert addSuccess = new Alert(Alert.AlertType.INFORMATION);

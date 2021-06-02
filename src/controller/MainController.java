@@ -5,7 +5,9 @@ import application.BeamInfoStage;
 import hibernate.abstractModel.HibernateUtil;
 import hibernate.entities.BeamInfoEntity;
 import hibernate.model.BeamInfoModel;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 /**
  * @author Robert Chen
@@ -22,6 +24,9 @@ public class MainController
     public Button preBeam8;
     public Button preBeam9;
     public Button preBeam10;
+    public Button readDatabaseButton;
+    public TextField beamSearchTf;
+    public Button queryButton;
 
     public void initialize()
     {
@@ -48,13 +53,44 @@ public class MainController
         if (beamInfoEntity == null)
         {
             AddBasicInfoStage addBasicInfoStage = new AddBasicInfoStage();
-            addBasicInfoStage.getPreBeam(button);
+            addBasicInfoStage.getPreBeam(button.getText());
             addBasicInfoStage.showStage();
         }
         else
         {
             BeamInfoStage beamInfoStage = new BeamInfoStage();
-            beamInfoStage.getPreBeam(button);
+            beamInfoStage.getPreBeam(button.getText());
+            beamInfoStage.showStage();
+        }
+    }
+
+    public void readDatabase()
+    {
+        Alert beamIsNullAlert = new Alert(Alert.AlertType.INFORMATION);
+        beamIsNullAlert.setTitle("来自 加载数据库 的消息");
+        beamIsNullAlert.setHeaderText("数据库加载完成！");
+        beamIsNullAlert.show();
+    }
+
+    public void queryBeam() throws Exception
+    {
+        String beamId = beamSearchTf.getText();
+        BeamInfoModel beamInfoModel = new BeamInfoModel();
+        if("".equals(beamId))
+        {
+            beamSearchTf.setPromptText("🔍 请输入查询关键字！");
+        }
+        else if (beamInfoModel.findById(beamId) == null)
+        {
+            Alert beamIsNull = new Alert(Alert.AlertType.INFORMATION);
+            beamIsNull.setTitle("来自 搜索预制梁 的消息");
+            beamIsNull.setHeaderText("数据库中暂无此预制梁的信息");
+            beamIsNull.show();
+        }
+        else
+        {
+            BeamInfoStage beamInfoStage = new BeamInfoStage();
+            beamInfoStage.getPreBeam(beamId);
             beamInfoStage.showStage();
         }
     }
