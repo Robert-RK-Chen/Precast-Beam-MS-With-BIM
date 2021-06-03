@@ -102,22 +102,31 @@ public class BeamInfoController
 
     public void nextStep() throws Exception
     {
-        String state = "已运出";
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
 
-        if (state.equals(beamInfoEntity.getBeamState()))
+        String beamState = beamInfoEntity.getBeamState();
+        switch (beamState)
         {
-            Alert finishBeam = new Alert(Alert.AlertType.INFORMATION);
-            finishBeam.setTitle("来自 添加预制梁业务 的消息");
-            finishBeam.setHeaderText("这块预制梁已经运出，\n完成了所有的业务方法！");
-            finishBeam.show();
-        }
-        else
-        {
-            AddServiceInfoStage serviceInfoStage = new AddServiceInfoStage();
-            serviceInfoStage.getBeam(beamIdTf);
-            serviceInfoStage.showStage();
+            case "存储" -> {
+                beamInfoEntity.setBeamState("已运出");
+                beamInfoModel.update(beamInfoEntity);
+                Alert transBeam = new Alert(Alert.AlertType.INFORMATION);
+                transBeam.setTitle("来自 添加预制梁业务 的消息");
+                transBeam.setHeaderText("预制梁已经运出!");
+                transBeam.show();
+            }
+            case "已运出" -> {
+                Alert finishBeam = new Alert(Alert.AlertType.INFORMATION);
+                finishBeam.setTitle("来自 添加预制梁业务 的消息");
+                finishBeam.setHeaderText("这块预制梁已经运出，\n完成了所有的业务方法！");
+                finishBeam.show();
+            }
+            default -> {
+                AddServiceInfoStage serviceInfoStage = new AddServiceInfoStage();
+                serviceInfoStage.getBeam(beamIdTf);
+                serviceInfoStage.showStage();
+            }
         }
     }
 }

@@ -39,7 +39,7 @@ public class AddServiceInfoController
         }
     }
 
-    public void saveInfo()
+    public void saveInfo() throws Exception
     {
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
@@ -56,14 +56,6 @@ public class AddServiceInfoController
             case "浇筑" -> addCuringInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime);
             case "养护" -> addStoreInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime,
                     shipmentActualTime);
-            case "存储" -> {
-                beamInfoEntity.setBeamState("已运出");
-                beamInfoModel.update(beamInfoEntity);
-                Alert transBeam = new Alert(Alert.AlertType.INFORMATION);
-                transBeam.setTitle("来自 添加预制梁业务 的消息");
-                transBeam.setHeaderText("预制梁已经运出!");
-                transBeam.show();
-            }
             default -> {}
         }
 
