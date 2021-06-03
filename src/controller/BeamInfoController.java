@@ -1,6 +1,7 @@
 package controller;
 
 import application.AddServiceInfoStage;
+import application.Show3DModelStage;
 import hibernate.entities.*;
 import hibernate.model.*;
 import javafx.scene.control.Alert;
@@ -128,5 +129,14 @@ public class BeamInfoController
                 serviceInfoStage.showStage();
             }
         }
+    }
+
+    /**
+     * 完成 3D 模型展示接口
+     */
+    public void show3DModel()
+    {
+        Show3DModelStage modelStage = new Show3DModelStage();
+        modelStage.showStage();
     }
 }

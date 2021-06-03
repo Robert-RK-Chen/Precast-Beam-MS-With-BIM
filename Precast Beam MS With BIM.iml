@@ -4,7 +4,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="abe81fa5-f048-411a-ae14-5654d6aff5b0" />
+          <unit-entry name="hibernate.cfg.xml" value="a948fcf6-0121-413b-b06b-ca71c6d3ff37" />
           <unit-entry name="hibernate:hibernate.cfg.xml" value="abe81fa5-f048-411a-ae14-5654d6aff5b0" />
         </datasource-map>
         <naming-strategy-map />
@@ -22,6 +22,6 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.21" level="project" />
     <orderEntry type="library" name="Hibernate 5.4.11-5.4.11" level="project" />
-    <orderEntry type="library" name="guava-30.1.1-jre" level="project" />
+    <orderEntry type="library" name="jimObjModelImporterJFX" level="project" />
   </component>
 </module>

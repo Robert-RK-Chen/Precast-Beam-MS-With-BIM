@@ -68,13 +68,6 @@ public class MainController
     public TextField beamSearchTf;
     public Button queryButton;
 
-
-    public void initialize()
-    {
-        Thread loadDataThread = new Thread(HibernateUtil::getSession);
-        loadDataThread.start();
-    }
-
     public void getPreBeam1() throws Exception { getInfo(preBeam1); }
     public void getPreBeam2() throws Exception { getInfo(preBeam2); }
     public void getPreBeam3() throws Exception { getInfo(preBeam3); }
@@ -126,6 +119,11 @@ public class MainController
     public void getStoreBeam9() throws Exception { getInfo(storeBeam9); }
     public void getStoreBeam10() throws Exception { getInfo(storeBeam10); }
 
+    public void initialize()
+    {
+        Thread loadDataThread = new Thread(HibernateUtil::getSession);
+        loadDataThread.start();
+    }
 
     public void getInfo(Button button) throws Exception
     {
