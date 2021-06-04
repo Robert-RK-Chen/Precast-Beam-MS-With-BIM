@@ -9,8 +9,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import java.util.List;
-
 /**
  * @author Robert Chen
  */
@@ -331,6 +329,8 @@ public class MainController
         String beamId = button.getText();
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamId);
+        String beamName = button.getId();
+        String beamState = beamInfoEntity == null ? "" : beamInfoEntity.getBeamState();
         if (beamInfoEntity == null)
         {
             if (button.getId().startsWith("preBeam"))
@@ -342,9 +342,16 @@ public class MainController
         }
         else
         {
-            BeamInfoStage beamInfoStage = new BeamInfoStage();
-            beamInfoStage.getPreBeam(button.getText());
-            beamInfoStage.showStage();
+            if ((beamName.startsWith("preBeam") && beamState.equals("预处理"))
+                    || (beamName.startsWith("tieBeam") && beamState.equals("扎钢筋"))
+                    || (beamName.startsWith("pourBeam") && beamState.equals("浇筑"))
+                    || (beamName.startsWith("cureBeam") && beamState.equals("养护"))
+                    || (beamName.startsWith("storeBeam") && beamState.equals("存储")))
+            {
+                BeamInfoStage beamInfoStage = new BeamInfoStage();
+                beamInfoStage.getPreBeam(button.getText());
+                beamInfoStage.showStage();
+            }
         }
     }
 
