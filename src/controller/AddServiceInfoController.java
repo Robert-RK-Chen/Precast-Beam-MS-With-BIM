@@ -47,26 +47,44 @@ public class AddServiceInfoController {
         LocalDate startTime = startTimeDp.getValue();
         LocalDate finishTime = finishTimeDp.getValue();
         LocalDate shipmentActualTime = shipmentActualDp.getValue();
+        Boolean valueLegal = Boolean.TRUE;
+
+        if (inspector.equals("")) { valueLegal = Boolean.FALSE; }
+        if (startTime == null|| finishTime == null) { valueLegal = Boolean.FALSE; }
+        if (beamState.equals("养护") && shipmentActualTime == null) { valueLegal = Boolean.FALSE; }
 
         // 根据不同的预制梁状态执行不同的业务操作
-        switch (beamState) {
-            case "预处理" -> addTieInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime);
-            case "扎钢筋" -> addPouringInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime);
-            case "浇筑" -> addCuringInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime);
-            case "养护" -> addStoreInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime,
-                    shipmentActualTime);
-            default -> {}
+        if (valueLegal == Boolean.FALSE) {
+            Alert addFailed = new Alert(Alert.AlertType.INFORMATION);
+            addFailed.setTitle("来自 添加预制梁业务 的消息");
+            addFailed.setHeaderText("""
+                    业务信息添加失败，请检查：
+                    1. 质检员是否未录入；
+                    2. 是否有时间为空。""");
+            addFailed.show();
+        } else {
+            assert startTime != null;
+            assert finishTime != null;
+            assert shipmentActualTime != null;
+            switch (beamState) {
+                case "预处理" -> addTieInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime);
+                case "扎钢筋" -> addPouringInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime);
+                case "浇筑" -> addCuringInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime);
+                case "养护" -> addStoreInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime,
+                        shipmentActualTime);
+                default -> {
+                }
+            }
+            // 成功增加预制梁的业务信息后，提醒用户
+            Alert addSuccess = new Alert(Alert.AlertType.INFORMATION);
+            addSuccess.setTitle("来自 添加预制梁业务 的消息");
+            addSuccess.setHeaderText("业务信息添加成功！");
+            addSuccess.show();
+
+            // 关闭业务信息添加面板
+            Stage stage = (Stage) saveInfoButton.getScene().getWindow();
+            stage.close();
         }
-
-        // 成功增加预制梁的业务信息后，提醒用户
-        Alert addSuccess = new Alert(Alert.AlertType.INFORMATION);
-        addSuccess.setTitle("来自 添加预制梁业务 的消息");
-        addSuccess.setHeaderText("业务信息添加成功！");
-        addSuccess.show();
-
-        // 关闭业务信息添加面板
-        Stage stage = (Stage) saveInfoButton.getScene().getWindow();
-        stage.close();
     }
 
     // 增加【扎钢筋】业务信息

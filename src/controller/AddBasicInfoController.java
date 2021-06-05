@@ -35,6 +35,7 @@ public class AddBasicInfoController {
         // 创建 Hibernate 模型，Model 用于 CRUD 操作，Entity 作为结果的实体
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = new BeamInfoEntity();
+        Boolean valueLegal = Boolean.TRUE;
 
         // 从添加基本信息界面的控件中获取对应的值
         String beamId = beamIdTf.getText();
@@ -48,30 +49,51 @@ public class AddBasicInfoController {
         double height = Double.parseDouble("".equals(heightTf.getText()) ? "0" : heightTf.getText());
         double radius = Double.parseDouble("".equals(radiusTf.getText()) ? "0" : radiusTf.getText());
 
+        // 判断输入条件的合法性
+        if (beamKind == null) { valueLegal = Boolean.FALSE; }
+        else {
+            if (steelType1.equals("") && steelType2.equals("") && steelType3.equals("")) {
+                valueLegal = Boolean.FALSE; }
+            if (height <= 0) { valueLegal = Boolean.FALSE; }
+            if (beamKind.equals("长方体") && (length <= 0 || width <= 0)) { valueLegal = Boolean.FALSE; }
+            if (beamKind.equals("") && radius <= 0) { valueLegal = Boolean.FALSE; }
+        }
+
         // 向预制梁实体添加信息
-        beamInfoEntity.setBeamId(beamId);
-        beamInfoEntity.setBeamKind(beamKind);
-        beamInfoEntity.setSteelType1(steelType1);
-        beamInfoEntity.setSteelType2(steelType2);
-        beamInfoEntity.setSteelType3(steelType3);
-        beamInfoEntity.setLength(length);
-        beamInfoEntity.setWidth(width);
-        beamInfoEntity.setHeight(height);
-        beamInfoEntity.setRadius(radius);
-        beamInfoEntity.setBeamState("预处理");
+        if (valueLegal == Boolean.FALSE) {
+            Alert addFailed = new Alert(Alert.AlertType.INFORMATION);
+            addFailed.setTitle("来自 添加预处理的预制梁 的消息");
+            addFailed.setHeaderText(
+                    """
+                    预制梁添加失败，请检查：
+                    1. 是否选择了与质量类型；
+                    2. 预制梁钢筋类型是否全空；
+                    3. 预制梁的参数是否小于等于 0。
+                    """);
+            addFailed.show();
+        } else {
+            beamInfoEntity.setBeamId(beamId);
+            beamInfoEntity.setBeamKind(beamKind);
+            beamInfoEntity.setSteelType1(steelType1);
+            beamInfoEntity.setSteelType2(steelType2);
+            beamInfoEntity.setSteelType3(steelType3);
+            beamInfoEntity.setLength(length);
+            beamInfoEntity.setWidth(width);
+            beamInfoEntity.setHeight(height);
+            beamInfoEntity.setRadius(radius);
+            beamInfoEntity.setBeamState("预处理");
+            beamInfoModel.insert(beamInfoEntity);
 
-        // 使用 Hibernate 模型向数据库中插入信息
-        beamInfoModel.insert(beamInfoEntity);
+            // 当用户新增预制梁成功后提醒用户创建与质量成功
+            Alert addSuccess = new Alert(Alert.AlertType.INFORMATION);
+            addSuccess.setTitle("来自 添加预处理的预制梁 的消息");
+            addSuccess.setHeaderText("预制梁添加成功！");
+            addSuccess.show();
 
-        // 当用户新增预制梁成功后提醒用户创建与质量成功
-        Alert addSuccess = new Alert(Alert.AlertType.INFORMATION);
-        addSuccess.setTitle("来自 添加预处理的预制梁 的消息");
-        addSuccess.setHeaderText("预制梁添加成功！");
-        addSuccess.show();
-
-        // 关闭预制梁信息添加面板
-        Stage stage = (Stage) addBeamButton.getScene().getWindow();
-        stage.close();
+            // 关闭预制梁信息添加面板
+            Stage stage = (Stage) addBeamButton.getScene().getWindow();
+            stage.close();
+        }
     }
 
     // 获取 ComboBox 中预制梁的类型，来保证填入参数的正确性
@@ -92,4 +114,6 @@ public class AddBasicInfoController {
             lengthTf.setDisable(true);
         }
     }
+
+    // 获取钢筋类型
 }
