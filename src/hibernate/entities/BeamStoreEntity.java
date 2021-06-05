@@ -9,8 +9,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "beam_store", schema = "precast_beam_system")
-public class BeamStoreEntity
-{
+public class BeamStoreEntity {
     private String beamId;
     private String storeInspector;
     private Timestamp storeStart;
@@ -78,16 +77,9 @@ public class BeamStoreEntity
     }
 
     @Override
-    public boolean equals(Object o)
-    {
-        if (this == o)
-        {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass())
-        {
-            return false;
-        }
+    public boolean equals(Object o) {
+        if (this == o) { return true; }
+        if (o == null || getClass() != o.getClass()) { return false; }
         BeamStoreEntity that = (BeamStoreEntity) o;
         return Objects.equals(beamId, that.beamId) && Objects.equals(storeInspector, that.storeInspector) && Objects.equals(storeStart, that.storeStart) && Objects.equals(shipmentExpect, that.shipmentExpect) && Objects.equals(shipmentActual, that.shipmentActual);
     }

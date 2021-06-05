@@ -6,8 +6,7 @@ import hibernate.entities.BeamInfoEntity;
 /**
  * @author Robert Chen
  */
-public class BeamInfoModel extends AbstractModel<BeamInfoEntity>
-{
+public class BeamInfoModel extends AbstractModel<BeamInfoEntity> {
     public BeamInfoModel()
     {
         super(BeamInfoEntity.class);

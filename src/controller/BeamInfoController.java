@@ -16,8 +16,8 @@ import java.net.URL;
 /**
  * @author Robert Chen
  */
-public class BeamInfoController
-{
+public class BeamInfoController {
+    // 来自 FXML 绑定的的控件
     public ImageView beamImageView;
     public TextField beamIdTf;
     public TextField beamKindTf;
@@ -44,8 +44,8 @@ public class BeamInfoController
     public TextField shipmentExpectTf;
     public TextField shipmentActualTf;
 
-    public void initialize(String id)
-    {
+    // 初始化预制梁信息面板
+    public void initialize(String id) {
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(id);
         TieInfoModel tieInfoModel = new TieInfoModel();
@@ -57,9 +57,11 @@ public class BeamInfoController
         BeamStoreModel beamStoreModel = new BeamStoreModel();
         BeamStoreEntity beamStoreEntity = beamStoreModel.findById(id);
 
+        // 预制梁的预览图
         URL imageUrl = getClass().getResource("../resource/image/preview/" + beamInfoEntity.getBeamKind() + ".jpg");
         beamImageView.setImage(new Image(imageUrl.toExternalForm()));
 
+        // 加载预制梁的基本信息
         beamIdTf.setText(beamInfoEntity.getBeamId());
         beamKindTf.setText(beamInfoEntity.getBeamKind());
         steelType1Tf.setText(beamInfoEntity.getSteelType1());
@@ -71,29 +73,29 @@ public class BeamInfoController
         radiusTf.setText(beamInfoEntity.getRadius().toString());
         stateLabel.setText(beamInfoEntity.getBeamState());
 
-        if (tieInfoEntity != null)
-        {
+        // 当预制梁的状态是【扎钢筋】时，加载扎钢筋的业务信息
+        if (tieInfoEntity != null) {
             wireInspectorTf.setText(tieInfoEntity.getWireInspector());
             wireStartTf.setText(tieInfoEntity.getWireStart().toString());
             wireFinishTf.setText(tieInfoEntity.getWireFinish().toString());
         }
 
-        if (pouringInfoEntity != null)
-        {
+        // 当预制梁的状态是【浇筑】时，加载浇筑的业务信息
+        if (pouringInfoEntity != null) {
             pouringInspectorTf.setText(pouringInfoEntity.getPouringInspector());
             pouringStartTf.setText(pouringInfoEntity.getPouringStart().toString());
             pouringFinishTf.setText(pouringInfoEntity.getPouringFinish().toString());
         }
 
-        if (curingInfoEntity != null)
-        {
+        // 当预制梁的状态是【养护】时，加载养护的业务信息
+        if (curingInfoEntity != null) {
             curingInspectorTf.setText(curingInfoEntity.getCuringInspector());
             curingStartTf.setText(curingInfoEntity.getCuringStart().toString());
             curingFinishTf.setText(curingInfoEntity.getCuringFinish().toString());
         }
 
-        if (beamStoreEntity != null)
-        {
+        // 当预制梁的状态是【存储】时，加载存储的业务信息
+        if (beamStoreEntity != null) {
             storeInspectorTf.setText(beamStoreEntity.getStoreInspector());
             storeStartTf.setText(beamStoreEntity.getStoreStart().toString());
             shipmentExpectTf.setText(beamStoreEntity.getShipmentExpect().toString());
@@ -101,14 +103,15 @@ public class BeamInfoController
         }
     }
 
-    public void nextStep() throws Exception
-    {
+    // 给预制梁增加下一步业务信息
+    public void nextStep() throws Exception {
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
 
+        // 获取预制梁的状态
         String beamState = beamInfoEntity.getBeamState();
-        switch (beamState)
-        {
+        switch (beamState) {
+            // 【存储】状态则直接改状态为【已运出】
             case "存储" -> {
                 beamInfoEntity.setBeamState("已运出");
                 beamInfoModel.update(beamInfoEntity);
@@ -117,12 +120,14 @@ public class BeamInfoController
                 transBeam.setHeaderText("预制梁已经运出!");
                 transBeam.show();
             }
+            // 已运出则提醒用户没有下一步操作了
             case "已运出" -> {
                 Alert finishBeam = new Alert(Alert.AlertType.INFORMATION);
                 finishBeam.setTitle("来自 添加预制梁业务 的消息");
                 finishBeam.setHeaderText("这块预制梁已经运出，\n完成了所有的业务方法！");
                 finishBeam.show();
             }
+            // 加载添加业务方法的页面
             default -> {
                 AddServiceInfoStage serviceInfoStage = new AddServiceInfoStage();
                 serviceInfoStage.getBeam(beamIdTf);
@@ -131,11 +136,8 @@ public class BeamInfoController
         }
     }
 
-    /**
-     * 完成 3D 模型展示接口
-     */
-    public void show3DModel()
-    {
+    // 用户点击预制梁的预览图，展示桥梁的 3D 模型
+    public void show3DModel() {
         Show3DModelStage modelStage = new Show3DModelStage();
         modelStage.showStage();
     }

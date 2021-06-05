@@ -8,8 +8,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "steel_info", schema = "precast_beam_system")
-public class SteelInfoEntity
-{
+public class SteelInfoEntity {
     private String steelType;
     private Double diameter;
 
@@ -38,16 +37,9 @@ public class SteelInfoEntity
     }
 
     @Override
-    public boolean equals(Object o)
-    {
-        if (this == o)
-        {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass())
-        {
-            return false;
-        }
+    public boolean equals(Object o) {
+        if (this == o) { return true; }
+        if (o == null || getClass() != o.getClass()) { return false; }
         SteelInfoEntity that = (SteelInfoEntity) o;
         return Objects.equals(steelType, that.steelType) && Objects.equals(diameter, that.diameter);
     }

@@ -11,8 +11,8 @@ import java.time.LocalDate;
 /**
  * @author Robert Chen
  */
-public class AddServiceInfoController
-{
+public class AddServiceInfoController {
+    // 来自 FXML 绑定的的控件
     public Button saveInfoButton;
     public TextField beamIdTf;
     public TextField inspectorTf;
@@ -21,26 +21,25 @@ public class AddServiceInfoController
     public DatePicker shipmentActualDp;
     public Label finishTimeLabel;
 
-    public void initialize(TextField textField)
-    {
-        String state = "养护";
+    // 控制器初始化方法，如果预制梁的状态是养护，则在增加下一步业务时，实际运出时间的日期选择器可用
+    public void initialize(TextField textField) {
         beamIdTf.setText(textField.getText());
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
-        if (state.equals(beamInfoEntity.getBeamState()))
-        {
+
+        String state = "养护";
+        if (state.equals(beamInfoEntity.getBeamState())) {
             finishTimeLabel.setText("预期运出时间");
             shipmentActualDp.setDisable(false);
-        }
-        else
-        {
+        } else {
             finishTimeLabel.setText("结束时间");
             shipmentActualDp.setDisable(true);
         }
     }
 
-    public void saveInfo() throws Exception
-    {
+    // 使预制梁进入下一个步骤，增加该业务信息
+    public void saveInfo() {
+        // 获取 beamID 对应的预制梁实体
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
         String beamState = beamInfoEntity.getBeamState();
@@ -49,8 +48,8 @@ public class AddServiceInfoController
         LocalDate finishTime = finishTimeDp.getValue();
         LocalDate shipmentActualTime = shipmentActualDp.getValue();
 
-        switch (beamState)
-        {
+        // 根据不同的预制梁状态执行不同的业务操作
+        switch (beamState) {
             case "预处理" -> addTieInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime);
             case "扎钢筋" -> addPouringInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime);
             case "浇筑" -> addCuringInfo(beamInfoModel, beamInfoEntity, inspector, startTime, finishTime);
@@ -59,18 +58,20 @@ public class AddServiceInfoController
             default -> {}
         }
 
+        // 成功增加预制梁的业务信息后，提醒用户
         Alert addSuccess = new Alert(Alert.AlertType.INFORMATION);
         addSuccess.setTitle("来自 添加预制梁业务 的消息");
         addSuccess.setHeaderText("业务信息添加成功！");
         addSuccess.show();
 
+        // 关闭业务信息添加面板
         Stage stage = (Stage) saveInfoButton.getScene().getWindow();
         stage.close();
     }
 
+    // 增加【扎钢筋】业务信息
     public void addTieInfo(BeamInfoModel beamInfoModel, BeamInfoEntity beamInfoEntity, String inspector,
-                           LocalDate startTime, LocalDate finishTime)
-    {
+                           LocalDate startTime, LocalDate finishTime) {
         TieInfoModel tieInfoModel = new TieInfoModel();
         TieInfoEntity tieInfoEntity = new TieInfoEntity();
         tieInfoEntity.setBeamId(beamIdTf.getText());
@@ -78,13 +79,15 @@ public class AddServiceInfoController
         tieInfoEntity.setWireStart(Timestamp.valueOf(startTime.atStartOfDay()));
         tieInfoEntity.setWireFinish(Timestamp.valueOf(finishTime.atStartOfDay()));
         tieInfoModel.insert(tieInfoEntity);
+
+        // 更新预制梁状态
         beamInfoEntity.setBeamState("扎钢筋");
         beamInfoModel.update(beamInfoEntity);
     }
 
+    // 增加【浇筑】业务信息
     public void addPouringInfo(BeamInfoModel beamInfoModel, BeamInfoEntity beamInfoEntity, String inspector,
-                               LocalDate startTime, LocalDate finishTime)
-    {
+                               LocalDate startTime, LocalDate finishTime) {
         PouringInfoModel pouringInfoModel = new PouringInfoModel();
         PouringInfoEntity pouringInfoEntity = new PouringInfoEntity();
         pouringInfoEntity.setBeamId(beamIdTf.getText());
@@ -96,9 +99,9 @@ public class AddServiceInfoController
         beamInfoModel.update(beamInfoEntity);
     }
 
+    // 增加【养护】业务信息
     public void addCuringInfo(BeamInfoModel beamInfoModel, BeamInfoEntity beamInfoEntity, String inspector,
-                              LocalDate startTime, LocalDate finishTime)
-    {
+                              LocalDate startTime, LocalDate finishTime) {
         CuringInfoModel curingInfoModel = new CuringInfoModel();
         CuringInfoEntity curingInfoEntity = new CuringInfoEntity();
         curingInfoEntity.setBeamId(beamIdTf.getText());
@@ -110,9 +113,9 @@ public class AddServiceInfoController
         beamInfoModel.update(beamInfoEntity);
     }
 
+    // 增加存储业务信息
     public void addStoreInfo(BeamInfoModel beamInfoModel, BeamInfoEntity beamInfoEntity, String inspector,
-                             LocalDate startTime, LocalDate finishTime, LocalDate shipmentActualTime)
-    {
+                             LocalDate startTime, LocalDate finishTime, LocalDate shipmentActualTime) {
         BeamStoreModel beamStoreModel = new BeamStoreModel();
         BeamStoreEntity beamStoreEntity = new BeamStoreEntity();
         beamStoreEntity.setBeamId(beamIdTf.getText());
