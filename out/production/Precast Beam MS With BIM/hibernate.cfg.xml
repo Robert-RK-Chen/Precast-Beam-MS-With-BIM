@@ -8,7 +8,7 @@
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="connection.username">root</property>
-        <property name="connection.password">123456</property>
+        <property name="connection.password">12061555</property>
         <mapping class="hibernate.entities.BeamInfoEntity"/>
         <mapping class="hibernate.entities.BeamStoreEntity"/>
         <mapping class="hibernate.entities.CuringInfoEntity"/>
