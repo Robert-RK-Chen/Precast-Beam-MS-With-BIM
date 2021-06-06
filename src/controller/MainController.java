@@ -146,7 +146,7 @@ public class MainController {
                     || (beamName.startsWith("tieBeam") && beamState.equals("扎钢筋"))
                     || (beamName.startsWith("pourBeam") && beamState.equals("浇筑"))
                     || (beamName.startsWith("cureBeam") && beamState.equals("养护"))
-                    || (beamName.startsWith("storeBeam") && beamState.equals("存储"))) {
+                    || (beamName.startsWith("storeBeam") && (beamState.equals("存储")||beamState.equals("已运出")))) {
             // 针对每个区域，当预制梁存在于该区域时，才展示预制梁的基本信息
             BeamInfoStage beamInfoStage = new BeamInfoStage();
             beamInfoStage.getPreBeam(button.getText());
