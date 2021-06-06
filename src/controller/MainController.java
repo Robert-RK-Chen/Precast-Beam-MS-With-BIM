@@ -154,7 +154,7 @@ public class MainController {
         }
     }
 
-    // 读入数据库，暂无真方法
+    // 读入数据库
     public void readDatabase() {
         Alert beamIsNullAlert = new Alert(Alert.AlertType.INFORMATION);
         beamIsNullAlert.setTitle("来自 加载数据库 的消息");

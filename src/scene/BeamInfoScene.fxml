@@ -430,16 +430,28 @@
                     </TextField>
                 </HBox>
             </VBox>
-            <Button fx:id="nextStepButton" mnemonicParsing="false" onMouseClicked="#nextStep" prefHeight="50.0"
-                    prefWidth="770.0" style="-fx-background-color: #027FFF; -fx-background-radius: 10;" text="下 一 步"
-                    textFill="WHITE">
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="770.0">
                 <VBox.margin>
-                    <Insets bottom="20.0" left="10.0" right="15.0" top="25.0"/>
+                    <Insets bottom="20.0" left="10.0" right="15.0" top="20.0"/>
                 </VBox.margin>
-                <font>
-                    <Font name="System Bold" size="16.0"/>
-                </font>
-            </Button>
+                <Button fx:id="nextStepButton" mnemonicParsing="false" onMouseClicked="#nextStep" prefHeight="50.0"
+                        prefWidth="620.0" style="-fx-background-color: #027FFF; -fx-background-radius: 10;" text="下 一 步"
+                        textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="deleteBeamButton" mnemonicParsing="false" onMouseClicked="#deleteBeam" prefHeight="50.0"
+                        prefWidth="140.0" style="-fx-background-color: #E94256; -fx-background-radius: 10;" text="删除预制梁"
+                        textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="10.0"/>
+                    </HBox.margin>
+                </Button>
+            </HBox>
         </VBox>
     </HBox>
 </Pane>

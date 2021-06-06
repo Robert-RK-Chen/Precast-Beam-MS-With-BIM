@@ -96,7 +96,7 @@ public class AddServiceInfoController {
         tieInfoEntity.setWireInspector(inspector);
         tieInfoEntity.setWireStart(Timestamp.valueOf(startTime.atStartOfDay()));
         tieInfoEntity.setWireFinish(Timestamp.valueOf(finishTime.atStartOfDay()));
-        tieInfoModel.insert(tieInfoEntity);
+        tieInfoModel.update(tieInfoEntity);
 
         // 更新预制梁状态
         beamInfoEntity.setBeamState("扎钢筋");
@@ -112,7 +112,7 @@ public class AddServiceInfoController {
         pouringInfoEntity.setPouringInspector(inspector);
         pouringInfoEntity.setPouringStart(Timestamp.valueOf(startTime.atStartOfDay()));
         pouringInfoEntity.setPouringFinish(Timestamp.valueOf(finishTime.atStartOfDay()));
-        pouringInfoModel.insert(pouringInfoEntity);
+        pouringInfoModel.update(pouringInfoEntity);
         beamInfoEntity.setBeamState("浇筑");
         beamInfoModel.update(beamInfoEntity);
     }
@@ -126,7 +126,7 @@ public class AddServiceInfoController {
         curingInfoEntity.setCuringInspector(inspector);
         curingInfoEntity.setCuringStart(Timestamp.valueOf(startTime.atStartOfDay()));
         curingInfoEntity.setCuringFinish(Timestamp.valueOf(finishTime.atStartOfDay()));
-        curingInfoModel.insert(curingInfoEntity);
+        curingInfoModel.update(curingInfoEntity);
         beamInfoEntity.setBeamState("养护");
         beamInfoModel.update(beamInfoEntity);
     }
@@ -141,7 +141,7 @@ public class AddServiceInfoController {
         beamStoreEntity.setStoreStart(Timestamp.valueOf(startTime.atStartOfDay()));
         beamStoreEntity.setShipmentExpect(Timestamp.valueOf(finishTime.atStartOfDay()));
         beamStoreEntity.setShipmentActual(Timestamp.valueOf(shipmentActualTime.atStartOfDay()));
-        beamStoreModel.insert(beamStoreEntity);
+        beamStoreModel.update(beamStoreEntity);
         beamInfoEntity.setBeamState("存储");
         beamInfoModel.update(beamInfoEntity);
     }

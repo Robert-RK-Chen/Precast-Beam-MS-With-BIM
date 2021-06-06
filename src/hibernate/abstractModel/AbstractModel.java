@@ -62,7 +62,7 @@ public abstract class AbstractModel<T> {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            session.update(entity);
+            session.saveOrUpdate(entity);
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,8 +95,8 @@ public abstract class AbstractModel<T> {
      *
      * @return List<T> : 所有返回值的列表
      */
-    public List<?> findAll() {
-        List<?> result = null;
+    public List<T> findAll() {
+        List<T> result = null;
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();

@@ -4,14 +4,13 @@ import application.AddServiceInfoStage;
 import application.Show3DModelStage;
 import hibernate.entities.*;
 import hibernate.model.*;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.Optional;
 
 /**
  * @author Robert Chen
@@ -43,6 +42,7 @@ public class BeamInfoController {
     public TextField storeStartTf;
     public TextField shipmentExpectTf;
     public TextField shipmentActualTf;
+    public Button deleteBeamButton;
 
     // 初始化预制梁信息面板
     public void initialize(String id) {
@@ -140,5 +140,26 @@ public class BeamInfoController {
     public void show3DModel() {
         Show3DModelStage modelStage = new Show3DModelStage();
         modelStage.showStage();
+    }
+
+    // 用户点击删除预制梁按钮
+    public void deleteBeam() {
+        BeamInfoModel beamInfoModel = new BeamInfoModel();
+        BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
+
+        Alert deleteBeam = new Alert(Alert.AlertType.CONFIRMATION);
+        deleteBeam.setTitle("来自删除预制梁的警告");
+        deleteBeam.setHeaderText("确定要删除这块预制梁吗？");
+        Optional<ButtonType> result = deleteBeam.showAndWait();
+
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            beamInfoModel.delete(beamInfoEntity);
+            Alert deleteSuccess = new Alert(Alert.AlertType.INFORMATION);
+            deleteSuccess.setTitle("来自删除预制梁的消息");
+            deleteSuccess.setHeaderText("预制梁删除成功！");
+            deleteSuccess.show();
+            Stage stage = (Stage) beamIdTf.getScene().getWindow();
+            stage.close();
+        }
     }
 }
