@@ -56,7 +56,7 @@ public class AddBasicInfoController {
                 valueLegal = Boolean.FALSE; }
             if (height <= 0) { valueLegal = Boolean.FALSE; }
             if (beamKind.equals("长方体") && (length <= 0 || width <= 0)) { valueLegal = Boolean.FALSE; }
-            if (beamKind.equals("") && radius <= 0) { valueLegal = Boolean.FALSE; }
+            if (beamKind.equals("圆柱体") && radius <= 0) { valueLegal = Boolean.FALSE; }
         }
 
         // 向预制梁实体添加信息
