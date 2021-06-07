@@ -56,5 +56,5 @@ public class AddBasicInfoStage extends Application {
 
     public static void main(String[] args) { launch(args); }
     public void showStage() throws Exception { start(getBasicInfoAddStage()); }
-    public void getPreBeam(String id) { preBeamId = id; }
+    public void initializePreBeam(String id) { preBeamId = id; }
 }

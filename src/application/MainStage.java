@@ -36,7 +36,9 @@ public class MainStage extends Application {
 
         // mainController : MainController 类的实例，主窗口的控制器
         MainController mainController = mainLoader.getController();
-        mainController.initialize();
+        mainController.loadHibernate();
+        mainController.setBeamHashTable();
+        mainController.readDatabase();
         primaryStage.show();
     }
 

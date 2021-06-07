@@ -114,6 +114,4 @@ public class AddBasicInfoController {
             lengthTf.setDisable(true);
         }
     }
-
-    // 获取钢筋类型
 }

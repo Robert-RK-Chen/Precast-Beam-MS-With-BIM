@@ -9,6 +9,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.util.Hashtable;
+import java.util.List;
+
 /**
  * @author Robert Chen
  */
@@ -67,67 +70,122 @@ public class MainController {
     public Button readDatabaseButton;
     public TextField beamSearchTf;
     public Button queryButton;
+    public Hashtable<String, Button> beamHashTable = new Hashtable<>();
 
     // 获取预制梁的基本信息
-    public void getPreBeam1() throws Exception { getInfo(preBeam1); }
-    public void getPreBeam2() throws Exception { getInfo(preBeam2); }
-    public void getPreBeam3() throws Exception { getInfo(preBeam3); }
-    public void getPreBeam4() throws Exception { getInfo(preBeam4); }
-    public void getPreBeam5() throws Exception { getInfo(preBeam5); }
-    public void getPreBeam6() throws Exception { getInfo(preBeam6); }
-    public void getPreBeam7() throws Exception { getInfo(preBeam7); }
-    public void getPreBeam8() throws Exception { getInfo(preBeam8); }
-    public void getPreBeam9() throws Exception { getInfo(preBeam9); }
-    public void getPreBeam10() throws Exception { getInfo(preBeam10); }
-    public void getTieBeam1() throws Exception { getInfo(tieBeam1); }
-    public void getTieBeam2() throws Exception { getInfo(tieBeam2); }
-    public void getTieBeam3() throws Exception { getInfo(tieBeam3); }
-    public void getTieBeam4() throws Exception { getInfo(tieBeam4); }
-    public void getTieBeam5() throws Exception { getInfo(tieBeam5); }
-    public void getTieBeam6() throws Exception { getInfo(tieBeam6); }
-    public void getTieBeam7() throws Exception { getInfo(tieBeam7); }
-    public void getTieBeam8() throws Exception { getInfo(tieBeam8); }
-    public void getTieBeam9() throws Exception { getInfo(tieBeam9); }
-    public void getTieBeam10() throws Exception { getInfo(pourBeam10); }
-    public void getPourBeam1() throws Exception { getInfo(pourBeam1); }
-    public void getPourBeam2() throws Exception { getInfo(pourBeam2); }
-    public void getPourBeam3() throws Exception { getInfo(pourBeam3); }
-    public void getPourBeam4() throws Exception { getInfo(pourBeam4); }
-    public void getPourBeam5() throws Exception { getInfo(pourBeam5); }
-    public void getPourBeam6() throws Exception { getInfo(pourBeam6); }
-    public void getPourBeam7() throws Exception { getInfo(pourBeam7); }
-    public void getPourBeam8() throws Exception { getInfo(pourBeam8); }
-    public void getPourBeam9() throws Exception { getInfo(pourBeam9); }
-    public void getPourBeam10() throws Exception { getInfo(pourBeam10); }
-    public void getCureBeam1() throws Exception { getInfo(cureBeam1); }
-    public void getCureBeam2() throws Exception { getInfo(cureBeam2); }
-    public void getCureBeam3() throws Exception { getInfo(cureBeam3); }
-    public void getCureBeam4() throws Exception { getInfo(cureBeam4); }
-    public void getCureBeam5() throws Exception { getInfo(cureBeam5); }
-    public void getCureBeam6() throws Exception { getInfo(cureBeam6); }
-    public void getCureBeam7() throws Exception { getInfo(cureBeam7); }
-    public void getCureBeam8() throws Exception { getInfo(cureBeam8); }
-    public void getCureBeam9() throws Exception { getInfo(cureBeam9); }
-    public void getCureBeam10() throws Exception { getInfo(cureBeam10); }
-    public void getStoreBeam1() throws Exception { getInfo(storeBeam1); }
-    public void getStoreBeam2() throws Exception { getInfo(storeBeam2); }
-    public void getStoreBeam3() throws Exception { getInfo(storeBeam3); }
-    public void getStoreBeam4() throws Exception { getInfo(storeBeam4); }
-    public void getStoreBeam5() throws Exception { getInfo(storeBeam5); }
-    public void getStoreBeam6() throws Exception { getInfo(storeBeam6); }
-    public void getStoreBeam7() throws Exception { getInfo(storeBeam7); }
-    public void getStoreBeam8() throws Exception { getInfo(storeBeam8); }
-    public void getStoreBeam9() throws Exception { getInfo(storeBeam9); }
-    public void getStoreBeam10() throws Exception { getInfo(storeBeam10); }
-
     // 初始化方法，多线程加载 Hibernate 连接以免影响软件启动速度
-    public void initialize() {
+    public void loadHibernate() {
         Thread loadDataThread = new Thread(HibernateUtil::getSession);
         loadDataThread.start();
     }
 
+    public void clickedPreBeam1() throws Exception { getBeamInfo(preBeam1); }
+    public void clickedPreBeam2() throws Exception { getBeamInfo(preBeam2); }
+    public void clickedPreBeam3() throws Exception { getBeamInfo(preBeam3); }
+    public void clickedPreBeam4() throws Exception { getBeamInfo(preBeam4); }
+    public void clickedPreBeam5() throws Exception { getBeamInfo(preBeam5); }
+    public void clickedPreBeam6() throws Exception { getBeamInfo(preBeam6); }
+    public void clickedPreBeam7() throws Exception { getBeamInfo(preBeam7); }
+    public void clickedPreBeam8() throws Exception { getBeamInfo(preBeam8); }
+    public void clickedPreBeam9() throws Exception { getBeamInfo(preBeam9); }
+    public void clickedPreBeam10() throws Exception { getBeamInfo(preBeam10); }
+    public void clickedTieBeam1() throws Exception { getBeamInfo(tieBeam1); }
+    public void clickedTieBeam2() throws Exception { getBeamInfo(tieBeam2); }
+    public void clickedTieBeam3() throws Exception { getBeamInfo(tieBeam3); }
+    public void clickedTieBeam4() throws Exception { getBeamInfo(tieBeam4); }
+    public void clickedTieBeam5() throws Exception { getBeamInfo(tieBeam5); }
+    public void clickedTieBeam6() throws Exception { getBeamInfo(tieBeam6); }
+    public void clickedTieBeam7() throws Exception { getBeamInfo(tieBeam7); }
+    public void clickedTieBeam8() throws Exception { getBeamInfo(tieBeam8); }
+    public void clickedTieBeam9() throws Exception { getBeamInfo(tieBeam9); }
+    public void clickedTieBeam10() throws Exception { getBeamInfo(pourBeam10); }
+    public void clickedPourBeam1() throws Exception { getBeamInfo(pourBeam1); }
+    public void clickedPourBeam2() throws Exception { getBeamInfo(pourBeam2); }
+    public void clickedPourBeam3() throws Exception { getBeamInfo(pourBeam3); }
+    public void clickedPourBeam4() throws Exception { getBeamInfo(pourBeam4); }
+    public void clickedPourBeam5() throws Exception { getBeamInfo(pourBeam5); }
+    public void clickedPourBeam6() throws Exception { getBeamInfo(pourBeam6); }
+    public void clickedPourBeam7() throws Exception { getBeamInfo(pourBeam7); }
+    public void clickedPourBeam8() throws Exception { getBeamInfo(pourBeam8); }
+    public void clickedPourBeam9() throws Exception { getBeamInfo(pourBeam9); }
+    public void clickedPourBeam10() throws Exception { getBeamInfo(pourBeam10); }
+    public void clickedCureBeam1() throws Exception { getBeamInfo(cureBeam1); }
+    public void clickedCureBeam2() throws Exception { getBeamInfo(cureBeam2); }
+    public void clickedCureBeam3() throws Exception { getBeamInfo(cureBeam3); }
+    public void clickedCureBeam4() throws Exception { getBeamInfo(cureBeam4); }
+    public void clickedCureBeam5() throws Exception { getBeamInfo(cureBeam5); }
+    public void clickedCureBeam6() throws Exception { getBeamInfo(cureBeam6); }
+    public void clickedCureBeam7() throws Exception { getBeamInfo(cureBeam7); }
+    public void clickedCureBeam8() throws Exception { getBeamInfo(cureBeam8); }
+    public void clickedCureBeam9() throws Exception { getBeamInfo(cureBeam9); }
+    public void clickedCureBeam10() throws Exception { getBeamInfo(cureBeam10); }
+    public void clickedStoreBeam1() throws Exception { getBeamInfo(storeBeam1); }
+    public void clickedStoreBeam2() throws Exception { getBeamInfo(storeBeam2); }
+    public void clickedStoreBeam3() throws Exception { getBeamInfo(storeBeam3); }
+    public void clickedStoreBeam4() throws Exception { getBeamInfo(storeBeam4); }
+    public void clickedStoreBeam5() throws Exception { getBeamInfo(storeBeam5); }
+    public void clickedStoreBeam6() throws Exception { getBeamInfo(storeBeam6); }
+    public void clickedStoreBeam7() throws Exception { getBeamInfo(storeBeam7); }
+    public void clickedStoreBeam8() throws Exception { getBeamInfo(storeBeam8); }
+    public void clickedStoreBeam9() throws Exception { getBeamInfo(storeBeam9); }
+    public void clickedStoreBeam10() throws Exception { getBeamInfo(storeBeam10); }
+
+    // 获取预制梁
+    public void setBeamHashTable() {
+        beamHashTable.put("预处理1", preBeam1);
+        beamHashTable.put("预处理2", preBeam2);
+        beamHashTable.put("预处理3", preBeam3);
+        beamHashTable.put("预处理4", preBeam4);
+        beamHashTable.put("预处理5", preBeam5);
+        beamHashTable.put("预处理6", preBeam6);
+        beamHashTable.put("预处理7", preBeam7);
+        beamHashTable.put("预处理8", preBeam8);
+        beamHashTable.put("预处理9", preBeam9);
+        beamHashTable.put("预处理10", preBeam10);
+        beamHashTable.put("扎钢筋1", tieBeam1);
+        beamHashTable.put("扎钢筋2", tieBeam2);
+        beamHashTable.put("扎钢筋3", tieBeam3);
+        beamHashTable.put("扎钢筋4", tieBeam4);
+        beamHashTable.put("扎钢筋5", tieBeam5);
+        beamHashTable.put("扎钢筋6", tieBeam6);
+        beamHashTable.put("扎钢筋7", tieBeam7);
+        beamHashTable.put("扎钢筋8", tieBeam8);
+        beamHashTable.put("扎钢筋9", tieBeam9);
+        beamHashTable.put("扎钢筋10", tieBeam10);
+        beamHashTable.put("浇筑1", pourBeam1);
+        beamHashTable.put("浇筑2", pourBeam2);
+        beamHashTable.put("浇筑3", pourBeam3);
+        beamHashTable.put("浇筑4", pourBeam4);
+        beamHashTable.put("浇筑5", pourBeam5);
+        beamHashTable.put("浇筑6", pourBeam6);
+        beamHashTable.put("浇筑7", pourBeam7);
+        beamHashTable.put("浇筑8", pourBeam8);
+        beamHashTable.put("浇筑9", pourBeam9);
+        beamHashTable.put("浇筑10", pourBeam10);
+        beamHashTable.put("养护1", cureBeam1);
+        beamHashTable.put("养护2", cureBeam2);
+        beamHashTable.put("养护3", cureBeam3);
+        beamHashTable.put("养护4", cureBeam4);
+        beamHashTable.put("养护5", cureBeam5);
+        beamHashTable.put("养护6", cureBeam6);
+        beamHashTable.put("养护7", cureBeam7);
+        beamHashTable.put("养护8", cureBeam8);
+        beamHashTable.put("养护9", cureBeam9);
+        beamHashTable.put("养护10", cureBeam10);
+        beamHashTable.put("存储1", storeBeam1);
+        beamHashTable.put("存储2", storeBeam2);
+        beamHashTable.put("存储3", storeBeam3);
+        beamHashTable.put("存储4", storeBeam4);
+        beamHashTable.put("存储5", storeBeam5);
+        beamHashTable.put("存储6", storeBeam6);
+        beamHashTable.put("存储7", storeBeam7);
+        beamHashTable.put("存储8", storeBeam8);
+        beamHashTable.put("存储9", storeBeam9);
+        beamHashTable.put("存储10", storeBeam10);
+    }
+
     // 真正的获取预制梁信息的方法
-    public void getInfo(Button button) throws Exception {
+    public void getBeamInfo(Button button) throws Exception {
         String beamId = button.getText();
         String beamName = button.getId();
 
@@ -139,28 +197,38 @@ public class MainController {
             // 发现预制梁的基本信息为空时，添加预制梁
             if (button.getId().startsWith("preBeam")) {
                 AddBasicInfoStage addBasicInfoStage = new AddBasicInfoStage();
-                addBasicInfoStage.getPreBeam(button.getText());
+                addBasicInfoStage.initializePreBeam(beamId);
                 addBasicInfoStage.showStage();
             }
         } else if ((beamName.startsWith("preBeam") && beamState.equals("预处理"))
                 || (beamName.startsWith("tieBeam") && beamState.equals("扎钢筋"))
                 || (beamName.startsWith("pourBeam") && beamState.equals("浇筑"))
                 || (beamName.startsWith("cureBeam") && beamState.equals("养护"))
-                || (beamState.equals("存储")
-                || beamState.equals("已运出"))) {
+                || (beamName.startsWith("storeBeam") && (beamState.equals("存储") || beamState.equals("已运出")))) {
             // 针对每个区域，当预制梁存在于该区域时，才展示预制梁的基本信息
             BeamInfoStage beamInfoStage = new BeamInfoStage();
-            beamInfoStage.getPreBeam(button.getText());
+            beamInfoStage.initializePreBeam(beamId);
             beamInfoStage.showStage();
         }
     }
 
     // 读入数据库
     public void readDatabase() {
-        Alert beamIsNullAlert = new Alert(Alert.AlertType.INFORMATION);
-        beamIsNullAlert.setTitle("来自 加载数据库 的消息");
-        beamIsNullAlert.setHeaderText("数据库加载完成！");
-        beamIsNullAlert.show();
+        BeamInfoModel beamInfoModel = new BeamInfoModel();
+        List<BeamInfoEntity> beams = beamInfoModel.findAll();
+
+        for (Button button : beamHashTable.values()) {
+            String existBeamStyle = button.getStyle();
+            button.setStyle(existBeamStyle.replace("#F0F0F0","#FFFFFF"));
+        }
+
+        for (BeamInfoEntity beam : beams) {
+            String beamState = beam.getBeamState();
+            String beamId = beam.getBeamId();
+            Button tempBeam = beamHashTable.get(beamState + beamId);
+            String existBeamStyle = tempBeam.getStyle();
+            tempBeam.setStyle(existBeamStyle.replace("#FFFFFF","#F0F0F0"));
+        }
     }
 
     // 用户通过搜索栏搜索预制梁的信息
@@ -179,7 +247,7 @@ public class MainController {
             beamIsNull.show();
         } else {
             BeamInfoStage beamInfoStage = new BeamInfoStage();
-            beamInfoStage.getPreBeam(beamId);
+            beamInfoStage.initializePreBeam(beamId);
             beamInfoStage.showStage();
         }
     }

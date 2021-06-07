@@ -22,8 +22,8 @@ public class AddServiceInfoController {
     public Label finishTimeLabel;
 
     // 控制器初始化方法，如果预制梁的状态是养护，则在增加下一步业务时，实际运出时间的日期选择器可用
-    public void initialize(TextField textField) {
-        beamIdTf.setText(textField.getText());
+    public void initialize(String beamId) {
+        beamIdTf.setText(beamId);
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
 
@@ -75,6 +75,7 @@ public class AddServiceInfoController {
                 default -> {
                 }
             }
+
             // 成功增加预制梁的业务信息后，提醒用户
             Alert addSuccess = new Alert(Alert.AlertType.INFORMATION);
             addSuccess.setTitle("来自 添加预制梁业务 的消息");

@@ -5,7 +5,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -17,7 +16,7 @@ import java.net.URL;
 public class AddServiceInfoStage extends Application {
     // beam : 作为主界面与添加预制梁信息界面的中间信息
     // serviceInfoStage : 添加预制梁业务信息界面
-    private TextField beam;
+    private String beamId;
     private static Stage serviceInfoStage = null;
 
     /**
@@ -51,7 +50,7 @@ public class AddServiceInfoStage extends Application {
 
         // addServiceController : AddServiceInfoController 类的实例，窗口的控制器
         AddServiceInfoController addServiceController = addServiceLoader.getController();
-        addServiceController.initialize(beam);
+        addServiceController.initialize(beamId);
         stage.show();
     }
 
@@ -60,8 +59,5 @@ public class AddServiceInfoStage extends Application {
         launch(args);
     }
     public void showStage() throws Exception { start(getServiceInfoStage()); }
-    public void getBeam(TextField textField)
-    {
-        beam = textField;
-    }
+    public void initializePreBeam(String id) { beamId = id; }
 }

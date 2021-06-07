@@ -23,7 +23,7 @@
                     <VBox.margin>
                         <Insets bottom="10.0"/>
                     </VBox.margin>
-                    <Button fx:id="preBeam1" mnemonicParsing="false" onMouseClicked="#getPreBeam1" prefHeight="80.0"
+                    <Button fx:id="preBeam1" mnemonicParsing="false" onMouseClicked="#clickedPreBeam1" prefHeight="80.0"
                             prefWidth="135.0"
                             style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E94256; -fx-border-width: 2; -fx-border-radius: 10;"
                             text="1" textFill="#e94256">
@@ -34,7 +34,7 @@
                             <Font size="14.0"/>
                         </font>
                     </Button>
-                    <Button fx:id="preBeam2" mnemonicParsing="false" onMouseClicked="#getPreBeam2" prefHeight="80.0"
+                    <Button fx:id="preBeam2" mnemonicParsing="false" onMouseClicked="#clickedPreBeam2" prefHeight="80.0"
                             prefWidth="135.0"
                             style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E94256; -fx-border-width: 2; -fx-border-radius: 10;"
                             text="2" textFill="#e94256">
@@ -50,7 +50,7 @@
                     <VBox.margin>
                         <Insets bottom="10.0"/>
                     </VBox.margin>
-                    <Button fx:id="preBeam3" mnemonicParsing="false" onMouseClicked="#getPreBeam3" prefHeight="80.0"
+                    <Button fx:id="preBeam3" mnemonicParsing="false" onMouseClicked="#clickedPreBeam3" prefHeight="80.0"
                             prefWidth="135.0"
                             style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E94256; -fx-border-width: 2; -fx-border-radius: 10;"
                             text="3" textFill="#e94256">
@@ -61,7 +61,7 @@
                             <Font size="14.0"/>
                         </font>
                     </Button>
-                    <Button fx:id="preBeam4" mnemonicParsing="false" onMouseClicked="#getPreBeam4" prefHeight="80.0"
+                    <Button fx:id="preBeam4" mnemonicParsing="false" onMouseClicked="#clickedPreBeam4" prefHeight="80.0"
                             prefWidth="135.0"
                             style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E94256; -fx-border-width: 2; -fx-border-radius: 10;"
                             text="4" textFill="#e94256">
@@ -77,7 +77,7 @@
                     <VBox.margin>
                         <Insets bottom="10.0"/>
                     </VBox.margin>
-                    <Button fx:id="preBeam5" mnemonicParsing="false" onMouseClicked="#getPreBeam5" prefHeight="80.0"
+                    <Button fx:id="preBeam5" mnemonicParsing="false" onMouseClicked="#clickedPreBeam5" prefHeight="80.0"
                             prefWidth="135.0"
                             style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E94256; -fx-border-width: 2; -fx-border-radius: 10;"
                             text="5" textFill="#e94256">
@@ -88,7 +88,7 @@
                             <Font size="14.0"/>
                         </font>
                     </Button>
-                    <Button fx:id="preBeam6" mnemonicParsing="false" onMouseClicked="#getPreBeam6" prefHeight="80.0"
+                    <Button fx:id="preBeam6" mnemonicParsing="false" onMouseClicked="#clickedPreBeam6" prefHeight="80.0"
                             prefWidth="135.0"
                             style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E94256; -fx-border-width: 2; -fx-border-radius: 10;"
                             text="6" textFill="#e94256">
@@ -104,7 +104,7 @@
                     <VBox.margin>
                         <Insets bottom="10.0"/>
                     </VBox.margin>
-                    <Button fx:id="preBeam7" mnemonicParsing="false" onMouseClicked="#getPreBeam7" prefHeight="80.0"
+                    <Button fx:id="preBeam7" mnemonicParsing="false" onMouseClicked="#clickedPreBeam7" prefHeight="80.0"
                             prefWidth="135.0"
                             style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E94256; -fx-border-width: 2; -fx-border-radius: 10;"
                             text="7" textFill="#e94256">
@@ -115,7 +115,7 @@
                             <Font size="14.0"/>
                         </font>
                     </Button>
-                    <Button fx:id="preBeam8" mnemonicParsing="false" onMouseClicked="#getPreBeam8" prefHeight="80.0"
+                    <Button fx:id="preBeam8" mnemonicParsing="false" onMouseClicked="#clickedPreBeam8" prefHeight="80.0"
                             prefWidth="135.0"
                             style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E94256; -fx-border-width: 2; -fx-border-radius: 10;"
                             text="8" textFill="#e94256">
@@ -131,7 +131,7 @@
                     <VBox.margin>
                         <Insets bottom="10.0"/>
                     </VBox.margin>
-                    <Button fx:id="preBeam9" mnemonicParsing="false" onMouseClicked="#getPreBeam9" prefHeight="80.0"
+                    <Button fx:id="preBeam9" mnemonicParsing="false" onMouseClicked="#clickedPreBeam9" prefHeight="80.0"
                             prefWidth="135.0"
                             style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E94256; -fx-border-width: 2; -fx-border-radius: 10;"
                             text="9" textFill="#e94256">
@@ -142,8 +142,8 @@
                             <Font size="14.0"/>
                         </font>
                     </Button>
-                    <Button fx:id="preBeam10" mnemonicParsing="false" onMouseClicked="#getPreBeam10" prefHeight="80.0"
-                            prefWidth="135.0"
+                    <Button fx:id="preBeam10" mnemonicParsing="false" onMouseClicked="#clickedPreBeam10"
+                            prefHeight="80.0" prefWidth="135.0"
                             style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E94256; -fx-border-width: 2; -fx-border-radius: 10;"
                             text="10" textFill="#e94256">
                         <HBox.margin>
@@ -207,7 +207,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="tieBeam1" mnemonicParsing="false" onMouseClicked="#getTieBeam1"
+                            <Button fx:id="tieBeam1" mnemonicParsing="false" onMouseClicked="#clickedTieBeam1"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #027FFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="1" textFill="#027fff">
@@ -218,7 +218,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="tieBeam2" mnemonicParsing="false" onMouseClicked="#getTieBeam2"
+                            <Button fx:id="tieBeam2" mnemonicParsing="false" onMouseClicked="#clickedTieBeam2"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #027FFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="2" textFill="#027fff">
@@ -234,7 +234,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="tieBeam3" mnemonicParsing="false" onMouseClicked="#getTieBeam3"
+                            <Button fx:id="tieBeam3" mnemonicParsing="false" onMouseClicked="#clickedTieBeam3"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #027FFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="3" textFill="#027fff">
@@ -245,7 +245,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="tieBeam4" mnemonicParsing="false" onMouseClicked="#getTieBeam4"
+                            <Button fx:id="tieBeam4" mnemonicParsing="false" onMouseClicked="#clickedTieBeam4"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #027FFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="4" textFill="#027fff">
@@ -261,7 +261,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="tieBeam5" mnemonicParsing="false" onMouseClicked="#getTieBeam5"
+                            <Button fx:id="tieBeam5" mnemonicParsing="false" onMouseClicked="#clickedTieBeam5"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #027FFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="5" textFill="#027fff">
@@ -272,7 +272,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="tieBeam6" mnemonicParsing="false" onMouseClicked="#getTieBeam6"
+                            <Button fx:id="tieBeam6" mnemonicParsing="false" onMouseClicked="#clickedTieBeam6"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #027FFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="6" textFill="#027fff">
@@ -288,7 +288,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="tieBeam7" mnemonicParsing="false" onMouseClicked="#getTieBeam7"
+                            <Button fx:id="tieBeam7" mnemonicParsing="false" onMouseClicked="#clickedTieBeam7"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #027FFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="7" textFill="#027fff">
@@ -299,7 +299,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="tieBeam8" mnemonicParsing="false" onMouseClicked="#getTieBeam8"
+                            <Button fx:id="tieBeam8" mnemonicParsing="false" onMouseClicked="#clickedTieBeam8"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #027FFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="8" textFill="#027fff">
@@ -315,7 +315,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="tieBeam9" mnemonicParsing="false" onMouseClicked="#getTieBeam9"
+                            <Button fx:id="tieBeam9" mnemonicParsing="false" onMouseClicked="#clickedTieBeam9"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #027FFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="9" textFill="#027fff">
@@ -326,7 +326,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="tieBeam10" mnemonicParsing="false" onMouseClicked="#getTieBeam10"
+                            <Button fx:id="tieBeam10" mnemonicParsing="false" onMouseClicked="#clickedTieBeam10"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #027FFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="10" textFill="#027fff">
@@ -355,7 +355,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="pourBeam1" mnemonicParsing="false" onMouseClicked="#getPourBeam1"
+                            <Button fx:id="pourBeam1" mnemonicParsing="false" onMouseClicked="#clickedPourBeam1"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #34B4A7; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="1" textFill="#34b4a7">
@@ -366,7 +366,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="pourBeam2" mnemonicParsing="false" onMouseClicked="#getPourBeam2"
+                            <Button fx:id="pourBeam2" mnemonicParsing="false" onMouseClicked="#clickedPourBeam2"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #34B4A7; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="2" textFill="#34b4a7">
@@ -382,7 +382,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="pourBeam3" mnemonicParsing="false" onMouseClicked="#getPourBeam3"
+                            <Button fx:id="pourBeam3" mnemonicParsing="false" onMouseClicked="#clickedPourBeam3"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #34B4A7; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="3" textFill="#34b4a7">
@@ -393,7 +393,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="pourBeam4" mnemonicParsing="false" onMouseClicked="#getPourBeam4"
+                            <Button fx:id="pourBeam4" mnemonicParsing="false" onMouseClicked="#clickedPourBeam4"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #34B4A7; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="4" textFill="#34b4a7">
@@ -409,7 +409,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="pourBeam5" mnemonicParsing="false" onMouseClicked="#getPourBeam5"
+                            <Button fx:id="pourBeam5" mnemonicParsing="false" onMouseClicked="#clickedPourBeam5"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #34B4A7; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="5" textFill="#34b4a7">
@@ -420,7 +420,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="pourBeam6" mnemonicParsing="false" onMouseClicked="#getPourBeam6"
+                            <Button fx:id="pourBeam6" mnemonicParsing="false" onMouseClicked="#clickedPourBeam6"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #34B4A7; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="6" textFill="#34b4a7">
@@ -436,7 +436,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="pourBeam7" mnemonicParsing="false" onMouseClicked="#getPourBeam7"
+                            <Button fx:id="pourBeam7" mnemonicParsing="false" onMouseClicked="#clickedPourBeam7"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #34B4A7; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="7" textFill="#34b4a7">
@@ -447,7 +447,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="pourBeam8" mnemonicParsing="false" onMouseClicked="#getPourBeam8"
+                            <Button fx:id="pourBeam8" mnemonicParsing="false" onMouseClicked="#clickedPourBeam8"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #34B4A7; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="8" textFill="#34b4a7">
@@ -463,7 +463,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="pourBeam9" mnemonicParsing="false" onMouseClicked="#getPourBeam9"
+                            <Button fx:id="pourBeam9" mnemonicParsing="false" onMouseClicked="#clickedPourBeam9"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #34B4A7; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="9" textFill="#34b4a7">
@@ -474,7 +474,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="pourBeam10" mnemonicParsing="false" onMouseClicked="#getPourBeam10"
+                            <Button fx:id="pourBeam10" mnemonicParsing="false" onMouseClicked="#clickedPourBeam10"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #34B4A7; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="10" textFill="#34b4a7">
@@ -503,7 +503,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="cureBeam1" mnemonicParsing="false" onMouseClicked="#getCureBeam1"
+                            <Button fx:id="cureBeam1" mnemonicParsing="false" onMouseClicked="#clickedCureBeam1"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #622AFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="1" textFill="#622aff">
@@ -514,7 +514,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="cureBeam2" mnemonicParsing="false" onMouseClicked="#getCureBeam2"
+                            <Button fx:id="cureBeam2" mnemonicParsing="false" onMouseClicked="#clickedCureBeam2"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #622AFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="2" textFill="#622aff">
@@ -530,7 +530,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="cureBeam3" mnemonicParsing="false" onMouseClicked="#getCureBeam3"
+                            <Button fx:id="cureBeam3" mnemonicParsing="false" onMouseClicked="#clickedCureBeam3"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #622AFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="3" textFill="#622aff">
@@ -541,7 +541,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="cureBeam4" mnemonicParsing="false" onMouseClicked="#getCureBeam4"
+                            <Button fx:id="cureBeam4" mnemonicParsing="false" onMouseClicked="#clickedCureBeam4"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #622AFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="4" textFill="#622aff">
@@ -557,7 +557,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="cureBeam5" mnemonicParsing="false" onMouseClicked="#getCureBeam5"
+                            <Button fx:id="cureBeam5" mnemonicParsing="false" onMouseClicked="#clickedCureBeam5"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #622AFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="5" textFill="#622aff">
@@ -568,7 +568,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="cureBeam6" mnemonicParsing="false" onMouseClicked="#getCureBeam6"
+                            <Button fx:id="cureBeam6" mnemonicParsing="false" onMouseClicked="#clickedCureBeam6"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #622AFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="6" textFill="#622aff">
@@ -584,7 +584,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="cureBeam7" mnemonicParsing="false" onMouseClicked="#getCureBeam7"
+                            <Button fx:id="cureBeam7" mnemonicParsing="false" onMouseClicked="#clickedCureBeam7"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #622AFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="7" textFill="#622aff">
@@ -595,7 +595,7 @@
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="cureBeam8" mnemonicParsing="false" onMouseClicked="#getCureBeam8"
+                            <Button fx:id="cureBeam8" mnemonicParsing="false" onMouseClicked="#clickedCureBeam8"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #622AFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="8" textFill="#622aff">
@@ -611,18 +611,19 @@
                             <VBox.margin>
                                 <Insets bottom="10.0"/>
                             </VBox.margin>
-                            <Button fx:id="cureBeam9" mnemonicParsing="false" onMouseClicked="#getCureBeam9"
+                            <Button fx:id="cureBeam9" mnemonicParsing="false" onMouseClicked="#clickedCureBeam9"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #622AFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="9" textFill="#622aff">
                                 <HBox.margin>
                                     <Insets left="10.0" top="10.0"/>
                                 </HBox.margin>
+                                clicked
                                 <font>
                                     <Font size="14.0"/>
                                 </font>
                             </Button>
-                            <Button fx:id="cureBeam10" mnemonicParsing="false" onMouseClicked="#getCureBeam10"
+                            <Button fx:id="cureBeam10" mnemonicParsing="false" onMouseClicked="#clickedCureBeam10"
                                     prefHeight="70.0" prefWidth="135.0"
                                     style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #622AFF; -fx-border-width: 2; -fx-border-radius: 10;"
                                     text="10" textFill="#622aff">
@@ -650,9 +651,9 @@
                     <Insets bottom="10.0" left="10.0" top="10.0"/>
                 </HBox.margin>
             </Label>
-            <Button fx:id="storeBeam1" mnemonicParsing="false" onMouseClicked="#getStoreBeam1" prefHeight="180.0"
+            <Button fx:id="storeBeam1" mnemonicParsing="false" onMouseClicked="#clickedStoreBeam1" prefHeight="180.0"
                     prefWidth="100.0"
-                    style="-fx-background-color: #F3F3F8; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
                     text="1" textFill="#e2620c">
                 <HBox.margin>
                     <Insets bottom="10.0" left="10.0" top="10.0"/>
@@ -661,9 +662,9 @@
                     <Font size="14.0"/>
                 </font>
             </Button>
-            <Button fx:id="storeBeam2" mnemonicParsing="false" onMouseClicked="#getStoreBeam2" prefHeight="180.0"
+            <Button fx:id="storeBeam2" mnemonicParsing="false" onMouseClicked="#clickedStoreBeam2" prefHeight="180.0"
                     prefWidth="100.0"
-                    style="-fx-background-color: #F3F3F8; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
                     text="2" textFill="#e2620c">
                 <HBox.margin>
                     <Insets bottom="10.0" left="10.0" top="10.0"/>
@@ -672,9 +673,9 @@
                     <Font size="14.0"/>
                 </font>
             </Button>
-            <Button fx:id="storeBeam3" mnemonicParsing="false" onMouseClicked="#getStoreBeam3" prefHeight="180.0"
+            <Button fx:id="storeBeam3" mnemonicParsing="false" onMouseClicked="#clickedStoreBeam3" prefHeight="180.0"
                     prefWidth="100.0"
-                    style="-fx-background-color: #F3F3F8; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
                     text="3" textFill="#e2620c">
                 <HBox.margin>
                     <Insets bottom="10.0" left="10.0" top="10.0"/>
@@ -683,9 +684,9 @@
                     <Font size="14.0"/>
                 </font>
             </Button>
-            <Button fx:id="storeBeam4" mnemonicParsing="false" onMouseClicked="#getStoreBeam4" prefHeight="180.0"
+            <Button fx:id="storeBeam4" mnemonicParsing="false" onMouseClicked="#clickedStoreBeam4" prefHeight="180.0"
                     prefWidth="100.0"
-                    style="-fx-background-color: #F3F3F8; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
                     text="4" textFill="#e2620c">
                 <HBox.margin>
                     <Insets bottom="10.0" left="10.0" top="10.0"/>
@@ -694,9 +695,9 @@
                     <Font size="14.0"/>
                 </font>
             </Button>
-            <Button fx:id="storeBeam5" mnemonicParsing="false" onMouseClicked="#getStoreBeam5" prefHeight="180.0"
+            <Button fx:id="storeBeam5" mnemonicParsing="false" onMouseClicked="#clickedStoreBeam5" prefHeight="180.0"
                     prefWidth="100.0"
-                    style="-fx-background-color: #F3F3F8; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
                     text="5" textFill="#e2620c">
                 <HBox.margin>
                     <Insets bottom="10.0" left="10.0" top="10.0"/>
@@ -705,9 +706,9 @@
                     <Font size="14.0"/>
                 </font>
             </Button>
-            <Button fx:id="storeBeam6" mnemonicParsing="false" onMouseClicked="#getStoreBeam6" prefHeight="180.0"
+            <Button fx:id="storeBeam6" mnemonicParsing="false" onMouseClicked="#clickedStoreBeam6" prefHeight="180.0"
                     prefWidth="100.0"
-                    style="-fx-background-color: #F3F3F8; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
                     text="6" textFill="#e2620c">
                 <HBox.margin>
                     <Insets bottom="10.0" left="10.0" top="10.0"/>
@@ -716,9 +717,9 @@
                     <Font size="14.0"/>
                 </font>
             </Button>
-            <Button fx:id="storeBeam7" mnemonicParsing="false" onMouseClicked="#getStoreBeam7" prefHeight="180.0"
+            <Button fx:id="storeBeam7" mnemonicParsing="false" onMouseClicked="#clickedStoreBeam7" prefHeight="180.0"
                     prefWidth="100.0"
-                    style="-fx-background-color: #F3F3F8; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
                     text="7" textFill="#e2620c">
                 <HBox.margin>
                     <Insets bottom="10.0" left="10.0" top="10.0"/>
@@ -727,9 +728,9 @@
                     <Font size="14.0"/>
                 </font>
             </Button>
-            <Button fx:id="storeBeam8" mnemonicParsing="false" onMouseClicked="#getStoreBeam8" prefHeight="180.0"
+            <Button fx:id="storeBeam8" mnemonicParsing="false" onMouseClicked="#clickedStoreBeam8" prefHeight="180.0"
                     prefWidth="100.0"
-                    style="-fx-background-color: #F3F3F8; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
                     text="8" textFill="#e2620c">
                 <HBox.margin>
                     <Insets bottom="10.0" left="10.0" top="10.0"/>
@@ -738,9 +739,9 @@
                     <Font size="14.0"/>
                 </font>
             </Button>
-            <Button fx:id="storeBeam9" mnemonicParsing="false" onMouseClicked="#getStoreBeam9" prefHeight="180.0"
+            <Button fx:id="storeBeam9" mnemonicParsing="false" onMouseClicked="#clickedStoreBeam9" prefHeight="180.0"
                     prefWidth="100.0"
-                    style="-fx-background-color: #F3F3F8; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
                     text="9" textFill="#e2620c">
                 <HBox.margin>
                     <Insets bottom="10.0" left="10.0" top="10.0"/>
@@ -749,9 +750,9 @@
                     <Font size="14.0"/>
                 </font>
             </Button>
-            <Button fx:id="storeBeam10" mnemonicParsing="false" onMouseClicked="#getStoreBeam10" prefHeight="180.0"
+            <Button fx:id="storeBeam10" mnemonicParsing="false" onMouseClicked="#clickedStoreBeam10" prefHeight="180.0"
                     prefWidth="100.0"
-                    style="-fx-background-color: #F3F3F8; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
+                    style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2620C; -fx-border-width: 2; -fx-border-radius: 10;"
                     text="10" textFill="#e2620c">
                 <HBox.margin>
                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>

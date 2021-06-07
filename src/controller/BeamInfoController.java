@@ -130,7 +130,7 @@ public class BeamInfoController {
             // 加载添加业务方法的页面
             default -> {
                 AddServiceInfoStage serviceInfoStage = new AddServiceInfoStage();
-                serviceInfoStage.getBeam(beamIdTf);
+                serviceInfoStage.initializePreBeam(beamIdTf.getText());
                 serviceInfoStage.showStage();
             }
         }
@@ -161,5 +161,6 @@ public class BeamInfoController {
             Stage stage = (Stage) beamIdTf.getScene().getWindow();
             stage.close();
         }
+
     }
 }

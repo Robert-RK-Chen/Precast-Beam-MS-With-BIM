@@ -59,7 +59,7 @@ public class BeamInfoStage extends Application {
         launch(args);
     }
     public void showStage() throws Exception { start(getBasicInfoStage()); }
-    public void getPreBeam(String id)
+    public void initializePreBeam(String id)
     {
         preBeamId = id;
     }
