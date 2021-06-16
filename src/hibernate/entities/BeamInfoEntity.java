@@ -20,15 +20,15 @@ public class BeamInfoEntity {
     private Double height;
     private String beamState;
 
-    public void setBeamId(String beamId)
-    {
-        this.beamId = beamId;
-    }
-
     @Id
     @Column(name = "beam_id")
     public String getBeamId() {
         return beamId;
+    }
+
+    public void setBeamId(String beamId)
+    {
+        this.beamId = beamId;
     }
 
     @Basic

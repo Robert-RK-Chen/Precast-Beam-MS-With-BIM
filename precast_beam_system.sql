@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 01/06/2021 18:19:10
+ Date: 16/06/2021 23:15:02
 */
 
 SET NAMES utf8mb4;
@@ -49,7 +49,8 @@ CREATE TABLE `beam_store`  (
   `store_start` datetime NULL DEFAULT NULL,
   `shipment_expect` datetime NULL DEFAULT NULL,
   `shipment_actual` datetime NULL DEFAULT NULL,
-  PRIMARY KEY (`beam_id`) USING BTREE
+  PRIMARY KEY (`beam_id`) USING BTREE,
+  CONSTRAINT `storeBeamId` FOREIGN KEY (`beam_id`) REFERENCES `beam_info` (`beam_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = gbk COLLATE = gbk_chinese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -65,7 +66,8 @@ CREATE TABLE `curing_info`  (
   `curing_inspector` varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NULL DEFAULT NULL,
   `curing_start` datetime NULL DEFAULT NULL,
   `curing_finish` datetime NULL DEFAULT NULL,
-  PRIMARY KEY (`beam_id`) USING BTREE
+  PRIMARY KEY (`beam_id`) USING BTREE,
+  CONSTRAINT `curingBeamId` FOREIGN KEY (`beam_id`) REFERENCES `beam_info` (`beam_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = gbk COLLATE = gbk_chinese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -81,7 +83,8 @@ CREATE TABLE `pouring_info`  (
   `pouring_inspector` varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NULL DEFAULT NULL,
   `pouring_start` datetime NULL DEFAULT NULL,
   `pouring_finish` datetime NULL DEFAULT NULL,
-  PRIMARY KEY (`beam_id`) USING BTREE
+  PRIMARY KEY (`beam_id`) USING BTREE,
+  CONSTRAINT `pouringBeamId` FOREIGN KEY (`beam_id`) REFERENCES `beam_info` (`beam_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = gbk COLLATE = gbk_chinese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -111,7 +114,8 @@ CREATE TABLE `tie_info`  (
   `wire_inspector` varchar(10) CHARACTER SET gbk COLLATE gbk_chinese_ci NULL DEFAULT NULL,
   `wire_start` datetime NULL DEFAULT NULL,
   `wire_finish` datetime NULL DEFAULT NULL,
-  PRIMARY KEY (`beam_id`) USING BTREE
+  PRIMARY KEY (`beam_id`) USING BTREE,
+  CONSTRAINT `tieBeamId` FOREIGN KEY (`beam_id`) REFERENCES `beam_info` (`beam_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = gbk COLLATE = gbk_chinese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
