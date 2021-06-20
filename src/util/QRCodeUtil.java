@@ -27,8 +27,8 @@ public class QRCodeUtil
                 "制梁编号：" + beamInfoEntity.getBeamId() + "\n" +
                 "制梁种类：" + beamInfoEntity.getBeamKind() + "预制梁\n" +
                 "目前状态：" + beamInfoEntity.getBeamState() + "\n" +
-                "钢筋型号：" + beamInfoEntity.getSteelType1() + "、" +
-                beamInfoEntity.getSteelType2() + "、" +
+                "钢筋型号：" + beamInfoEntity.getSteelType1() + "  " +
+                beamInfoEntity.getSteelType2() + "  " +
                 beamInfoEntity.getSteelType3() + "\n\n" +
                 "测量属性：\n";
         if (beamInfoEntity.getBeamKind().equals("长方体")) {
