@@ -4,10 +4,13 @@ import application.AddServiceInfoStage;
 import application.Show3DModelStage;
 import hibernate.entities.*;
 import hibernate.model.*;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import util.QRCodeUtil;
 
 import java.net.URL;
 import java.util.Optional;
@@ -15,7 +18,8 @@ import java.util.Optional;
 /**
  * @author Robert Chen
  */
-public class BeamInfoController {
+public class BeamInfoController
+{
     // 来自 FXML 绑定的的控件
     public ImageView beamImageView;
     public TextField beamIdTf;
@@ -43,9 +47,11 @@ public class BeamInfoController {
     public TextField shipmentExpectTf;
     public TextField shipmentActualTf;
     public Button deleteBeamButton;
+    public Button qrCodeButton;
 
     // 初始化预制梁信息面板
-    public void initialize(String id) {
+    public void initialize(String id)
+    {
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(id);
         TieInfoModel tieInfoModel = new TieInfoModel();
@@ -74,28 +80,32 @@ public class BeamInfoController {
         stateLabel.setText(beamInfoEntity.getBeamState());
 
         // 当预制梁的状态是【扎钢筋】时，加载扎钢筋的业务信息
-        if (tieInfoEntity != null) {
+        if (tieInfoEntity != null)
+        {
             wireInspectorTf.setText(tieInfoEntity.getWireInspector());
             wireStartTf.setText(tieInfoEntity.getWireStart().toString());
             wireFinishTf.setText(tieInfoEntity.getWireFinish().toString());
         }
 
         // 当预制梁的状态是【浇筑】时，加载浇筑的业务信息
-        if (pouringInfoEntity != null) {
+        if (pouringInfoEntity != null)
+        {
             pouringInspectorTf.setText(pouringInfoEntity.getPouringInspector());
             pouringStartTf.setText(pouringInfoEntity.getPouringStart().toString());
             pouringFinishTf.setText(pouringInfoEntity.getPouringFinish().toString());
         }
 
         // 当预制梁的状态是【养护】时，加载养护的业务信息
-        if (curingInfoEntity != null) {
+        if (curingInfoEntity != null)
+        {
             curingInspectorTf.setText(curingInfoEntity.getCuringInspector());
             curingStartTf.setText(curingInfoEntity.getCuringStart().toString());
             curingFinishTf.setText(curingInfoEntity.getCuringFinish().toString());
         }
 
         // 当预制梁的状态是【存储】时，加载存储的业务信息
-        if (beamStoreEntity != null) {
+        if (beamStoreEntity != null)
+        {
             storeInspectorTf.setText(beamStoreEntity.getStoreInspector());
             storeStartTf.setText(beamStoreEntity.getStoreStart().toString());
             shipmentExpectTf.setText(beamStoreEntity.getShipmentExpect().toString());
@@ -104,13 +114,15 @@ public class BeamInfoController {
     }
 
     // 给预制梁增加下一步业务信息
-    public void nextStep() throws Exception {
+    public void nextStep() throws Exception
+    {
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
 
         // 获取预制梁的状态
         String beamState = beamInfoEntity.getBeamState();
-        switch (beamState) {
+        switch (beamState)
+        {
             // 【存储】状态则直接改状态为【已运出】
             case "存储" -> {
                 beamInfoEntity.setBeamState("已运出");
@@ -137,13 +149,15 @@ public class BeamInfoController {
     }
 
     // 用户点击预制梁的预览图，展示桥梁的 3D 模型
-    public void show3DModel() throws Exception {
+    public void show3DModel() throws Exception
+    {
         Show3DModelStage modelStage = new Show3DModelStage();
         modelStage.showStage();
     }
 
     // 用户点击删除预制梁按钮
-    public void deleteBeam() {
+    public void deleteBeam()
+    {
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
 
@@ -152,7 +166,8 @@ public class BeamInfoController {
         deleteBeam.setHeaderText("确定要删除这块预制梁吗？");
         Optional<ButtonType> result = deleteBeam.showAndWait();
 
-        if (result.isPresent() && result.get() == ButtonType.OK) {
+        if (result.isPresent() && result.get() == ButtonType.OK)
+        {
             beamInfoModel.delete(beamInfoEntity);
             Alert deleteSuccess = new Alert(Alert.AlertType.INFORMATION);
             deleteSuccess.setTitle("来自删除预制梁的消息");
@@ -162,5 +177,23 @@ public class BeamInfoController {
             stage.close();
         }
 
+    }
+
+    public void showQRCode() throws Exception
+    {
+        QRCodeUtil qrCodeUtil = new QRCodeUtil();
+        BorderPane borderPane = new BorderPane();
+
+        Image QRCode = new Image("file:" + qrCodeUtil.getQRCode(beamIdTf.getText()).toString());
+        ImageView QRCodeView = new ImageView();
+        QRCodeView.setImage(QRCode);
+        borderPane.setCenter(QRCodeView);
+
+        Scene scene = new Scene(borderPane, QRCode.getWidth(),QRCode.getHeight());
+        Stage stage = new Stage();
+        stage.setTitle("预制梁唯一标识符的二维码");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 }

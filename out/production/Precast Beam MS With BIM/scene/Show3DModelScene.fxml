@@ -2,12 +2,11 @@
 
 <?import javafx.scene.Group?>
 <?import javafx.scene.Scene?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<Scene fx:id="modelScene" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ThreeDModelController">
+<Scene fx:id="modelScene" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+       fx:controller="controller.ThreeDModelController">
     <AnchorPane prefHeight="600.0" prefWidth="1000.0">
-        <Group fx:id="model" />
-        <Button fx:id="magicButton" layoutX="23.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#returnMouseCoordinate" text="Button" />
+        <Group fx:id="model"/>
     </AnchorPane>
 </Scene>

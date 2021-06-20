@@ -28,13 +28,13 @@ public class ThreeDModelController
         model.getChildren().add(ambientLight);
 
         // 调整模型角度
-        model.getTransforms().add(new Rotate(0, Rotate.X_AXIS));
+        model.getTransforms().add(new Rotate(285, Rotate.X_AXIS));
         model.getTransforms().add(new Rotate(0, Rotate.Y_AXIS));
-        model.getTransforms().add(new Rotate(0, Rotate.Z_AXIS));
+        model.getTransforms().add(new Rotate(-30, Rotate.Z_AXIS));
 
         // 调整照相机角度
         camera.setTranslateX(0);
-        camera.setTranslateY(0);
+        camera.setTranslateY(-10);
         camera.setTranslateZ(-80);
 
         modelScene = new Scene(model, 1000, 600, true);
