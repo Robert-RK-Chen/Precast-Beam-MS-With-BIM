@@ -13,7 +13,8 @@ import java.net.URL;
 /**
  * @author Robert Chen
  */
-public class AddBasicInfoStage extends Application {
+public class AddBasicInfoStage extends Application
+{
     // preBeamId : 作为主界面与添加预制梁信息界面的中间信息
     // basicInfoAddStage : 添加预制梁基本信息界面
     private String preBeamId = null;
@@ -23,13 +24,18 @@ public class AddBasicInfoStage extends Application {
      * @return Stage basicInfoAddStage : 添加基本信息界面
      * 使用单例模式保证只会弹出一个界面
      */
-    public static Stage getBasicInfoAddStage() {
-        if (basicInfoAddStage == null) { basicInfoAddStage = new Stage(); }
+    public static Stage getBasicInfoAddStage()
+    {
+        if (basicInfoAddStage == null)
+        {
+            basicInfoAddStage = new Stage();
+        }
         return basicInfoAddStage;
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws Exception
+    {
         // basicInfoAddSceneUrl : 添加基本信息界面的 FXML 资源
         // basicInfoAddLoader : 加载器，用于动态控制窗口
         URL basicInfoAddSceneUrl = getClass().getResource("../scene/addBasicInfoScene.fxml");
@@ -54,7 +60,18 @@ public class AddBasicInfoStage extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) { launch(args); }
-    public void showStage() throws Exception { start(getBasicInfoAddStage()); }
-    public void initializePreBeam(String id) { preBeamId = id; }
+    public static void main(String[] args)
+    {
+        launch(args);
+    }
+
+    public void showStage() throws Exception
+    {
+        start(getBasicInfoAddStage());
+    }
+
+    public void initializePreBeam(String id)
+    {
+        preBeamId = id;
+    }
 }

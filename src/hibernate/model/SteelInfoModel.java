@@ -6,8 +6,10 @@ import hibernate.entities.SteelInfoEntity;
 /**
  * @author Robert Chen
  */
-public class SteelInfoModel extends AbstractModel<SteelInfoEntity> {
-    public SteelInfoModel() {
+public class SteelInfoModel extends AbstractModel<SteelInfoEntity>
+{
+    public SteelInfoModel()
+    {
         super((SteelInfoEntity.class));
     }
 }

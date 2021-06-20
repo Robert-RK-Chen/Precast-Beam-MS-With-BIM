@@ -13,7 +13,8 @@ import java.net.URL;
 /**
  * @author Robert Chen
  */
-public class AddServiceInfoStage extends Application {
+public class AddServiceInfoStage extends Application
+{
     // beam : 作为主界面与添加预制梁信息界面的中间信息
     // serviceInfoStage : 添加预制梁业务信息界面
     private String beamId;
@@ -23,13 +24,18 @@ public class AddServiceInfoStage extends Application {
      * @return Stage serviceInfoStage
      * 使用单例模式保证只会弹出一个界面
      */
-    public static Stage getServiceInfoStage() {
-        if (serviceInfoStage == null) { serviceInfoStage = new Stage(); }
+    public static Stage getServiceInfoStage()
+    {
+        if (serviceInfoStage == null)
+        {
+            serviceInfoStage = new Stage();
+        }
         return serviceInfoStage;
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws Exception
+    {
         // addServiceUrl : 添加业务信息界面的 FXML 资源
         // addServiceLoader : 加载器，用于动态控制窗口
         URL addServiceUrl = getClass().getResource("../scene/addServiceInfoScene.fxml");
@@ -58,6 +64,14 @@ public class AddServiceInfoStage extends Application {
     {
         launch(args);
     }
-    public void showStage() throws Exception { start(getServiceInfoStage()); }
-    public void initializePreBeam(String id) { beamId = id; }
+
+    public void showStage() throws Exception
+    {
+        start(getServiceInfoStage());
+    }
+
+    public void initializePreBeam(String id)
+    {
+        beamId = id;
+    }
 }

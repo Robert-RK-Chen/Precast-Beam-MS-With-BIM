@@ -13,9 +13,11 @@ import java.net.URL;
 /**
  * @author Robert Chen
  */
-public class MainStage extends Application {
+public class MainStage extends Application
+{
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws Exception
+    {
         // mainUrl : 主界面的 FXML 资源
         // mainLoader : 加载器，用于动态控制窗口
         URL mainUrl = getClass().getResource("../scene/MainScene.fxml");
@@ -42,5 +44,8 @@ public class MainStage extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args) { launch(args); }
+    public static void main(String[] args)
+    {
+        launch(args);
+    }
 }

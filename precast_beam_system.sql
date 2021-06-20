@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 16/06/2021 23:15:02
+ Date: 20/06/2021 20:32:28
 */
 
 SET NAMES utf8mb4;
@@ -38,6 +38,11 @@ CREATE TABLE `beam_info`  (
 -- ----------------------------
 -- Records of beam_info
 -- ----------------------------
+INSERT INTO `beam_info` VALUES ('1', '长方体', 'A1', 'A2', 'A3', 5, 2, 0, 1, '存储');
+INSERT INTO `beam_info` VALUES ('2', '圆柱体', 'A1', 'A2', '', 0, 0, 1, 5, '预处理');
+INSERT INTO `beam_info` VALUES ('3', '长方体', 'A1', 'A2', '', 10, 4, 0, 1, '扎钢筋');
+INSERT INTO `beam_info` VALUES ('4', '圆柱体', 'A1', 'A2', 'A3', 0, 0, 2, 5, '浇筑');
+INSERT INTO `beam_info` VALUES ('5', '长方体', 'A1', 'A2', 'A3', 10, 4, 0, 1.5, '养护');
 
 -- ----------------------------
 -- Table structure for beam_store
@@ -56,6 +61,7 @@ CREATE TABLE `beam_store`  (
 -- ----------------------------
 -- Records of beam_store
 -- ----------------------------
+INSERT INTO `beam_store` VALUES ('1', '周晨风', '2021-06-09 00:00:00', '2021-06-11 00:00:00', '2021-06-12 00:00:00');
 
 -- ----------------------------
 -- Table structure for curing_info
@@ -73,6 +79,8 @@ CREATE TABLE `curing_info`  (
 -- ----------------------------
 -- Records of curing_info
 -- ----------------------------
+INSERT INTO `curing_info` VALUES ('1', '汪奕琰', '2021-06-06 00:00:00', '2021-06-08 00:00:00');
+INSERT INTO `curing_info` VALUES ('5', '陈佳语', '2021-06-27 00:00:00', '2021-06-29 00:00:00');
 
 -- ----------------------------
 -- Table structure for pouring_info
@@ -90,6 +98,9 @@ CREATE TABLE `pouring_info`  (
 -- ----------------------------
 -- Records of pouring_info
 -- ----------------------------
+INSERT INTO `pouring_info` VALUES ('1', '王瀚民', '2021-06-04 00:00:00', '2021-06-05 00:00:00');
+INSERT INTO `pouring_info` VALUES ('4', '王瀚民', '2021-06-03 00:00:00', '2021-06-05 00:00:00');
+INSERT INTO `pouring_info` VALUES ('5', '周晨风', '2021-06-25 00:00:00', '2021-06-26 00:00:00');
 
 -- ----------------------------
 -- Table structure for steel_info
@@ -121,5 +132,9 @@ CREATE TABLE `tie_info`  (
 -- ----------------------------
 -- Records of tie_info
 -- ----------------------------
+INSERT INTO `tie_info` VALUES ('1', '陈佳语', '2021-06-01 00:00:00', '2021-06-03 00:00:00');
+INSERT INTO `tie_info` VALUES ('3', '陈佳语', '2021-06-17 00:00:00', '2021-06-19 00:00:00');
+INSERT INTO `tie_info` VALUES ('4', '陈佳语', '2021-05-31 00:00:00', '2021-06-02 00:00:00');
+INSERT INTO `tie_info` VALUES ('5', '汪奕琰', '2021-06-22 00:00:00', '2021-06-24 00:00:00');
 
 SET FOREIGN_KEY_CHECKS = 1;

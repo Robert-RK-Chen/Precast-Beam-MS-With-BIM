@@ -11,7 +11,8 @@ import javafx.stage.Stage;
 /**
  * @author Robert Chen
  */
-public class AddBasicInfoController {
+public class AddBasicInfoController
+{
     // 来自 FXML 绑定的的控件
     public TextField beamIdTf;
     public ComboBox<String> beamKindCb;
@@ -31,7 +32,8 @@ public class AddBasicInfoController {
     }
 
     // 添加预制梁方法
-    public void addBeam() {
+    public void addBeam()
+    {
         // 创建 Hibernate 模型，Model 用于 CRUD 操作，Entity 作为结果的实体
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = new BeamInfoEntity();
@@ -50,28 +52,46 @@ public class AddBasicInfoController {
         double radius = Double.parseDouble("".equals(radiusTf.getText()) ? "0" : radiusTf.getText());
 
         // 判断输入条件的合法性
-        if (beamKind == null) { valueLegal = Boolean.FALSE; }
-        else {
-            if (steelType1.equals("") && steelType2.equals("") && steelType3.equals("")) {
-                valueLegal = Boolean.FALSE; }
-            if (height <= 0) { valueLegal = Boolean.FALSE; }
-            if (beamKind.equals("长方体") && (length <= 0 || width <= 0)) { valueLegal = Boolean.FALSE; }
-            if (beamKind.equals("圆柱体") && radius <= 0) { valueLegal = Boolean.FALSE; }
+        if (beamKind == null)
+        {
+            valueLegal = Boolean.FALSE;
+        }
+        else
+        {
+            if (steelType1.equals("") && steelType2.equals("") && steelType3.equals(""))
+            {
+                valueLegal = Boolean.FALSE;
+            }
+            if (height <= 0)
+            {
+                valueLegal = Boolean.FALSE;
+            }
+            if (beamKind.equals("长方体") && (length <= 0 || width <= 0))
+            {
+                valueLegal = Boolean.FALSE;
+            }
+            if (beamKind.equals("圆柱体") && radius <= 0)
+            {
+                valueLegal = Boolean.FALSE;
+            }
         }
 
         // 向预制梁实体添加信息
-        if (valueLegal == Boolean.FALSE) {
+        if (valueLegal == Boolean.FALSE)
+        {
             Alert addFailed = new Alert(Alert.AlertType.INFORMATION);
             addFailed.setTitle("来自 添加预处理的预制梁 的消息");
             addFailed.setHeaderText(
                     """
-                    预制梁添加失败，请检查：
-                    1. 是否选择了与质量类型；
-                    2. 预制梁钢筋类型是否全空；
-                    3. 预制梁的参数是否小于等于 0。
-                    """);
+                            预制梁添加失败，请检查：
+                            1. 是否选择了与质量类型；
+                            2. 预制梁钢筋类型是否全空；
+                            3. 预制梁的参数是否小于等于 0。
+                            """);
             addFailed.show();
-        } else {
+        }
+        else
+        {
             beamInfoEntity.setBeamId(beamId);
             beamInfoEntity.setBeamKind(beamKind);
             beamInfoEntity.setSteelType1(steelType1);
@@ -97,16 +117,20 @@ public class AddBasicInfoController {
     }
 
     // 获取 ComboBox 中预制梁的类型，来保证填入参数的正确性
-    public void getBeamKind() {
+    public void getBeamKind()
+    {
         String beamKind = beamKindCb.getValue();
         String defaultBeamKind = "长方体";
 
-        if (defaultBeamKind.equals(beamKind)) {
+        if (defaultBeamKind.equals(beamKind))
+        {
             widthTf.setDisable(false);
             lengthTf.setDisable(false);
             radiusTf.setText("");
             radiusTf.setDisable(true);
-        } else {
+        }
+        else
+        {
             radiusTf.setDisable(false);
             widthTf.setText("");
             widthTf.setDisable(true);

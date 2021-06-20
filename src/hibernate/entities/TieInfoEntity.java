@@ -9,7 +9,8 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "tie_info", schema = "precast_beam_system")
-public class TieInfoEntity {
+public class TieInfoEntity
+{
     private String beamId;
     private String wireInspector;
     private Timestamp wireStart;
@@ -64,9 +65,16 @@ public class TieInfoEntity {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) { return true; }
-        if (o == null || getClass() != o.getClass()) { return false; }
+    public boolean equals(Object o)
+    {
+        if (this == o)
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass())
+        {
+            return false;
+        }
         TieInfoEntity that = (TieInfoEntity) o;
         return Objects.equals(beamId, that.beamId) && Objects.equals(wireInspector, that.wireInspector) && Objects.equals(wireStart, that.wireStart) && Objects.equals(wireFinish, that.wireFinish);
     }

@@ -8,7 +8,8 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "beam_info", schema = "precast_beam_system")
-public class BeamInfoEntity {
+public class BeamInfoEntity
+{
     private String beamId;
     private String beamKind;
     private String steelType1;
@@ -22,7 +23,8 @@ public class BeamInfoEntity {
 
     @Id
     @Column(name = "beam_id")
-    public String getBeamId() {
+    public String getBeamId()
+    {
         return beamId;
     }
 
@@ -140,13 +142,23 @@ public class BeamInfoEntity {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) { return true; }
-        if (o == null || getClass() != o.getClass()) { return false; }
+    public boolean equals(Object o)
+    {
+        if (this == o)
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass())
+        {
+            return false;
+        }
         BeamInfoEntity that = (BeamInfoEntity) o;
         return Objects.equals(beamId, that.beamId) && Objects.equals(beamKind, that.beamKind) && Objects.equals(steelType1, that.steelType1) && Objects.equals(steelType2, that.steelType2) && Objects.equals(steelType3, that.steelType3) && Objects.equals(length, that.length) && Objects.equals(width, that.width) && Objects.equals(radius, that.radius) && Objects.equals(height, that.height) && Objects.equals(beamState, that.beamState);
     }
 
     @Override
-    public int hashCode() { return Objects.hash(beamId, beamKind, steelType1, steelType2, steelType3, length, width, radius, height, beamState); }
+    public int hashCode()
+    {
+        return Objects.hash(beamId, beamKind, steelType1, steelType2, steelType3, length, width, radius, height, beamState);
+    }
 }

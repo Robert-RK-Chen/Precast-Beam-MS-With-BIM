@@ -9,7 +9,8 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "curing_info", schema = "precast_beam_system")
-public class CuringInfoEntity {
+public class CuringInfoEntity
+{
     private String beamId;
     private String curingInspector;
     private Timestamp curingStart;
@@ -64,9 +65,16 @@ public class CuringInfoEntity {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) { return true; }
-        if (o == null || getClass() != o.getClass()) { return false; }
+    public boolean equals(Object o)
+    {
+        if (this == o)
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass())
+        {
+            return false;
+        }
         CuringInfoEntity that = (CuringInfoEntity) o;
         return Objects.equals(beamId, that.beamId) && Objects.equals(curingInspector, that.curingInspector) && Objects.equals(curingStart, that.curingStart) && Objects.equals(curingFinish, that.curingFinish);
     }

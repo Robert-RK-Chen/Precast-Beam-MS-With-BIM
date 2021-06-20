@@ -189,7 +189,7 @@ public class BeamInfoController
         QRCodeView.setImage(QRCode);
         borderPane.setCenter(QRCodeView);
 
-        Scene scene = new Scene(borderPane, QRCode.getWidth(),QRCode.getHeight());
+        Scene scene = new Scene(borderPane, QRCode.getWidth(), QRCode.getHeight());
         Stage stage = new Stage();
         stage.setTitle("预制梁唯一标识符的二维码");
         stage.setScene(scene);
