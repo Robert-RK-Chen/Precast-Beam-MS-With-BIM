@@ -137,7 +137,7 @@ public class BeamInfoController {
     }
 
     // 用户点击预制梁的预览图，展示桥梁的 3D 模型
-    public void show3DModel() {
+    public void show3DModel() throws Exception {
         Show3DModelStage modelStage = new Show3DModelStage();
         modelStage.showStage();
     }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Scene fx:id="modelScene" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+       fx:controller="controller.ThreeDModelController">
+    <AnchorPane prefHeight="600.0" prefWidth="1000.0">
+        <Group fx:id="model"/>
+    </AnchorPane>
+</Scene>
