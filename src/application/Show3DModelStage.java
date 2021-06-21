@@ -1,11 +1,12 @@
 package application;
 
-import controller.ThreeDModelController;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 
 /**
@@ -28,17 +29,23 @@ public class Show3DModelStage extends Application
     }
 
     @Override
-    public void start(Stage stage) throws IOException
+    public void start(Stage primaryStage) throws Exception
     {
-        ThreeDModelController modelController = new ThreeDModelController();
+        URL mainUrl = getClass().getResource("../scene/Show3DModelScene.fxml");
+        FXMLLoader mainLoader = new FXMLLoader();
+        mainLoader.setLocation(mainUrl);
+
         URL iconUrl = getClass().getResource("../resource/image/icon/prebeams.png");
         Image icon = new Image(iconUrl.toExternalForm());
-        stage.getIcons().add(icon);
+        primaryStage.getIcons().add(icon);
 
-        stage.setTitle("桥梁 3D模型 展示界面");
-        stage.setScene(modelController.initialize());
-        stage.setResizable(false);
-        stage.show();
+        Parent root = mainLoader.load();
+        Scene mainScene = new Scene(root, 1000, 700);
+
+        primaryStage.setScene(mainScene);
+        primaryStage.setTitle("桥梁 3D 模型查看");
+        primaryStage.setResizable(false);
+        primaryStage.show();
     }
 
     public static void main(String[] args)
@@ -46,7 +53,7 @@ public class Show3DModelStage extends Application
         launch(args);
     }
 
-    public void showStage() throws IOException
+    public void showStage() throws Exception
     {
         start(getShowModelStage());
     }

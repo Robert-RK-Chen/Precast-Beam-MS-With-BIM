@@ -1,0 +1,11 @@
+.slider .track {
+    -fx-pref-height: 2;
+    -fx-min-width: 20;
+}
+
+.slider .thumb {
+    -fx-pref-width: 120;
+    -fx-pref-height: 6;
+    -fx-background-color: cadetblue;
+    -fx-background-radius: 5;
+}
