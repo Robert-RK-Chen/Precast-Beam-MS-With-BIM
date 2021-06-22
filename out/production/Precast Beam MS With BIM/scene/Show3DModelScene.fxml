@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -17,18 +18,34 @@
         </VBox.margin>
         <Image url="@../resource/image/Bridge/BridgeModel0.png"/>
     </ImageView>
-    <Slider fx:id="modelSlider" onMouseDragged="#showModel" prefHeight="0.0" prefWidth="920.0"
-            stylesheets="@../style/modelSlider.css">
+    <Slider fx:id="modelSlider" onMouseClicked="#showModel" onMouseDragged="#showModel" prefHeight="0.0"
+            prefWidth="920.0" stylesheets="@../style/modelSlider.css">
         <VBox.margin>
             <Insets bottom="15.0" left="100.0" right="100.0"/>
         </VBox.margin>
     </Slider>
-    <Label alignment="CENTER" prefHeight="15.0" prefWidth="259.0" text="（滑动滑块来旋转三维模型）">
-        <VBox.margin>
-            <Insets bottom="10.0"/>
-        </VBox.margin>
-        <font>
-            <Font size="13.0"/>
-        </font>
-    </Label>
+    <HBox alignment="CENTER_RIGHT" prefHeight="15.0" prefWidth="1000.0">
+        <Label alignment="CENTER" prefHeight="15.0" prefWidth="260.0" text="（滑动滑块来旋转三维模型）">
+            <font>
+                <Font size="13.0"/>
+            </font>
+        </Label>
+        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="18.0" prefWidth="100.0" text="当前角度："
+               textFill="#027fff">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+            <HBox.margin>
+                <Insets left="110.0"/>
+            </HBox.margin>
+        </Label>
+        <Label fx:id="rotationLabel" prefHeight="18.0" prefWidth="60.0" text="0°" textFill="CADETBLUE">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+            <HBox.margin>
+                <Insets right="100.0"/>
+            </HBox.margin>
+        </Label>
+    </HBox>
 </VBox>

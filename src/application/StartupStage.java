@@ -1,6 +1,8 @@
 package application;
 
+import controller.StartupController;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,17 +16,6 @@ import java.net.URL;
  */
 public class StartupStage extends Application
 {
-    private static Stage startupStage = null;
-
-    public static Stage getStartupStage()
-    {
-        if (startupStage == null)
-        {
-            startupStage = new Stage();
-        }
-        return startupStage;
-    }
-
     @Override
     public void start(Stage stage) throws Exception
     {
@@ -39,20 +30,12 @@ public class StartupStage extends Application
         stage.setScene(infoScene);
         stage.setResizable(false);
         stage.show();
+        Thread loadHibernateThread = new Thread(() -> Platform.runLater(() -> new StartupController().loadHibernate()));
+        loadHibernateThread.start();
     }
 
     public static void main(String[] args)
     {
         launch(args);
-    }
-
-    public void showStage() throws Exception
-    {
-        start(getStartupStage());
-    }
-
-    public void closeStage()
-    {
-        startupStage.close();
     }
 }

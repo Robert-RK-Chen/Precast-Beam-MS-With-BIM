@@ -5,9 +5,11 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 
 /**
@@ -34,30 +36,37 @@ public class BeamInfoStage extends Application
     }
 
     @Override
-    public void start(Stage stage) throws Exception
+    public void start(Stage stage)
     {
         // infoUrl : 预制梁信息界面的 FXML 资源
         // infoLoader : 加载器，用于动态控制窗口
         URL infoUrl = getClass().getResource("../scene/BeamInfoScene.fxml");
+        URL iconUrl = getClass().getResource("../resource/image/icon/prebeams.png");
         FXMLLoader infoLoader = new FXMLLoader();
         infoLoader.setLocation(infoUrl);
 
         // 加载图标资源
-        URL iconUrl = getClass().getResource("../resource/image/icon/prebeams.png");
         Image icon = new Image(iconUrl.toExternalForm());
         stage.getIcons().add(icon);
 
         // 设置场景以及窗口的信息
-        Parent root = infoLoader.load();
-        Scene infoScene = new Scene(root, 1200, 800);
-        stage.setTitle("预制梁信息面板");
-        stage.setScene(infoScene);
-        stage.setResizable(false);
+        try
+        {
+            Parent root = infoLoader.load();
+            Scene infoScene = new Scene(root, 1200, 800);
+            stage.setTitle("预制梁信息面板");
+            stage.setScene(infoScene);
+            stage.setResizable(false);
 
-        // infoController : BeamInfoController 类的实例，窗口的控制器
-        BeamInfoController infoController = infoLoader.getController();
-        infoController.initialize(preBeamId);
-        stage.show();
+            // infoController : BeamInfoController 类的实例，窗口的控制器
+            BeamInfoController infoController = infoLoader.getController();
+            infoController.initialize(preBeamId);
+            stage.show();
+        }
+        catch (IOException ioException)
+        {
+            new Alert(Alert.AlertType.ERROR, "预制梁信息界面加载失败！").show();
+        }
     }
 
     public static void main(String[] args)
@@ -65,7 +74,7 @@ public class BeamInfoStage extends Application
         launch(args);
     }
 
-    public void showStage() throws Exception
+    public void showStage()
     {
         start(getBasicInfoStage());
     }
@@ -73,5 +82,10 @@ public class BeamInfoStage extends Application
     public void initializePreBeam(String id)
     {
         preBeamId = id;
+    }
+
+    public void closeStage()
+    {
+        basicInfoStage.close();
     }
 }

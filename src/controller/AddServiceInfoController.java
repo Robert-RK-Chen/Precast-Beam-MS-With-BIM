@@ -1,7 +1,9 @@
 package controller;
 
+import application.BeamInfoStage;
 import hibernate.entities.*;
 import hibernate.model.*;
+import javafx.application.Platform;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
@@ -102,8 +104,13 @@ public class AddServiceInfoController
             addSuccess.show();
 
             // 关闭业务信息添加面板
-            Stage stage = (Stage) saveInfoButton.getScene().getWindow();
-            stage.close();
+            Thread closeStage = new Thread(() -> Platform.runLater(() ->
+            {
+                new BeamInfoStage().closeStage();
+                Stage stage = (Stage) saveInfoButton.getScene().getWindow();
+                stage.close();
+            }));
+            closeStage.start();
         }
     }
 

@@ -2,7 +2,6 @@ package controller;
 
 import application.AddBasicInfoStage;
 import application.BeamInfoStage;
-import hibernate.abstractModel.HibernateUtil;
 import hibernate.entities.BeamInfoEntity;
 import hibernate.model.BeamInfoModel;
 import javafx.scene.control.Alert;
@@ -74,13 +73,6 @@ public class MainController
     public Hashtable<String, Button> beamHashTable = new Hashtable<>();
 
     // 获取预制梁的基本信息
-    // 初始化方法，多线程加载 Hibernate 连接以免影响软件启动速度
-    public void loadHibernate()
-    {
-        Thread loadDataThread = new Thread(HibernateUtil::getSession);
-        loadDataThread.start();
-    }
-
     public void clickedPreBeam1() throws Exception
     {
         getBeamInfo(preBeam1);
@@ -442,7 +434,7 @@ public class MainController
     }
 
     // 用户通过搜索栏搜索预制梁的信息
-    public void queryBeam() throws Exception
+    public void queryBeam()
     {
         String beamId = beamSearchTf.getText();
         BeamInfoModel beamInfoModel = new BeamInfoModel();

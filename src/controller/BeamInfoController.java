@@ -176,7 +176,6 @@ public class BeamInfoController
             Stage stage = (Stage) beamIdTf.getScene().getWindow();
             stage.close();
         }
-
     }
 
     public void showQRCode() throws Exception
