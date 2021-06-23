@@ -64,7 +64,7 @@ public class LoginController
             Path filePath = Paths.get(authorityFilePath);
             String authority = Files.readString(filePath);
             for (UsersEntity user : users)
-                if (user.getMd5Check().equals(authority))
+                if (user.getMd5Check().equals(authority) || user.getMd5Check() == null)
                 {
                     fastLoginFlag = true;
                     break;

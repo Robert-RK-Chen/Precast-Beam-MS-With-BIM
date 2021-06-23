@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 23/06/2021 17:30:22
+ Date: 23/06/2021 20:40:49
 */
 
 SET NAMES utf8mb4;
@@ -142,14 +142,16 @@ INSERT INTO `tie_info` VALUES ('5', '汪奕琰', '2021-06-22 00:00:00', '2021-06
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
-  `username` varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL,
-  `password` varchar(16) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL,
+  `username` varchar(30) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL,
+  `password` varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL,
   `md5check` varchar(500) CHARACTER SET gbk COLLATE gbk_chinese_ci NULL DEFAULT NULL,
   PRIMARY KEY (`username`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = gbk COLLATE = gbk_chinese_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = gbk COLLATE = gbk_chinese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
+INSERT INTO `users` VALUES ('1162189626@qq.om', 'T.S.REP1213', NULL);
+INSERT INTO `users` VALUES ('imrobertchen@qq.com', 'T.S.RED1213', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
