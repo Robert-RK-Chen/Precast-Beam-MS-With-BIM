@@ -11,10 +11,9 @@
         <!--<property name="connection.password">testuser@mysql</property>-->
 
         <!--For Local Server-->
-        <property name="connection.url">jdbc:mysql://localhost:3306/precast_beam_system?useUnicode=true&amp;characterEncoding=GBK&amp;serverTimezone=GMT%2b8</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/precast_beam_system</property>
         <property name="connection.username">root</property>
         <property name="connection.password">123456</property>
-
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <mapping class="hibernate.entities.BeamInfoEntity"/>
@@ -23,5 +22,6 @@
         <mapping class="hibernate.entities.PouringInfoEntity"/>
         <mapping class="hibernate.entities.SteelInfoEntity"/>
         <mapping class="hibernate.entities.TieInfoEntity"/>
+        <mapping class="hibernate.entities.UsersEntity"/>
     </session-factory>
 </hibernate-configuration>

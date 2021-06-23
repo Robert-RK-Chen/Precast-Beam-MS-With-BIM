@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : MySQL Server
+ Source Server         : MySQL57
  Source Server Type    : MySQL
  Source Server Version : 50733
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 20/06/2021 20:32:28
+ Date: 23/06/2021 17:30:22
 */
 
 SET NAMES utf8mb4;
@@ -136,5 +136,20 @@ INSERT INTO `tie_info` VALUES ('1', '陈佳语', '2021-06-01 00:00:00', '2021-06
 INSERT INTO `tie_info` VALUES ('3', '陈佳语', '2021-06-17 00:00:00', '2021-06-19 00:00:00');
 INSERT INTO `tie_info` VALUES ('4', '陈佳语', '2021-05-31 00:00:00', '2021-06-02 00:00:00');
 INSERT INTO `tie_info` VALUES ('5', '汪奕琰', '2021-06-22 00:00:00', '2021-06-24 00:00:00');
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`  (
+  `username` varchar(20) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL,
+  `password` varchar(16) CHARACTER SET gbk COLLATE gbk_chinese_ci NOT NULL,
+  `md5check` varchar(500) CHARACTER SET gbk COLLATE gbk_chinese_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`username`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = gbk COLLATE = gbk_chinese_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;

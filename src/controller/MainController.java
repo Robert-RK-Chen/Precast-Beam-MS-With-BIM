@@ -2,11 +2,13 @@ package controller;
 
 import application.AddBasicInfoStage;
 import application.BeamInfoStage;
+import application.SettingStage;
 import hibernate.entities.BeamInfoEntity;
 import hibernate.model.BeamInfoModel;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 import java.util.Hashtable;
 import java.util.List;
@@ -71,6 +73,7 @@ public class MainController
     public TextField beamSearchTf;
     public Button queryButton;
     public Hashtable<String, Button> beamHashTable = new Hashtable<>();
+    public Button settingBtn;
 
     // 获取预制梁的基本信息
     public void clickedPreBeam1() throws Exception
@@ -458,5 +461,11 @@ public class MainController
             beamInfoStage.initializePreBeam(beamId);
             beamInfoStage.showStage();
         }
+    }
+
+    public void changeSetting()
+    {
+        SettingStage settingStage = new SettingStage();
+        settingStage.showStage();
     }
 }

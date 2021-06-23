@@ -56,7 +56,7 @@ public class AddServiceInfoStage extends Application
 
         // addServiceController : AddServiceInfoController 类的实例，窗口的控制器
         AddServiceInfoController addServiceController = addServiceLoader.getController();
-        addServiceController.initialize(beamId);
+        addServiceController.init(beamId);
         stage.show();
     }
 

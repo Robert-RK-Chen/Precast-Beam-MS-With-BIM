@@ -50,7 +50,7 @@ public class BeamInfoController
     public Button qrCodeButton;
 
     // 初始化预制梁信息面板
-    public void initialize(String id)
+    public void init(String id)
     {
         BeamInfoModel beamInfoModel = new BeamInfoModel();
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(id);

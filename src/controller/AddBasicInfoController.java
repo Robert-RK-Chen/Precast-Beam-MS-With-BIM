@@ -26,7 +26,7 @@ public class AddBasicInfoController
     public Button addBeamButton;
 
     // 初始化方法，用于传递预制梁编号
-    public void initialize(String id)
+    public void init(String id)
     {
         beamIdTf.setText(id);
     }

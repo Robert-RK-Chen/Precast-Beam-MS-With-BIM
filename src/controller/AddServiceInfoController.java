@@ -25,7 +25,7 @@ public class AddServiceInfoController
     public Label finishTimeLabel;
 
     // 控制器初始化方法，如果预制梁的状态是养护，则在增加下一步业务时，实际运出时间的日期选择器可用
-    public void initialize(String beamId)
+    public void init(String beamId)
     {
         beamIdTf.setText(beamId);
         BeamInfoModel beamInfoModel = new BeamInfoModel();

@@ -145,4 +145,25 @@ public abstract class AbstractModel<T>
         }
         return result;
     }
+
+    public List<T> findByHql(String hql)
+    {
+        List<T> result = null;
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession())
+        {
+            transaction = session.beginTransaction();
+            result = session.createQuery(hql).list();
+            transaction.commit();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            if (transaction != null)
+            {
+                transaction.rollback();
+            }
+        }
+        return result;
+    }
 }

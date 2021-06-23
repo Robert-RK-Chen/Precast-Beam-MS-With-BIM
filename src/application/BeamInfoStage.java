@@ -60,7 +60,7 @@ public class BeamInfoStage extends Application
 
             // infoController : BeamInfoController 类的实例，窗口的控制器
             BeamInfoController infoController = infoLoader.getController();
-            infoController.initialize(preBeamId);
+            infoController.init(preBeamId);
             stage.show();
         }
         catch (IOException ioException)

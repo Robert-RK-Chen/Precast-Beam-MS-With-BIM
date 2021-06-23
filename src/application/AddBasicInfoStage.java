@@ -56,7 +56,7 @@ public class AddBasicInfoStage extends Application
 
         // addBasicInfoController : AddBasicInfoController 类的实例，窗口的控制器
         AddBasicInfoController addBasicInfoController = basicInfoAddLoader.getController();
-        addBasicInfoController.initialize(preBeamId);
+        addBasicInfoController.init(preBeamId);
         stage.show();
     }
 

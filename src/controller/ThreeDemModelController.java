@@ -1,6 +1,5 @@
 package controller;
 
-import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
@@ -9,19 +8,22 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.util.Properties;
 
-public class TDModelController
+/**
+ * @author Robert Chen
+ */
+public class ThreeDemModelController
 {
     public Slider modelSlider;
     public ImageView modelView;
-    private static double rot;
     public Label rotationLabel;
 
     public void showModel()
     {
         Properties properties = new Properties();
+        double rot;
         try
         {
-            properties.load(TDModelController.class.getClassLoader().getResourceAsStream("model.properties"));
+            properties.load(ThreeDemModelController.class.getClassLoader().getResourceAsStream("software.properties"));
             rot = Double.parseDouble(properties.getProperty("rotation"));
         }
         catch (IOException ioException)

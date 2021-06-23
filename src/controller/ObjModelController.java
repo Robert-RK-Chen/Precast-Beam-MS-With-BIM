@@ -12,14 +12,14 @@ import javafx.scene.transform.Rotate;
 
 import java.net.URL;
 
-public class ThreeDModelController
+public class ObjModelController
 {
     public Scene modelScene;
     public Group model;
     double[] mouseCoordinate = new double[2];
 
     // 创建包含 3D 模型的场景
-    public Scene initialize()
+    public Scene init()
     {
         // 设置 3D 模型的照相机、创建 3D 模型的信息组与漫反射灯，使 3D 模型的每个角度都能看到颜色
         model = load3dModel(getClass().getResource("../resource/beamModel/bridge1.obj"));
