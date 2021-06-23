@@ -35,7 +35,6 @@ public class AccountCreateController
             UsersEntity usersEntity = new UsersEntity();
             usersEntity.setUsername(accountName);
             usersEntity.setPassword(password);
-            usersEntity.setMd5Check("");
             new UsersModel().insert(usersEntity);
 
             Alert createAccountSuccess = new Alert(Alert.AlertType.INFORMATION);
