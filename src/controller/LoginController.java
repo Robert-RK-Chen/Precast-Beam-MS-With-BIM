@@ -1,5 +1,6 @@
 package controller;
 
+import application.AccountCreateStage;
 import application.MainStage;
 import hibernate.abstractModel.HibernateUtil;
 import hibernate.entities.UsersEntity;
@@ -17,12 +18,12 @@ import java.util.List;
 
 public class LoginController
 {
-    public static UsersEntity thisUser;
     public TextField userNameTf;
-    public Hyperlink forgetHyperLink;
+    public Hyperlink forgetHyperlink;
     public PasswordField passwordTf;
     public Button loginButton;
     public Button fastLoginBtn;
+    public Hyperlink createAccountHyperlink;
 
     // 初始化方法，多线程加载 Hibernate 连接以免影响软件启动速度
     public void loadHibernate()
@@ -83,6 +84,11 @@ public class LoginController
             loginFailed.setHeaderText("用户登录凭据被更改，请重新登陆！");
             loginFailed.show();
         }
+    }
+
+    public void createAccount() throws Exception
+    {
+        new AccountCreateStage().showStage();
     }
 }
 

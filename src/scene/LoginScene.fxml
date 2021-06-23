@@ -35,12 +35,21 @@
             <VBox.margin>
                 <Insets left="20.0" right="20.0" top="30.0"/>
             </VBox.margin>
-            <Label prefHeight="20.0" prefWidth="360.0" text="梁场通 ID/账号名：">
-                <font>
-                    <Font size="13.0"/>
-                </font>
-            </Label>
-            <TextField fx:id="userNameTf" prefHeight="35.0" prefWidth="360.0"
+            <HBox prefHeight="20.0" prefWidth="360.0">
+                <Label prefHeight="20.0" prefWidth="200.0" text="梁场通ID / 账号名：">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+                <Hyperlink fx:id="createAccountHyperlink" alignment="CENTER_RIGHT" focusTraversable="false"
+                           onMouseClicked="#createAccount" prefHeight="20.0" prefWidth="90.0" text="创建账号？"
+                           textFill="#b3b3b3">
+                    <HBox.margin>
+                        <Insets left="70.0"/>
+                    </HBox.margin>
+                </Hyperlink>
+            </HBox>
+            <TextField fx:id="userNameTf" prefHeight="20.0" prefWidth="130.0"
                        style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #B0B0B0; -fx-border-radius: 10;">
                 <font>
                     <Font size="13.0"/>
@@ -55,15 +64,15 @@
                 <Insets left="20.0" right="20.0" top="20.0"/>
             </VBox.margin>
             <HBox prefHeight="20.0" prefWidth="360.0">
-                <Label prefHeight="20.0" prefWidth="130.0" text="密码：">
+                <Label prefHeight="20.0" prefWidth="200.0" text="密码：">
                     <font>
                         <Font size="13.0"/>
                     </font>
                 </Label>
-                <Hyperlink fx:id="forgetHyperLink" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="70.0"
-                           text="忘记密码？" textFill="#b3b3b3">
+                <Hyperlink fx:id="forgetHyperlink" alignment="CENTER_RIGHT" focusTraversable="false" prefHeight="22.0"
+                           prefWidth="90.0" text="忘记密码？" textFill="#b3b3b3">
                     <HBox.margin>
-                        <Insets left="160.0"/>
+                        <Insets left="70.0"/>
                     </HBox.margin>
                 </Hyperlink>
             </HBox>

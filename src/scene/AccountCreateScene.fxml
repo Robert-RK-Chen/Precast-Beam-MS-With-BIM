@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AccountCreateController">
+    <ImageView fitHeight="286.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../resource/image/account.png"/>
+    </ImageView>
+    <Label prefHeight="35.0" prefWidth="500.0" text="”梁场通“ID / 邮箱：" textFill="#00bfa6">
+        <font>
+            <Font name="System Bold" size="14.0"/>
+        </font>
+        <VBox.margin>
+            <Insets left="20.0" right="20.0" top="10.0"/>
+        </VBox.margin>
+    </Label>
+    <TextField fx:id="accountIDTf" prefHeight="35.0" prefWidth="500.0"
+               style="-fx-background-color: #FFFFFF; -fx-border-color: #B3B3B3; -fx-border-radius: 10;">
+        <VBox.margin>
+            <Insets left="20.0" right="20.0" top="5.0"/>
+        </VBox.margin>
+    </TextField>
+    <Label prefHeight="35.0" prefWidth="500.0" text="请输入您的密码：" textFill="#00bfa6">
+        <font>
+            <Font name="System Bold" size="14.0"/>
+        </font>
+        <VBox.margin>
+            <Insets left="20.0" right="20.0" top="5.0"/>
+        </VBox.margin>
+    </Label>
+    <PasswordField fx:id="password1Tf" prefHeight="35.0" prefWidth="500.0"
+                   style="-fx-background-color: #FFFFFF; -fx-border-color: #B3B3B3; -fx-border-radius: 10;">
+        <VBox.margin>
+            <Insets left="20.0" right="20.0" top="5.0"/>
+        </VBox.margin>
+    </PasswordField>
+    <Label prefHeight="35.0" prefWidth="500.0" text="请再输入一次密码：" textFill="#00bfa6">
+        <font>
+            <Font name="System Bold" size="14.0"/>
+        </font>
+        <VBox.margin>
+            <Insets left="20.0" right="20.0" top="5.0"/>
+        </VBox.margin>
+    </Label>
+    <PasswordField fx:id="password2Tf" prefHeight="35.0" prefWidth="500.0"
+                   style="-fx-background-color: #FFFFFF; -fx-border-color: #B3B3B3; -fx-border-radius: 10;">
+        <VBox.margin>
+            <Insets left="20.0" right="20.0" top="5.0"/>
+        </VBox.margin>
+    </PasswordField>
+    <Label prefHeight="35.0" prefWidth="500.0" text="请输入授权码：" textFill="#00bfa6">
+        <font>
+            <Font name="System Bold" size="14.0"/>
+        </font>
+        <VBox.margin>
+            <Insets left="20.0" right="20.0" top="5.0"/>
+        </VBox.margin>
+    </Label>
+    <TextField fx:id="authorizeTf" prefHeight="35.0" prefWidth="500.0"
+               style="-fx-background-color: #FFFFFF; -fx-border-color: #B3B3B3; -fx-border-radius: 10;">
+        <VBox.margin>
+            <Insets left="20.0" right="20.0" top="5.0"/>
+        </VBox.margin>
+    </TextField>
+    <Button fx:id="accountCreateBtn" mnemonicParsing="false" onMouseClicked="#createAnAccount" prefHeight="35.0"
+            prefWidth="500.0" style="-fx-background-color: #00BFA6; -fx-background-radius: 10;" text="创 建 账 号"
+            textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="16.0"/>
+        </font>
+        <VBox.margin>
+            <Insets left="20.0" right="20.0" top="20.0"/>
+        </VBox.margin>
+    </Button>
+</VBox>

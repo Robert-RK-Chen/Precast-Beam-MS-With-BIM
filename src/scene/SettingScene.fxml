@@ -11,106 +11,110 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingController">
+<VBox prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingController">
     <Pane prefHeight="400.0" prefWidth="400.0">
         <VBox.margin>
-            <Insets top="20.0" />
+            <Insets top="20.0"/>
         </VBox.margin>
-        <ImageView fitHeight="242.0" fitWidth="337.0" layoutX="32.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../resource/image/Settings.png" />
+        <ImageView fitHeight="242.0" fitWidth="337.0" layoutX="32.0" layoutY="-4.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../resource/image/Settings.png"/>
         </ImageView>
     </Pane>
-    <Separator prefHeight="0.0" prefWidth="400.0" />
+    <Separator prefHeight="0.0" prefWidth="400.0"/>
     <VBox prefHeight="500.0" prefWidth="400.0">
         <VBox.margin>
-            <Insets left="30.0" right="30.0" top="20.0" />
+            <Insets left="30.0" right="30.0" top="20.0"/>
         </VBox.margin>
         <Label prefHeight="30.0" prefWidth="360.0" text="设 置" textFill="#00bfa6">
             <font>
-                <Font name="System Bold" size="20.0" />
+                <Font name="System Bold" size="20.0"/>
             </font>
             <VBox.margin>
-                <Insets />
+                <Insets/>
             </VBox.margin>
         </Label>
         <HBox prefHeight="30.0" prefWidth="360.0">
             <VBox.margin>
-                <Insets top="10.0" />
+                <Insets top="10.0"/>
             </VBox.margin>
             <Label prefHeight="30.0" prefWidth="50.0" text="账号：" textFill="#00bfa6">
                 <font>
-                    <Font name="System Bold" size="15.0" />
+                    <Font name="System Bold" size="15.0"/>
                 </font>
             </Label>
             <Label fx:id="userIdLabel" prefHeight="30.0" prefWidth="180.0" text="iamrobert@qq.com">
                 <font>
-                    <Font size="14.0" />
+                    <Font size="14.0"/>
                 </font>
             </Label>
-            <Hyperlink fx:id="exitLoginHyperlink" alignment="CENTER" onMouseClicked="#exitLogin" prefHeight="30.0" prefWidth="81.0" text="退出登录" textFill="#00bfa6">
+            <Hyperlink fx:id="exitLoginHyperlink" alignment="CENTER" focusTraversable="false"
+                       onMouseClicked="#exitLogin" prefHeight="30.0" prefWidth="81.0" text="退出登录" textFill="#00bfa6">
                 <font>
-                    <Font size="14.0" />
+                    <Font size="14.0"/>
                 </font>
             </Hyperlink>
         </HBox>
         <HBox prefHeight="30.0" prefWidth="360.0">
             <VBox.margin>
-                <Insets top="10.0" />
+                <Insets top="10.0"/>
             </VBox.margin>
             <Label prefHeight="30.0" prefWidth="50.0" text="版本：" textFill="#00bfa6">
                 <font>
-                    <Font name="System Bold" size="15.0" />
+                    <Font name="System Bold" size="15.0"/>
                 </font>
             </Label>
             <Label fx:id="versionLabel" prefHeight="30.0" prefWidth="180.0" text="1.2.0-RC">
                 <font>
-                    <Font size="14.0" />
+                    <Font size="14.0"/>
                 </font>
             </Label>
-            <Hyperlink fx:id="checkUpdateHyperlink" alignment="CENTER" onMouseClicked="#checkUpdate" prefHeight="30.0" prefWidth="81.0" text="检查更新" textFill="#00bfa6">
+            <Hyperlink fx:id="checkUpdateHyperlink" alignment="CENTER" focusTraversable="false"
+                       onMouseClicked="#checkUpdate" prefHeight="30.0" prefWidth="81.0" text="检查更新" textFill="#00bfa6">
                 <font>
-                    <Font size="14.0" />
+                    <Font size="14.0"/>
                 </font>
             </Hyperlink>
         </HBox>
         <Label text="关 于" textFill="#00b0ff">
             <font>
-                <Font name="System Bold" size="20.0" />
+                <Font name="System Bold" size="20.0"/>
             </font>
             <VBox.margin>
-                <Insets top="30.0" />
+                <Insets top="30.0"/>
             </VBox.margin>
         </Label>
         <Label text="开发者：" textFill="#00b0ff">
             <font>
-                <Font name="System Bold" size="15.0" />
+                <Font name="System Bold" size="15.0"/>
             </font>
             <VBox.margin>
-                <Insets top="10.0" />
+                <Insets top="10.0"/>
             </VBox.margin>
         </Label>
         <Label fx:id="developerLabel" onMouseClicked="#getEasternEgg" text="陈佳语、汪奕琰、王瀚民、周晨风、刘宝阳" textFill="#00b0ff">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
             <VBox.margin>
-                <Insets top="10.0" />
+                <Insets top="10.0"/>
             </VBox.margin>
         </Label>
         <Label text="版权所属：" textFill="#00b0ff">
             <font>
-                <Font name="System Bold" size="15.0" />
+                <Font name="System Bold" size="15.0"/>
             </font>
             <VBox.margin>
-                <Insets top="10.0" />
+                <Insets top="10.0"/>
             </VBox.margin>
         </Label>
         <Label text="Copyright © 2021 COZIB Software. 保留所有权利。" textFill="#00b0ff">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
             <VBox.margin>
-                <Insets top="10.0" />
+                <Insets top="10.0"/>
             </VBox.margin>
         </Label>
     </VBox>
