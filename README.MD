@@ -17,6 +17,12 @@
 | Hibernate            | `5` |
 
 - - -
+## 请注意：
+### 系统的启动方法为 LoginStage.main()方法
+在配置运行时，请加上 JavaFX 的 VM选项：
+> --module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml
+
+- - -
 
 ## 🎉Happy Children's Day !
 
