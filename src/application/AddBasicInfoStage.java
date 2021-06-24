@@ -5,73 +5,64 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 
 /**
  * @author Robert Chen
  */
-public class AddBasicInfoStage extends Application
-{
-    // preBeamId : 作为主界面与添加预制梁信息界面的中间信息
-    // basicInfoAddStage : 添加预制梁基本信息界面
+public class AddBasicInfoStage extends Application {
     private String preBeamId = null;
     private static Stage basicInfoAddStage = null;
 
-    /**
-     * @return Stage basicInfoAddStage : 添加基本信息界面
-     * 使用单例模式保证只会弹出一个界面
-     */
-    public static Stage getBasicInfoAddStage()
-    {
-        if (basicInfoAddStage == null)
-        {
+    public static Stage getBasicInfoAddStage() {
+        if (basicInfoAddStage == null) {
             basicInfoAddStage = new Stage();
         }
         return basicInfoAddStage;
     }
 
     @Override
-    public void start(Stage stage) throws Exception
-    {
-        // basicInfoAddSceneUrl : 添加基本信息界面的 FXML 资源
-        // basicInfoAddLoader : 加载器，用于动态控制窗口
+    public void start(Stage stage) {
         URL basicInfoAddSceneUrl = getClass().getResource("../scene/addBasicInfoScene.fxml");
-        FXMLLoader basicInfoAddLoader = new FXMLLoader();
-        basicInfoAddLoader.setLocation(basicInfoAddSceneUrl);
+        FXMLLoader basicInfoAddLoader = new FXMLLoader(basicInfoAddSceneUrl);
 
-        // 加载图标资源
-        URL iconUrl = getClass().getResource("../resource/image/icon/prebeams.png");
-        Image icon = new Image(iconUrl.toExternalForm());
-        stage.getIcons().add(icon);
+        try {
+            Parent root = basicInfoAddLoader.load();
+            Scene addBasicScene = new Scene(root, 500, 420);
+            URL iconUrl = getClass().getResource("../resource/image/icon/prebeams.png");
+            if (iconUrl != null) {
+                Image icon = new Image(iconUrl.toExternalForm());
+                stage.getIcons().add(icon);
+            }
 
-        // 设置场景以及窗口的信息
-        Parent root = basicInfoAddLoader.load();
-        Scene addBasicScene = new Scene(root, 500, 420);
-        stage.setScene(addBasicScene);
-        stage.setTitle("添加预处理的预制梁");
-        stage.setResizable(false);
-
-        // addBasicInfoController : AddBasicInfoController 类的实例，窗口的控制器
-        AddBasicInfoController addBasicInfoController = basicInfoAddLoader.getController();
-        addBasicInfoController.init(preBeamId);
-        stage.show();
+            stage.setScene(addBasicScene);
+            AddBasicInfoController addBasicInfoController = basicInfoAddLoader.getController();
+            addBasicInfoController.init(preBeamId);
+            stage.setTitle("添加预处理的预制梁");
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException ioException) {
+            Alert sceneLoadFailed = new Alert(Alert.AlertType.ERROR);
+            sceneLoadFailed.setTitle("界面资源加载失败！");
+            sceneLoadFailed.setHeaderText("请联系技术支持以获得更多帮助！");
+            sceneLoadFailed.show();
+        }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         launch(args);
     }
 
-    public void showStage() throws Exception
-    {
+    public void showStage() {
         start(getBasicInfoAddStage());
     }
 
-    public void initializePreBeam(String id)
-    {
+    public void initializePreBeam(String id) {
         preBeamId = id;
     }
 }

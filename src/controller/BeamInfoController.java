@@ -1,7 +1,8 @@
 package controller;
 
 import application.AddServiceInfoStage;
-import application.Show3DModelStage;
+import application.Show3dModelStage;
+import com.google.zxing.WriterException;
 import hibernate.entities.*;
 import hibernate.model.*;
 import javafx.scene.Scene;
@@ -10,17 +11,16 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import util.QRCodeUtil;
+import util.QrCodeUtil;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 
 /**
  * @author Robert Chen
  */
-public class BeamInfoController
-{
-    // 来自 FXML 绑定的的控件
+public class BeamInfoController {
     public ImageView beamImageView;
     public TextField beamIdTf;
     public TextField beamKindTf;
@@ -31,7 +31,6 @@ public class BeamInfoController
     public TextField widthTf;
     public TextField heightTf;
     public TextField radiusTf;
-    public Button nextStepButton;
     public Label stateLabel;
     public TextField wireInspectorTf;
     public TextField wireStartTf;
@@ -39,33 +38,34 @@ public class BeamInfoController
     public TextField pouringInspectorTf;
     public TextField pouringStartTf;
     public TextField pouringFinishTf;
-    public TextField curingStartTf;
     public TextField curingInspectorTf;
+    public TextField curingStartTf;
     public TextField curingFinishTf;
     public TextField storeInspectorTf;
     public TextField storeStartTf;
     public TextField shipmentExpectTf;
     public TextField shipmentActualTf;
-    public Button deleteBeamButton;
+    public Button nextStepButton;
     public Button qrCodeButton;
+    public Button deleteBeamButton;
+    private final BeamInfoModel beamInfoModel = new BeamInfoModel();
+    private final TieInfoModel tieInfoModel = new TieInfoModel();
+    private final PouringInfoModel pouringInfoModel = new PouringInfoModel();
+    private final CuringInfoModel curingInfoModel = new CuringInfoModel();
+    private final BeamStoreModel beamStoreModel = new BeamStoreModel();
 
-    // 初始化预制梁信息面板
-    public void init(String id)
-    {
-        BeamInfoModel beamInfoModel = new BeamInfoModel();
+    public void init(String id) {
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(id);
-        TieInfoModel tieInfoModel = new TieInfoModel();
         TieInfoEntity tieInfoEntity = tieInfoModel.findById(id);
-        PouringInfoModel pouringInfoModel = new PouringInfoModel();
         PouringInfoEntity pouringInfoEntity = pouringInfoModel.findById(id);
-        CuringInfoModel curingInfoModel = new CuringInfoModel();
         CuringInfoEntity curingInfoEntity = curingInfoModel.findById(id);
-        BeamStoreModel beamStoreModel = new BeamStoreModel();
         BeamStoreEntity beamStoreEntity = beamStoreModel.findById(id);
 
         // 预制梁的预览图
         URL imageUrl = getClass().getResource("../resource/image/preview/" + beamInfoEntity.getBeamKind() + ".jpg");
-        beamImageView.setImage(new Image(imageUrl.toExternalForm()));
+        if (imageUrl != null) {
+            beamImageView.setImage(new Image(imageUrl.toExternalForm()));
+        }
 
         // 加载预制梁的基本信息
         beamIdTf.setText(beamInfoEntity.getBeamId());
@@ -80,32 +80,28 @@ public class BeamInfoController
         stateLabel.setText(beamInfoEntity.getBeamState());
 
         // 当预制梁的状态是【扎钢筋】时，加载扎钢筋的业务信息
-        if (tieInfoEntity != null)
-        {
+        if (tieInfoEntity != null) {
             wireInspectorTf.setText(tieInfoEntity.getWireInspector());
             wireStartTf.setText(tieInfoEntity.getWireStart().toString());
             wireFinishTf.setText(tieInfoEntity.getWireFinish().toString());
         }
 
         // 当预制梁的状态是【浇筑】时，加载浇筑的业务信息
-        if (pouringInfoEntity != null)
-        {
+        if (pouringInfoEntity != null) {
             pouringInspectorTf.setText(pouringInfoEntity.getPouringInspector());
             pouringStartTf.setText(pouringInfoEntity.getPouringStart().toString());
             pouringFinishTf.setText(pouringInfoEntity.getPouringFinish().toString());
         }
 
         // 当预制梁的状态是【养护】时，加载养护的业务信息
-        if (curingInfoEntity != null)
-        {
+        if (curingInfoEntity != null) {
             curingInspectorTf.setText(curingInfoEntity.getCuringInspector());
             curingStartTf.setText(curingInfoEntity.getCuringStart().toString());
             curingFinishTf.setText(curingInfoEntity.getCuringFinish().toString());
         }
 
         // 当预制梁的状态是【存储】时，加载存储的业务信息
-        if (beamStoreEntity != null)
-        {
+        if (beamStoreEntity != null) {
             storeInspectorTf.setText(beamStoreEntity.getStoreInspector());
             storeStartTf.setText(beamStoreEntity.getStoreStart().toString());
             shipmentExpectTf.setText(beamStoreEntity.getShipmentExpect().toString());
@@ -113,16 +109,12 @@ public class BeamInfoController
         }
     }
 
-    // 给预制梁增加下一步业务信息
-    public void nextStep() throws Exception
-    {
-        BeamInfoModel beamInfoModel = new BeamInfoModel();
+    public void nextStep() {
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
 
         // 获取预制梁的状态
         String beamState = beamInfoEntity.getBeamState();
-        switch (beamState)
-        {
+        switch (beamState) {
             // 【存储】状态则直接改状态为【已运出】
             case "存储" -> {
                 beamInfoEntity.setBeamState("已运出");
@@ -132,6 +124,7 @@ public class BeamInfoController
                 transBeam.setHeaderText("预制梁已经运出!");
                 transBeam.show();
             }
+
             // 已运出则提醒用户没有下一步操作了
             case "已运出" -> {
                 Alert finishBeam = new Alert(Alert.AlertType.INFORMATION);
@@ -139,6 +132,7 @@ public class BeamInfoController
                 finishBeam.setHeaderText("这块预制梁已经运出，\n完成了所有的业务方法！");
                 finishBeam.show();
             }
+
             // 加载添加业务方法的页面
             default -> {
                 AddServiceInfoStage serviceInfoStage = new AddServiceInfoStage();
@@ -148,17 +142,11 @@ public class BeamInfoController
         }
     }
 
-    // 用户点击预制梁的预览图，展示桥梁的 3D 模型
-    public void show3DModel() throws Exception
-    {
-        Show3DModelStage modelStage = new Show3DModelStage();
-        modelStage.showStage();
+    public void show3dModel() {
+        new Show3dModelStage().showStage();
     }
 
-    // 用户点击删除预制梁按钮
-    public void deleteBeam()
-    {
-        BeamInfoModel beamInfoModel = new BeamInfoModel();
+    public void deleteBeam() {
         BeamInfoEntity beamInfoEntity = beamInfoModel.findById(beamIdTf.getText());
 
         Alert deleteBeam = new Alert(Alert.AlertType.CONFIRMATION);
@@ -166,8 +154,7 @@ public class BeamInfoController
         deleteBeam.setHeaderText("确定要删除这块预制梁吗？");
         Optional<ButtonType> result = deleteBeam.showAndWait();
 
-        if (result.isPresent() && result.get() == ButtonType.OK)
-        {
+        if (result.isPresent() && result.get() == ButtonType.OK) {
             beamInfoModel.delete(beamInfoEntity);
             Alert deleteSuccess = new Alert(Alert.AlertType.INFORMATION);
             deleteSuccess.setTitle("来自删除预制梁的消息");
@@ -178,21 +165,25 @@ public class BeamInfoController
         }
     }
 
-    public void showQRCode() throws Exception
-    {
-        QRCodeUtil qrCodeUtil = new QRCodeUtil();
-        BorderPane borderPane = new BorderPane();
-
-        Image QRCode = new Image("file:" + qrCodeUtil.getQRCode(beamIdTf.getText()).toString());
-        ImageView QRCodeView = new ImageView();
-        QRCodeView.setImage(QRCode);
-        borderPane.setCenter(QRCodeView);
-
-        Scene scene = new Scene(borderPane, QRCode.getWidth(), QRCode.getHeight());
+    public void showQrCode() {
         Stage stage = new Stage();
-        stage.setTitle("预制梁唯一标识符的二维码");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
+        BorderPane borderPane = new BorderPane();
+        ImageView qrCodeView = new ImageView();
+        borderPane.setCenter(qrCodeView);
+
+        try {
+            Image qrCode = new Image("file:" + new QrCodeUtil().getQrCode(beamIdTf.getText()).toString());
+            qrCodeView.setImage(qrCode);
+            Scene scene = new Scene(borderPane, qrCode.getWidth(), qrCode.getHeight());
+            stage.setTitle("预制梁唯一标识符的二维码");
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException | WriterException exception) {
+            Alert resourceLoadFailed = new Alert(Alert.AlertType.ERROR);
+            resourceLoadFailed.setTitle("二维码资源加载失败！");
+            resourceLoadFailed.setHeaderText("请联系技术支持以获得更多帮助！");
+            resourceLoadFailed.show();
+        }
     }
 }

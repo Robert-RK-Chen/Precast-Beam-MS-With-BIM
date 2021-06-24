@@ -4,8 +4,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="b5a76dcb-3d08-429f-94cc-b9c416b536c4" />
-          <unit-entry name="hibernate:hibernate.cfg.xml" value="abe81fa5-f048-411a-ae14-5654d6aff5b0" />
+          <unit-entry name="hibernate.cfg.xml" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
@@ -20,10 +19,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-8.0.21" level="project" />
-    <orderEntry type="library" name="Hibernate 5.4.11-5.4.11" level="project" />
-    <orderEntry type="library" name="jimObjModelImporterJFX" level="project" />
-    <orderEntry type="library" name="core-3.4.1" level="project" />
-    <orderEntry type="library" name="javase-3.4.1" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="lib-project" level="project" />
   </component>
 </module>

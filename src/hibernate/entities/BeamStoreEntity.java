@@ -9,8 +9,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "beam_store", schema = "precast_beam_system")
-public class BeamStoreEntity
-{
+public class BeamStoreEntity {
     private String beamId;
     private String storeInspector;
     private Timestamp storeStart;
@@ -19,73 +18,60 @@ public class BeamStoreEntity
 
     @Id
     @Column(name = "beam_id")
-    public String getBeamId()
-    {
+    public String getBeamId() {
         return beamId;
     }
 
-    public void setBeamId(String beamId)
-    {
+    public void setBeamId(String beamId) {
         this.beamId = beamId;
     }
 
     @Basic
     @Column(name = "store_inspector")
-    public String getStoreInspector()
-    {
+    public String getStoreInspector() {
         return storeInspector;
     }
 
-    public void setStoreInspector(String storeInspector)
-    {
+    public void setStoreInspector(String storeInspector) {
         this.storeInspector = storeInspector;
     }
 
     @Basic
     @Column(name = "store_start")
-    public Timestamp getStoreStart()
-    {
+    public Timestamp getStoreStart() {
         return storeStart;
     }
 
-    public void setStoreStart(Timestamp storeStart)
-    {
+    public void setStoreStart(Timestamp storeStart) {
         this.storeStart = storeStart;
     }
 
     @Basic
     @Column(name = "shipment_expect")
-    public Timestamp getShipmentExpect()
-    {
+    public Timestamp getShipmentExpect() {
         return shipmentExpect;
     }
 
-    public void setShipmentExpect(Timestamp shipmentExpect)
-    {
+    public void setShipmentExpect(Timestamp shipmentExpect) {
         this.shipmentExpect = shipmentExpect;
     }
 
     @Basic
     @Column(name = "shipment_actual")
-    public Timestamp getShipmentActual()
-    {
+    public Timestamp getShipmentActual() {
         return shipmentActual;
     }
 
-    public void setShipmentActual(Timestamp shipmentActual)
-    {
+    public void setShipmentActual(Timestamp shipmentActual) {
         this.shipmentActual = shipmentActual;
     }
 
     @Override
-    public boolean equals(Object o)
-    {
-        if (this == o)
-        {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass())
-        {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         BeamStoreEntity that = (BeamStoreEntity) o;
@@ -93,8 +79,7 @@ public class BeamStoreEntity
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         return Objects.hash(beamId, storeInspector, storeStart, shipmentExpect, shipmentActual);
     }
 }

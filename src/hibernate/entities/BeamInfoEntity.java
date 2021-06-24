@@ -8,8 +8,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "beam_info", schema = "precast_beam_system")
-public class BeamInfoEntity
-{
+public class BeamInfoEntity {
     private String beamId;
     private String beamKind;
     private String steelType1;
@@ -23,133 +22,110 @@ public class BeamInfoEntity
 
     @Id
     @Column(name = "beam_id")
-    public String getBeamId()
-    {
+    public String getBeamId() {
         return beamId;
     }
 
-    public void setBeamId(String beamId)
-    {
+    public void setBeamId(String beamId) {
         this.beamId = beamId;
     }
 
     @Basic
     @Column(name = "beam_kind")
-    public String getBeamKind()
-    {
+    public String getBeamKind() {
         return beamKind;
     }
 
-    public void setBeamKind(String beamKind)
-    {
+    public void setBeamKind(String beamKind) {
         this.beamKind = beamKind;
     }
 
     @Basic
     @Column(name = "steel_type_1")
-    public String getSteelType1()
-    {
+    public String getSteelType1() {
         return steelType1;
     }
 
-    public void setSteelType1(String steelType1)
-    {
+    public void setSteelType1(String steelType1) {
         this.steelType1 = steelType1;
     }
 
     @Basic
     @Column(name = "steel_type_2")
-    public String getSteelType2()
-    {
+    public String getSteelType2() {
         return steelType2;
     }
 
-    public void setSteelType2(String steelType2)
-    {
+    public void setSteelType2(String steelType2) {
         this.steelType2 = steelType2;
     }
 
     @Basic
     @Column(name = "steel_type_3")
-    public String getSteelType3()
-    {
+    public String getSteelType3() {
         return steelType3;
     }
 
-    public void setSteelType3(String steelType3)
-    {
+    public void setSteelType3(String steelType3) {
         this.steelType3 = steelType3;
     }
 
     @Basic
     @Column(name = "length")
-    public Double getLength()
-    {
+    public Double getLength() {
         return length;
     }
 
-    public void setLength(Double length)
-    {
+    public void setLength(Double length) {
         this.length = length;
     }
 
     @Basic
     @Column(name = "width")
-    public Double getWidth()
-    {
+    public Double getWidth() {
         return width;
     }
 
-    public void setWidth(Double width)
-    {
+    public void setWidth(Double width) {
         this.width = width;
     }
 
     @Basic
     @Column(name = "radius")
-    public Double getRadius()
-    {
+    public Double getRadius() {
         return radius;
     }
 
-    public void setRadius(Double radius)
-    {
+    public void setRadius(Double radius) {
         this.radius = radius;
     }
 
     @Basic
     @Column(name = "height")
-    public Double getHeight()
-    {
+    public Double getHeight() {
         return height;
     }
 
-    public void setHeight(Double height)
-    {
+    public void setHeight(Double height) {
         this.height = height;
     }
 
     @Basic
     @Column(name = "beam_state")
-    public String getBeamState()
-    {
+    public String getBeamState() {
         return beamState;
     }
 
-    public void setBeamState(String beamState)
-    {
+    public void setBeamState(String beamState) {
         this.beamState = beamState;
     }
 
     @Override
-    public boolean equals(Object o)
-    {
-        if (this == o)
-        {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass())
-        {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         BeamInfoEntity that = (BeamInfoEntity) o;
@@ -157,8 +133,7 @@ public class BeamInfoEntity
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         return Objects.hash(beamId, beamKind, steelType1, steelType2, steelType3, length, width, radius, height, beamState);
     }
 }

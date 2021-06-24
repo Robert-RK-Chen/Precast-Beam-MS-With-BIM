@@ -9,8 +9,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "tie_info", schema = "precast_beam_system")
-public class TieInfoEntity
-{
+public class TieInfoEntity {
     private String beamId;
     private String wireInspector;
     private Timestamp wireStart;
@@ -18,61 +17,50 @@ public class TieInfoEntity
 
     @Id
     @Column(name = "beam_id")
-    public String getBeamId()
-    {
+    public String getBeamId() {
         return beamId;
     }
 
-    public void setBeamId(String beamId)
-    {
+    public void setBeamId(String beamId) {
         this.beamId = beamId;
     }
 
     @Basic
     @Column(name = "wire_inspector")
-    public String getWireInspector()
-    {
+    public String getWireInspector() {
         return wireInspector;
     }
 
-    public void setWireInspector(String wireInspector)
-    {
+    public void setWireInspector(String wireInspector) {
         this.wireInspector = wireInspector;
     }
 
     @Basic
     @Column(name = "wire_start")
-    public Timestamp getWireStart()
-    {
+    public Timestamp getWireStart() {
         return wireStart;
     }
 
-    public void setWireStart(Timestamp wireStart)
-    {
+    public void setWireStart(Timestamp wireStart) {
         this.wireStart = wireStart;
     }
 
     @Basic
     @Column(name = "wire_finish")
-    public Timestamp getWireFinish()
-    {
+    public Timestamp getWireFinish() {
         return wireFinish;
     }
 
-    public void setWireFinish(Timestamp wireFinish)
-    {
+    public void setWireFinish(Timestamp wireFinish) {
         this.wireFinish = wireFinish;
     }
 
     @Override
-    public boolean equals(Object o)
-    {
-        if (this == o)
-        {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass())
-        {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         TieInfoEntity that = (TieInfoEntity) o;
@@ -80,8 +68,7 @@ public class TieInfoEntity
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         return Objects.hash(beamId, wireInspector, wireStart, wireFinish);
     }
 }

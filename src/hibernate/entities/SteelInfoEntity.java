@@ -8,44 +8,36 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "steel_info", schema = "precast_beam_system")
-public class SteelInfoEntity
-{
+public class SteelInfoEntity {
     private String steelType;
     private Double diameter;
 
     @Id
     @Column(name = "steel_type")
-    public String getSteelType()
-    {
+    public String getSteelType() {
         return steelType;
     }
 
-    public void setSteelType(String steelType)
-    {
+    public void setSteelType(String steelType) {
         this.steelType = steelType;
     }
 
     @Basic
     @Column(name = "diameter")
-    public Double getDiameter()
-    {
+    public Double getDiameter() {
         return diameter;
     }
 
-    public void setDiameter(Double diameter)
-    {
+    public void setDiameter(Double diameter) {
         this.diameter = diameter;
     }
 
     @Override
-    public boolean equals(Object o)
-    {
-        if (this == o)
-        {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass())
-        {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         SteelInfoEntity that = (SteelInfoEntity) o;
@@ -53,8 +45,7 @@ public class SteelInfoEntity
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         return Objects.hash(steelType, diameter);
     }
 }

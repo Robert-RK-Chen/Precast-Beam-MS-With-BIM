@@ -6,10 +6,8 @@ import hibernate.entities.PouringInfoEntity;
 /**
  * @author Robert Chen
  */
-public class PouringInfoModel extends AbstractModel<PouringInfoEntity>
-{
-    public PouringInfoModel()
-    {
+public class PouringInfoModel extends AbstractModel<PouringInfoEntity> {
+    public PouringInfoModel() {
         super(PouringInfoEntity.class);
     }
 }

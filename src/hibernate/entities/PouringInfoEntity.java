@@ -9,8 +9,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "pouring_info", schema = "precast_beam_system")
-public class PouringInfoEntity
-{
+public class PouringInfoEntity {
     private String beamId;
     private String pouringInspector;
     private Timestamp pouringStart;
@@ -18,61 +17,50 @@ public class PouringInfoEntity
 
     @Id
     @Column(name = "beam_id")
-    public String getBeamId()
-    {
+    public String getBeamId() {
         return beamId;
     }
 
-    public void setBeamId(String beamId)
-    {
+    public void setBeamId(String beamId) {
         this.beamId = beamId;
     }
 
     @Basic
     @Column(name = "pouring_inspector")
-    public String getPouringInspector()
-    {
+    public String getPouringInspector() {
         return pouringInspector;
     }
 
-    public void setPouringInspector(String pouringInspector)
-    {
+    public void setPouringInspector(String pouringInspector) {
         this.pouringInspector = pouringInspector;
     }
 
     @Basic
     @Column(name = "pouring_start")
-    public Timestamp getPouringStart()
-    {
+    public Timestamp getPouringStart() {
         return pouringStart;
     }
 
-    public void setPouringStart(Timestamp pouringStart)
-    {
+    public void setPouringStart(Timestamp pouringStart) {
         this.pouringStart = pouringStart;
     }
 
     @Basic
     @Column(name = "pouring_finish")
-    public Timestamp getPouringFinish()
-    {
+    public Timestamp getPouringFinish() {
         return pouringFinish;
     }
 
-    public void setPouringFinish(Timestamp pouringFinish)
-    {
+    public void setPouringFinish(Timestamp pouringFinish) {
         this.pouringFinish = pouringFinish;
     }
 
     @Override
-    public boolean equals(Object o)
-    {
-        if (this == o)
-        {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass())
-        {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         PouringInfoEntity that = (PouringInfoEntity) o;
@@ -80,8 +68,7 @@ public class PouringInfoEntity
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         return Objects.hash(beamId, pouringInspector, pouringStart, pouringFinish);
     }
 }

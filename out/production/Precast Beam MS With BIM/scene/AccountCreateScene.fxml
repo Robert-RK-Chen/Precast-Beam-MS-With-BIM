@@ -23,7 +23,7 @@
             <Insets left="20.0" right="20.0" top="10.0"/>
         </VBox.margin>
     </Label>
-    <TextField fx:id="accountIDTf" prefHeight="35.0" prefWidth="500.0"
+    <TextField fx:id="accountIdTf" prefHeight="35.0" prefWidth="500.0"
                style="-fx-background-color: #FFFFFF; -fx-border-color: #B3B3B3; -fx-border-radius: 10;">
         <VBox.margin>
             <Insets left="20.0" right="20.0" top="5.0"/>

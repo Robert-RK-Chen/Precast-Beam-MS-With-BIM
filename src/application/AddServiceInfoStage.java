@@ -5,73 +5,64 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 
 /**
  * @author Robert Chen
  */
-public class AddServiceInfoStage extends Application
-{
-    // beam : 作为主界面与添加预制梁信息界面的中间信息
-    // serviceInfoStage : 添加预制梁业务信息界面
+public class AddServiceInfoStage extends Application {
     private String beamId;
     private static Stage serviceInfoStage = null;
 
-    /**
-     * @return Stage serviceInfoStage
-     * 使用单例模式保证只会弹出一个界面
-     */
-    public static Stage getServiceInfoStage()
-    {
-        if (serviceInfoStage == null)
-        {
+    public static Stage getServiceInfoStage() {
+        if (serviceInfoStage == null) {
             serviceInfoStage = new Stage();
         }
         return serviceInfoStage;
     }
 
     @Override
-    public void start(Stage stage) throws Exception
-    {
-        // addServiceUrl : 添加业务信息界面的 FXML 资源
-        // addServiceLoader : 加载器，用于动态控制窗口
+    public void start(Stage stage) {
         URL addServiceUrl = getClass().getResource("../scene/addServiceInfoScene.fxml");
-        FXMLLoader addServiceLoader = new FXMLLoader();
-        addServiceLoader.setLocation(addServiceUrl);
+        FXMLLoader addServiceLoader = new FXMLLoader(addServiceUrl);
 
-        // 加载图标资源
-        URL iconUrl = getClass().getResource("../resource/image/icon/prebeams.png");
-        Image icon = new Image(iconUrl.toExternalForm());
-        stage.getIcons().add(icon);
+        try {
+            Parent root = addServiceLoader.load();
+            Scene addServiceScene = new Scene(root, 500, 340);
+            URL iconUrl = getClass().getResource("../resource/image/icon/prebeams.png");
+            if (iconUrl != null) {
+                Image icon = new Image(iconUrl.toExternalForm());
+                stage.getIcons().add(icon);
+            }
 
-        // 设置场景以及窗口的信息
-        Parent root = addServiceLoader.load();
-        Scene addServiceScene = new Scene(root, 500, 340);
-        stage.setTitle("添加预制梁业务步骤");
-        stage.setScene(addServiceScene);
-        stage.setResizable(false);
-
-        // addServiceController : AddServiceInfoController 类的实例，窗口的控制器
-        AddServiceInfoController addServiceController = addServiceLoader.getController();
-        addServiceController.init(beamId);
-        stage.show();
+            stage.setScene(addServiceScene);
+            AddServiceInfoController addServiceInfoController = addServiceLoader.getController();
+            addServiceInfoController.init(beamId);
+            stage.setTitle("添加预制梁业务步骤");
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException ioException) {
+            Alert sceneLoadFailed = new Alert(Alert.AlertType.ERROR);
+            sceneLoadFailed.setTitle("界面资源加载失败！");
+            sceneLoadFailed.setHeaderText("请联系技术支持以获得更多帮助！");
+            sceneLoadFailed.show();
+        }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         launch(args);
     }
 
-    public void showStage() throws Exception
-    {
+    public void showStage() {
         start(getServiceInfoStage());
     }
 
-    public void initializePreBeam(String id)
-    {
+    public void initializePreBeam(String id) {
         beamId = id;
     }
 }

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0962b99e-0452-49df-b988-ab8ba4b85482" name="默认变更列表" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib_project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/guava-30.1.1-jre.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_4_11_5_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/core_3_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javase_3_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jimObjModelImporterJFX.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/smartfox_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precast Beam MS With BIM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Precast Beam MS With BIM.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jimObjModelImporterJFX.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/AccountCreateStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/AccountCreateStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/AddBasicInfoStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/AddBasicInfoStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/AddServiceInfoStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/AddServiceInfoStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/BeamInfoStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/BeamInfoStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/LoginStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/LoginStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/MainStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/MainStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/SettingStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/SettingStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/Show3DModelStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/application/Show3DModelStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/AccountCreateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/AccountCreateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/AddBasicInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/AddBasicInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/AddServiceInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/AddServiceInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/BeamInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/BeamInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/ObjModelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/SettingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/SettingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/ThreeDemModelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/abstractModel/AbstractModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/abstractModel/AbstractModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/abstractModel/HibernateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/abstractModel/HibernateUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/BeamInfoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/BeamInfoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/BeamStoreEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/BeamStoreEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/CuringInfoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/CuringInfoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/PouringInfoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/PouringInfoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/SteelInfoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/SteelInfoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/TieInfoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/TieInfoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/UsersEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/entities/UsersEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/BeamInfoModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/BeamInfoModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/BeamStoreModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/BeamStoreModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/CuringInfoModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/CuringInfoModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/PouringInfoModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/PouringInfoModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/SteelInfoModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/SteelInfoModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/TieInfoModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/TieInfoModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/UsersModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate/model/UsersModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/scene/AccountCreateScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/scene/AccountCreateScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/scene/BeamInfoScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/scene/BeamInfoScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/scene/Show3DModelScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/scene/Show3DModelScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/software.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/software.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/style/emptyBeamPlace.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/style/existBeamPlace.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/util/HashUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/util/HashUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/util/QRCodeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/util/QRCodeUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/AccountCreateStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/AccountCreateStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/AddBasicInfoStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/AddBasicInfoStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/AddServiceInfoStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/AddServiceInfoStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/BeamInfoStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/BeamInfoStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/LoginStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/LoginStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/MainStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/MainStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/SettingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/SettingStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/Show3DModelStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Show3dModelStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AccountCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AccountCreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AddBasicInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddBasicInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AddServiceInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddServiceInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/BeamInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/BeamInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ObjModelController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/SettingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/SettingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ThreeDemModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Show3dModelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/abstractModel/AbstractModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/abstractModel/AbstractModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/abstractModel/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/abstractModel/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/entities/BeamInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/entities/BeamInfoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/entities/BeamStoreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/entities/BeamStoreEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/entities/CuringInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/entities/CuringInfoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/entities/PouringInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/entities/PouringInfoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/entities/SteelInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/entities/SteelInfoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/entities/TieInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/entities/TieInfoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/entities/UsersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/entities/UsersEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/model/BeamInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/model/BeamInfoModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/model/BeamStoreModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/model/BeamStoreModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/model/CuringInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/model/CuringInfoModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/model/PouringInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/model/PouringInfoModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/model/SteelInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/model/SteelInfoModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/model/TieInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/model/TieInfoModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate/model/UsersModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/model/UsersModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/AccountCreateScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/AccountCreateScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/BeamInfoScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/BeamInfoScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/Show3DModelScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/Show3DModelScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/software.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/software.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/emptyBeamPlace.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/existBeamPlace.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ByteToHex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ByteToHex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/HashUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/HashUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/QRCodeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/QrCodeUtil.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\Storages\Environment\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../Environment/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="C:\Storages\Environment\apache-maven-3.8.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1uOM4cIVfi6kGGFFJMBeyRMwrM0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PATH_TO_FX$" />
+    <property name="project.structure.last.edited" value="库" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.27877948" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="LoginStage" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="application.LoginStage" />
+      <module name="Precast Beam MS With BIM" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="0962b99e-0452-49df-b988-ab8ba4b85482" name="默认变更列表" comment="" />
+      <created>1624531996314</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624531996314</updated>
+      <workItem from="1624532001874" duration="205000" />
+      <workItem from="1624532255417" duration="1095000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

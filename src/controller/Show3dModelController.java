@@ -11,23 +11,18 @@ import java.util.Properties;
 /**
  * @author Robert Chen
  */
-public class ThreeDemModelController
-{
+public class Show3dModelController {
     public Slider modelSlider;
     public ImageView modelView;
     public Label rotationLabel;
 
-    public void showModel()
-    {
+    public void showModel() {
         Properties properties = new Properties();
         double rot;
-        try
-        {
-            properties.load(ThreeDemModelController.class.getClassLoader().getResourceAsStream("software.properties"));
+        try {
+            properties.load(Show3dModelController.class.getClassLoader().getResourceAsStream("software.properties"));
             rot = Double.parseDouble(properties.getProperty("rotation"));
-        }
-        catch (IOException ioException)
-        {
+        } catch (IOException ioException) {
             rot = 0;
             ioException.printStackTrace();
         }
