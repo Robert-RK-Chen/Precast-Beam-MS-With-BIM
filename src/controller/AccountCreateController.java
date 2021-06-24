@@ -2,6 +2,7 @@ package controller;
 
 import hibernate.entities.UsersEntity;
 import hibernate.model.UsersModel;
+import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -48,8 +49,10 @@ public class AccountCreateController {
             ExecutorService singleThreadPool =
                     new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(1024), new ThreadPoolExecutor.AbortPolicy());
             singleThreadPool.execute(() -> {
-                Stage stage = (Stage) accountCreateBtn.getScene().getWindow();
-                stage.close();
+                Platform.runLater(() -> {
+                    Stage stage = (Stage) accountCreateBtn.getScene().getWindow();
+                    stage.close();
+                });
             });
             singleThreadPool.shutdown();
         }

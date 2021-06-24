@@ -2,6 +2,7 @@ package application;
 
 import controller.LoginController;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -41,7 +42,7 @@ public class LoginStage extends Application {
 
             ExecutorService singleThreadPool =
                     new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(1024), new ThreadPoolExecutor.AbortPolicy());
-            singleThreadPool.execute(() -> new LoginController().loadHibernate());
+            singleThreadPool.execute(() -> Platform.runLater(() -> new LoginController().loadHibernate()));
             singleThreadPool.shutdown();
         } catch (IOException ioException) {
             Alert sceneLoadFailed = new Alert(Alert.AlertType.ERROR);

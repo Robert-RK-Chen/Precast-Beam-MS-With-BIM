@@ -2,6 +2,7 @@ package controller;
 
 import hibernate.entities.BeamInfoEntity;
 import hibernate.model.BeamInfoModel;
+import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -105,8 +106,10 @@ public class AddBasicInfoController {
             ExecutorService singleThreadPool =
                     new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(1024), new ThreadPoolExecutor.AbortPolicy());
             singleThreadPool.execute(() -> {
-                Stage stage = (Stage) addBeamButton.getScene().getWindow();
-                stage.close();
+                Platform.runLater(() -> {
+                    Stage stage = (Stage) addBeamButton.getScene().getWindow();
+                    stage.close();
+                });
             });
             singleThreadPool.shutdown();
         }
