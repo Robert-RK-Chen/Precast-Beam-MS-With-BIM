@@ -1,4 +1,5 @@
 # Precast Beam Management System With BIM
+
 ## 基于 BIM 的预制梁场生产管理系统
 
 - - -
@@ -17,10 +18,19 @@
 | Hibernate            | `5` |
 
 - - -
+
 ## 请注意：
+
 ### 系统的启动方法为 LoginStage.main()方法
+
 在配置运行时，请加上 JavaFX 的 VM选项：
 > --module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml
+
+### 检查版本更新请在 GitHub 生成一串 Token 密钥
+
+> 然后替换掉 SettingController 下的 checkUpdate().curl 的第三个参数
+
+### 云端数据库请在 hibernate.cfg.xml 下替换 jdbc-url 的 IP地址与端口
 
 - - -
 

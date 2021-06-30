@@ -9,5 +9,13 @@
       <jdbc-url>jdbc:mysql://localhost:3306/precast_beam_system</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="precast_beam_system@TDSQL-Cloud" uuid="5e1f464a-0224-4b7c-98c7-e62fd46c1f2a">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>precast_beam_system@TDSQL-Cloud</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://sh-cynosdbmysql-grp-edyno4ic.sql.tencentcdb.com:20567/precast_beam_system</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0962b99e-0452-49df-b988-ab8ba4b85482" name="默认变更列表" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/fastjson-1.2.76.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/LoginStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/LoginStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/AccountCreateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/AccountCreateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/SettingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/controller/SettingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Precast Beam MS With BIM/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/AccountCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AccountCreateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/AddBasicInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddBasicInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/SettingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/SettingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/SettingScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/SettingScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +24,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -25,11 +43,15 @@
     </option>
   </component>
   <component name="ProjectId" id="1uOM4cIVfi6kGGFFJMBeyRMwrM0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -40,7 +62,7 @@
     <property name="project.structure.last.edited" value="库" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.27877948" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="ImportMappingsDialog.RecentPackages">
@@ -62,13 +84,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -86,6 +110,13 @@
       <workItem from="1624532255417" duration="1095000" />
       <workItem from="1624533499859" duration="41000" />
       <workItem from="1624533604800" duration="454000" />
+      <workItem from="1624722419545" duration="27000" />
+      <workItem from="1624722475264" duration="409000" />
+      <workItem from="1624857458738" duration="1000" />
+      <workItem from="1624857530904" duration="1054000" />
+      <workItem from="1624973412132" duration="24000" />
+      <workItem from="1624973461599" duration="11175000" />
+      <workItem from="1625010171327" duration="3528000" />
     </task>
     <servers />
   </component>
@@ -103,5 +134,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

@@ -9,8 +9,6 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import util.HashUtil;
 
-import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -48,7 +46,7 @@ public class LoginController {
             loginFailed.setHeaderText("请检查用户名或密码是否正确。");
             loginFailed.show();
         } else {
-            user.setMd5Check(new HashUtil().encryptionHash(user.getUsername() + user.getPassword()));
+            user.setMd5Check(new HashUtil().encryptionHash(user.getUsername() + user.getPassword() + System.currentTimeMillis()));
             new UsersModel().update(user);
             new MainStage().showStage();
             Stage stage = (Stage) loginButton.getScene().getWindow();
@@ -57,33 +55,24 @@ public class LoginController {
     }
 
     public void fastLogin() {
-        boolean fastLoginFlag = false;
         List<UsersEntity> users = new UsersModel().findAll();
-        if (new File(authorityFilePath).exists()) {
+        try {
             Path filePath = Paths.get(authorityFilePath);
-            try {
-                String authority = Files.readString(filePath);
-                for (UsersEntity user : users) {
-                    try {
-                        if (user.getMd5Check().equals(authority)) {
-                            fastLoginFlag = true;
-                            break;
-                        }
-                    } catch (NullPointerException ignored) { }
+            String authority = Files.readString(filePath);
+            for (UsersEntity user : users) {
+                if (user.getMd5Check().equals(authority)) {
+                    new MainStage().showStage();
+                    Stage stage = (Stage) loginButton.getScene().getWindow();
+                    stage.close();
+                    break;
                 }
-            } catch (IOException ioException) {
-                Alert fileNotFoundAlert = new Alert(Alert.AlertType.ERROR);
-                fileNotFoundAlert.setTitle("快捷登录凭据加载失败！");
-                fileNotFoundAlert.setHeaderText("请联系技术支持以获得更多帮助！");
-                fileNotFoundAlert.show();
             }
-        }
-
-        if (fastLoginFlag) {
-            new MainStage().showStage();
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            stage.close();
-        } else {
+        } catch (Exception exception) {
+            Alert loginFailed = new Alert(Alert.AlertType.INFORMATION);
+            loginFailed.setTitle("快捷登录失败！");
+            loginFailed.setHeaderText("加载登录凭据失败，请重新登陆！");
+            loginFailed.show();
+        } finally {
             Alert loginFailed = new Alert(Alert.AlertType.INFORMATION);
             loginFailed.setTitle("快捷登录失败！");
             loginFailed.setHeaderText("快捷登录凭据已过期，请重新登陆！");

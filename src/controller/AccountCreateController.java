@@ -33,7 +33,7 @@ public class AccountCreateController {
         if (accountName.isEmpty() || password.isEmpty() || passwordCheck.isEmpty() || !password.equals(passwordCheck)) {
             Alert createAccountFailed = new Alert(Alert.AlertType.INFORMATION);
             createAccountFailed.setTitle("来自创建账户的提醒！");
-            createAccountFailed.setHeaderText("账户名或密码为空，或两次设置密码不同，\n请返回检查！");
+            createAccountFailed.setHeaderText("创建账户需要满足以下条件：\n1. 账户名或密码不为空\n2. 两次设置密码不同\n请返回检查！");
             createAccountFailed.show();
         } else {
             UsersEntity usersEntity = new UsersEntity();
@@ -48,12 +48,10 @@ public class AccountCreateController {
 
             ExecutorService singleThreadPool =
                     new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(1024), new ThreadPoolExecutor.AbortPolicy());
-            singleThreadPool.execute(() -> {
-                Platform.runLater(() -> {
-                    Stage stage = (Stage) accountCreateBtn.getScene().getWindow();
-                    stage.close();
-                });
-            });
+            singleThreadPool.execute(() -> Platform.runLater(() -> {
+                Stage stage = (Stage) accountCreateBtn.getScene().getWindow();
+                stage.close();
+            }));
             singleThreadPool.shutdown();
         }
     }
